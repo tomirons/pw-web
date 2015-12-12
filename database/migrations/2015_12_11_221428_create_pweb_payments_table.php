@@ -15,7 +15,7 @@ class CreatePwebPaymentsTable extends Migration
         Schema::create('pweb_payments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->text('transaction_id');
+            $table->string('transaction_id');
             $table->integer('amount');
             $table->timestamps();
 
