@@ -40,3 +40,10 @@ Breadcrumbs::register( 'voucher.index', function( $breadcrumbs )
     $breadcrumbs->parent( 'home' );
     $breadcrumbs->push( trans( 'main.apps.voucher' ) );
 });
+
+/* Services */
+Breadcrumbs::register( 'services.index', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'home' );
+    $breadcrumbs->push( trans( 'main.apps.services' ) );
+});

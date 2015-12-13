@@ -47,6 +47,9 @@ Route::get( 'vote/check/{site}', 'Front\VoteController@getCheck' );
 Route::get( 'voucher', ['as' => 'voucher.index', 'uses' => 'Front\VoucherController@getIndex'] );
 Route::post( 'voucher/redeem', 'Front\VoucherController@postRedeem' );
 
+/* Services */
+Route::get( 'services', ['as' => 'services.index', 'uses' => 'Front\ServicesController@getIndex'] );
+
 /* Admin */
 Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::get( '/', ['as' => 'dashboard', 'uses' => 'Admin\IndexController@getIndex'] );

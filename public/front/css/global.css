@@ -25448,6 +25448,15 @@ pre[class*=language-] code {
   height: 100px;
 }
 
+.grid-service-buy {
+  height: 40px;
+}
+
+.grid-service-buy button,
+.grid-service-buy a {
+  margin-left: 5%;
+}
+
 .grid-item-buy {
   padding-right: 12px;
   height: 40px;

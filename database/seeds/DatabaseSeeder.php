@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
 
          $this->call(ArticlesTableSeeder::class);
 
+         $this->call(ServicesTableSeeder::class);
+
         Model::reguard();
     }
 }

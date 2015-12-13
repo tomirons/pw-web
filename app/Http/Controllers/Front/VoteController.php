@@ -57,7 +57,7 @@ class VoteController extends Controller
             {
                 case 'virtual':
                     $user = Auth::user();
-                    $user->money = $user->money + ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount;
+                    $user->money = ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount + $user->money;
                     $user->save();
                     break;
 
@@ -72,7 +72,7 @@ class VoteController extends Controller
             VoteLog::create([
                 'user_id' => Auth::user()->ID,
                 'ip_address' => $request->ip(),
-                'reward' => 1200,
+                'reward' => ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount,
                 'site_id' => $site->id
             ]);
         }
