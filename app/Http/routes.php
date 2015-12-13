@@ -41,6 +41,7 @@ Route::post( 'paypal', 'Front\DonateController@postIPN' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
+Route::get( 'vote/check/{site}', 'Front\VoteController@getCheck' );
 
 Route::group( ['prefix' => 'admin'], function() {
 

@@ -154,6 +154,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Efriandika\LaravelSettings\SettingsServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 
     ],
 
@@ -211,6 +212,7 @@ return [
         'Settings'  => Efriandika\LaravelSettings\Facades\Settings::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
     ],
 
 ];

@@ -41,7 +41,7 @@
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     {{--*/ $roles = $api->getRoles( Auth::user()->ID ) /*--}}
                                     @if ( count( $roles ) > 0 )
-                                        @foreach( $roles['roles'] as $role )
+                                        @foreach( $roles as $role )
                                             <li>
                                                 <a href="{{ url( 'character/select/' . $role['id'] ) }}">
                                                     {{ $role['name'] }}
@@ -72,7 +72,7 @@
                             <!-- BEGIN USER LOGIN DROPDOWN -->
                             <li class="dropdown dropdown-user dropdown-dark">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <span class="username username-hide-mobile">{{ Auth::user()->name }}</span>
+                                    <span class="username">{{ Auth::user()->name }}</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     @if ( Auth::user()->isAdmin() )
@@ -105,7 +105,7 @@
         <!-- END HEADER TOP -->
         <div class="page-header-menu">
             <div class="container">
-                <div class="hor-menu  ">
+                <div class="hor-menu">
                     <ul class="nav navbar-nav">
                         <li {{ Request::is( '/' ) ? 'class=active' : NULL }}>
                             <a href="{{ url( '/' ) }}"> {{ trans( 'main.apps.news') }} </a>
@@ -138,10 +138,9 @@
     <div class="page-container">
         <!-- BEGIN CONTENT -->
         <div class="page-content-wrapper">
-            @include( 'front.page_header' )
+            {!! Breadcrumbs::render() !!}
             <div class="page-content">
                 <div class="container">
-                    @include( 'front.breadcrumb' )
                     <div class="page-content-inner">
                         @include( 'flash::message' )
                         <div class="row">

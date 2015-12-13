@@ -67,7 +67,8 @@ elixir(function(mix) {
         '../global/plugins/counterup/jquery.waypoints.min.js',
         '../global/plugins/counterup/jquery.counterup.min.js',
         '../global/plugins/bootstrap-toastr/toastr.min.js',
-        '../global/plugins/select2/js/select2.full.min.js'
+        '../global/plugins/select2/js/select2.full.min.js',
+        '../global/plugins/jquery.countdown/jquery.countdown.min.js'
     ], 'public/front/js/plugins.js');
 
     /* FRONT Layout Scripts */

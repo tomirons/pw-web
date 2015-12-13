@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "^6.1",
         "efriandika/laravel-settings": "^1.1",
         "illuminate/html": "^5.0",
-        "wadeshuler/php-paypal-ipn": "^2.5"
+        "wadeshuler/php-paypal-ipn": "^2.5",
+        "davejamesmiller/laravel-breadcrumbs": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

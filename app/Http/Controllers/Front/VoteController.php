@@ -2,12 +2,84 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Transfer;
+use App\VoteLog;
+use App\VoteSite;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class VoteController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware( 'auth' );
+    }
+
+    public function getIndex( Request $request )
+    {
+        $vote_info = [];
+        $sites = VoteSite::all();
+
+        foreach ( $sites as $site )
+        {
+            $log = VoteLog::onCooldown( $request, $site->id );
+
+            if ( $log->count() > 0 )
+            {
+                $log = $log->first();
+                if ( time() < ( $log->created_at->getTimestamp() + ( 3600 * $site->hour_limit ) ) )
+                {
+                    $vote_info[ $site->id ]['end_time'] = $log->created_at->addHours( $site->hour_limit )->getTimestamp() - Carbon::now()->getTimestamp();
+                    $vote_info[ $site->id ]['status'] = FALSE;
+                }
+                else
+                {
+                    $vote_info[ $site->id ]['status'] = TRUE;
+                }
+            }
+            else
+            {
+                $vote_info[ $site->id ]['status'] = TRUE;
+            }
+        }
+        return view( 'front.vote.index', compact( 'sites', 'vote_info' ) );
+    }
+
+    public function getCheck( Request $request, VoteSite $site )
+    {
+        if ( VoteLog::recent( $request, $site )->count() == 0 )
+        {
+            switch ( $site->type )
+            {
+                case 'virtual':
+                    $user = Auth::user();
+                    $user->money = $user->money + ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount;
+                    $user->save();
+                    break;
+
+                case 'cubi':
+                    Transfer::create([
+                        'user_id' => Auth::user()->ID,
+                        'zone_id' => 1,
+                        'cash' => ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount
+                    ]);
+                    break;
+            }
+            VoteLog::create([
+                'user_id' => Auth::user()->ID,
+                'ip_address' => $request->ip(),
+                'reward' => 1200,
+                'site_id' => $site->id
+            ]);
+        }
+        else
+        {
+            flash()->error( trans( 'vote.already_voted' ) );
+            return redirect( 'vote' );
+        }
+    }
 }

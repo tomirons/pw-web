@@ -11,6 +11,7 @@ return [
     |
     */
 
+    'home' => 'Home',
     'apps' => [
         'news' => 'News',
         'shop' => 'Shop',

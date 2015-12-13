@@ -441,3 +441,10 @@ a.nav-link, a.nav-link:hover {
     color: #8ea3b6;
 }
 
+div [data-countdown] span {
+    display: inline-block;
+    font-size: 2em;
+    line-height: 2em;
+    padding: 0 10px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
