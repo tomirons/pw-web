@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'server_connect_failed' => 'Failed to connect to the server... Be aware that some things may not work or show properly.',
+    'server_connect_failed' => 'Server is offline, therefore we can\'t process your request.',
     'no_version' => 'There isn\'t a protocol file for version (:version) yet.'
 
 ];

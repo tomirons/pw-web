@@ -58,4 +58,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return true;
     }
+
+    public function voucher_logs()
+    {
+        return $this->hasMany( 'App\VoucherLog' );
+    }
 }

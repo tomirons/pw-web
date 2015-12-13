@@ -7211,7 +7211,7 @@ fieldset[disabled] .btn.purple-soft:not(.btn-outline):hover {
   background-repeat: no-repeat!important;
   text-indent: -10000px;
   outline: 0;
-  background-image: url(../img/remove-icon-small.png)!important;
+  background-image: url(../../img/remove-icon-small.png)!important;
 }
 
 .dropdown.open>.dropdown-toggle,

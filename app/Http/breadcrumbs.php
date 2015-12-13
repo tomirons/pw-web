@@ -33,3 +33,10 @@ Breadcrumbs::register( 'vote.index', function( $breadcrumbs )
     $breadcrumbs->parent( 'home' );
     $breadcrumbs->push( trans( 'main.apps.vote' ) );
 });
+
+/* Voucher */
+Breadcrumbs::register( 'voucher.index', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'home' );
+    $breadcrumbs->push( trans( 'main.apps.voucher' ) );
+});

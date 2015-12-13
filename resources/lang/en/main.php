@@ -47,7 +47,6 @@ return [
         'back' => 'Back',
     ],
 
-    /* Character Lanugange Lines */
     'char_list_error' => 'An error occurred while retrieving your characters, please try again later.',
     'server_offline' => [
         'title' => 'Attention',
@@ -57,5 +56,6 @@ return [
     'reg_complete' => 'Your account has been registered, you can now login!',
     'acc_balance' => 'Account Balance: :money :currency',
     'buy' => 'Buy',
+    'no_character_selected' => 'You must select a character before proceeding.'
 
 ];

@@ -43,8 +43,11 @@ Route::post( 'paypal', 'Front\DonateController@postIPN' );
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
 Route::get( 'vote/check/{site}', 'Front\VoteController@getCheck' );
 
-Route::group( ['prefix' => 'admin'], function() {
+/* Voucher */
+Route::get( 'voucher', ['as' => 'voucher.index', 'uses' => 'Front\VoucherController@getIndex'] );
+Route::post( 'voucher/redeem', 'Front\VoucherController@postRedeem' );
 
-    Route::get( '/', 'Admin\IndexController@getIndex' );
-
+/* Admin */
+Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::get( '/', ['as' => 'dashboard', 'uses' => 'Admin\IndexController@getIndex'] );
 });

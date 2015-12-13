@@ -28,7 +28,7 @@ class VoteController extends Controller
         {
             $log = VoteLog::onCooldown( $request, $site->id );
 
-            if ( $log->count() > 0 )
+            if ( $log->exists() )
             {
                 $log = $log->first();
                 if ( time() < ( $log->created_at->getTimestamp() + ( 3600 * $site->hour_limit ) ) )
@@ -51,7 +51,7 @@ class VoteController extends Controller
 
     public function getCheck( Request $request, VoteSite $site )
     {
-        if ( VoteLog::recent( $request, $site )->count() == 0 )
+        if ( !VoteLog::recent( $request, $site )->exists() )
         {
             switch ( $site->type )
             {

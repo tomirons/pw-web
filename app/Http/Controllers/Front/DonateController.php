@@ -71,7 +71,7 @@ class DonateController extends Controller
 
             if ( $request->payment_status == 'Completed' )
             {
-                if ( Payment::where( 'transaction_id', $request->txn_id )->count() == 0 )
+                if ( !Payment::where( 'transaction_id', $request->txn_id )->exists() )
                 {
                     if ( $request->receiver_email == settings( 'paypal_email' ) )
                     {
