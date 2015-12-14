@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'mask.exists' => \App\Http\Middleware\MaskExists::class,
-        'selected.character' => \App\Http\Middleware\SelectedCharacter::class
+        'selected.character' => \App\Http\Middleware\SelectedCharacter::class,
+        'service.enabled' => \App\Http\Middleware\ServiceEnabled::class
     ];
 }

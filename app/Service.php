@@ -19,4 +19,11 @@ class Service extends Model
      * @var array
      */
     protected $fillable = ['currency_type', 'price', 'enabled'];
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'key';
 }

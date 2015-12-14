@@ -9,12 +9,18 @@
                     <div class="col-md-6">
                         <div class="grid-item box bg-white">
                             <div class="grid_icon">
-                                <img src="{{ asset( 'img/icons/37302.gif' ) }}" alt="">
+                                <img src="{{ asset( isset( $item->item_id ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="">
                             </div>
                             <div class="grid-item-title">
                                 <span class="font-dark">{{ $item->name }}</span>
                             </div>
-                            <div class="grid-item-price font-blue"> 30 Coins </div>
+                            <div class="grid-item-price font-blue">
+                                @if ( $item->discount)
+                                    <s>{{ $item->price }}</s> <span class="font-red">{{ $item->price - ( ( $item->price / 100 ) * $item->discount ) }}</span> {{ settings( 'currency_name' ) }}
+                                @else
+                                    {{ $item->price . ' ' . settings( 'currency_name' ) }}
+                                @endif
+                            </div>
                             <div class="caption mt-xs p-sm">
                                 <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="#111" data-handle-color="#000">
                                     {!! $item->about !!}

@@ -49,6 +49,7 @@ Route::post( 'voucher/redeem', 'Front\VoucherController@postRedeem' );
 
 /* Services */
 Route::get( 'services', ['as' => 'services.index', 'uses' => 'Front\ServicesController@getIndex'] );
+Route::post( 'services/{service}', 'Front\ServicesController@postPurchase' );
 
 /* Admin */
 Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {

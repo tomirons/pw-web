@@ -32,14 +32,14 @@
                 <!-- BEGIN TOP NAVIGATION MENU -->
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
-                        @if ( !Auth::guest() )
+                        @if ( Auth::user() )
                             <!-- BEGIN CHARACTER DROPDOWN -->
                             <li class="dropdown dropdown-notification dropdown-dark" id="header_notification_bar">
                                 <a id="charList" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     {{ Auth::user()->character() ? Auth::user()->character()['base']['name'] : trans( 'main.select_character' ) }}
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
-                                    {{--*/ $roles = $api->getRoles( Auth::user()->ID ) /*--}}
+                                    {{--*/ $roles = Auth::user()->roles() /*--}}
                                     @if ( count( $roles ) > 0 )
                                         @foreach( $roles as $role )
                                             <li>

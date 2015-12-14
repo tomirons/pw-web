@@ -48,6 +48,7 @@ return [
     ],
 
     'char_list_error' => 'An error occurred while retrieving your characters, please try again later.',
+    'server_not_online' => 'The server isn\'t online, please try again later.',
     'server_offline' => [
         'title' => 'Attention',
         'message' => 'Some pages may load slowly since the server isn\'t online.'

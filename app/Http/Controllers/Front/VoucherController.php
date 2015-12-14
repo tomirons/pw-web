@@ -18,7 +18,7 @@ class VoucherController extends Controller
     {
         $this->middleware( 'auth' );
 
-        //$this->middleware( 'selected.character', ['only' => ['postRedeem'] ] );
+        $this->middleware( 'selected.character', ['only' => ['postRedeem'] ] );
     }
     public function getIndex()
     {

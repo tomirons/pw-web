@@ -78,22 +78,22 @@ class SettingsTableSeeder extends Seeder
 
         DB::table('settings')->insert([
             'key' => 'teleport_x',
-            'value' => serialize(1280.6788)
+            'value' => serialize('1280.6788')
         ]);
 
         DB::table('settings')->insert([
             'key' => 'teleport_y',
-            'value' => serialize(219.61784)
+            'value' => serialize('219.61784')
         ]);
 
         DB::table('settings')->insert([
             'key' => 'teleport_z',
-            'value' => serialize(1021.2097)
+            'value' => serialize('1021.2097')
         ]);
 
         DB::table('settings')->insert([
             'key' => 'teleport_world_tag',
-            'value' => serialize(1280.6788)
+            'value' => serialize('1280.6788')
         ]);
 
         DB::table('settings')->insert([

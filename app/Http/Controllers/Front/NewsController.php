@@ -12,7 +12,7 @@ class NewsController extends Controller
 {
     public function getIndex()
     {
-        $articles = Article::orderBy( 'created_at', 'desc' )->paginate();
+        $articles = Article::orderBy( 'created_at', 'desc' )->paginate( settings( 'news_items_per_page' ) );
         return view( 'front.news.index', compact( 'articles' ) );
     }
 }

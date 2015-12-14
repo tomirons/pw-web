@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Huludini\PerfectWorldAPI\API;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -47,6 +48,13 @@ class User extends Model implements AuthenticatableContract,
     public function character()
     {
         return session()->get('character');
+    }
+
+    public function roles()
+    {
+        $api = new API();
+        $roles = $api->getRoles( $this->ID );
+        return isset( $roles['roles'] ) ? $roles['roles'] : NULL;
     }
 
     public function getAuthPassword()

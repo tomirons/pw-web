@@ -16,6 +16,15 @@ return [
     'quantity' => 'Quantity',
     'ingame_gold' => 'Ingame Gold',
     'requirements' => 'Requirements:',
+    'free' => 'Free',
+    'not_enough' => 'You don\'t have enough :currency.',
+    'must_login' => 'Your character must be logged in.',
+    'must_logout' => 'Your character must be logged out.',
+    'cultivation_not_unlocked' => 'Your character must have cultivation unlocked.',
+    'max_level' => 'Your character is already max level.',
+    'not_high_enough_level' => 'Your character isn\'t high enough level.',
+    'meridian_maxed' => 'Your meridian is already maxed.',
+    'no_stash_password' => 'Your character doesn\'t have a stash password .',
     'broadcast' => [
         'title' => 'Broadcast Message',
         'description' => 'Make an announcement in-game, you will be heard!',
@@ -26,7 +35,8 @@ return [
             'name' => 'message',
             'type' => 'text',
             'placeholder' => 'message'
-        ]
+        ],
+        'complete' => 'Your broadcast has been sent.',
     ],
     'virtual_to_cubi' => [
         'title' => 'Virtual Currency for Cubi',
@@ -38,16 +48,17 @@ return [
             'name' => 'quantity',
             'type' => 'number',
             'placeholder' => 'quantity'
-        ]
+        ],
+        'complete' => 'You will receive your cubi shortly.',
     ],
     'cultivation_change' => [
         'title' => 'Change Cultivation',
         'description' => 'Change from sage to demon, and vise versa.',
         'requirements' => [
-            0 => 'logged_in',
+            0 => 'logged_out',
             1 => 'cultivation_unlocked'
-        ]
-
+        ],
+        'complete' => 'Your cultivation has been changed.',
     ],
     'gold_to_virtual' => [
         'title' => 'Ingame Gold for Virtual Currency',
@@ -59,7 +70,8 @@ return [
             'name' => 'quantity',
             'type' => 'number',
             'placeholder' => 'quantity'
-        ]
+        ],
+        'complete' => 'You\'ve received :quantity :currency'
     ],
     'level_up' => [
         'title' => 'Level Up',
@@ -72,41 +84,47 @@ return [
             'name' => 'quantity',
             'type' => 'number',
             'placeholder' => 'quantity'
-        ]
+        ],
+        'complete' => 'You\'ve leveled up :quantity times.'
     ],
     'max_meridian' => [
         'title' => 'Meridian Upgrade',
         'description' => 'Maxes meridian attribute for your character.',
         'requirements' => [
             0 => 'logged_out'
-        ]
+        ],
+        'complete' => 'Your meridian is now maxed.'
     ],
     'reset_exp' => [
         'title' => 'Reset Experience',
         'description' => 'Resets the expereince of your character to zero.',
         'requirements' => [
             0 => 'logged_out'
-        ]
+        ],
+        'complete' => 'Your experience has been reset.',
     ],
     'reset_sp' => [
         'title' => 'Reset Spirit',
         'description' => 'Resets the spirit of your character to zero.',
         'requirements' => [
             0 => 'logged_out'
-        ]
+        ],
+        'complete' => 'Your spirit has been reset',
     ],
     'reset_stash_password' => [
         'title' => 'Reset Stash Password',
         'description' => 'Recover access to your stash.',
         'requirements' => [
             0 => 'logged_out'
-        ]
+        ],
+        'complete' => 'Your stash password has been removed.',
     ],
     'teleport' => [
         'title' => 'Teleport Character',
         'description' => 'Teleports your character if you get stuck in-game and can\'t enter the game.',
         'requirements' => [
             0 => 'logged_out'
-        ]
+        ],
+        'complete' => 'Your character has been teleported.',
     ],
 ];
