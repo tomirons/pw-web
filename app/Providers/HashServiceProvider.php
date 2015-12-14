@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Hash\Base64Hasher;
+use App\Hash\BinSaltHasher;
 use App\Hash\MD5Hasher;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,6 +26,10 @@ class HashServiceProvider extends ServiceProvider
 
                 case 'base64':
                     return new Base64Hasher();
+                    break;
+
+                case 'binsalt':
+                    return new BinSaltHasher();
                     break;
 
                 default:
