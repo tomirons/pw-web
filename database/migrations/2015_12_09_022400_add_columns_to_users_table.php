@@ -13,7 +13,7 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('money');
+            $table->decimal('money', 10, 2);
             $table->enum('role', ['member', 'game master', 'administrator'])->default('member');
             $table->rememberToken();
             $table->timestamps();

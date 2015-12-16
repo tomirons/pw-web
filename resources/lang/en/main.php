@@ -57,6 +57,7 @@ return [
     'reg_complete' => 'Your account has been registered, you can now login!',
     'acc_balance' => 'Account Balance: :money :currency',
     'buy' => 'Buy',
-    'no_character_selected' => 'You must select a character before proceeding.'
+    'no_character_selected' => 'You must select a character before proceeding.',
+    'not_enough' => 'You don\'t have enough :currency.',
 
 ];

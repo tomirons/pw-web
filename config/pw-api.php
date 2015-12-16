@@ -7,7 +7,7 @@ return [
      *
      * @var string
      */
-    'local' => '45.55.211.123',
+    'local' => '104.236.55.89',
 
     /**
      * These ports MUST be open if you the package isn't on the host machine

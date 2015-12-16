@@ -19,7 +19,7 @@ class ServicesController extends Controller
 
         $this->middleware( 'service.enabled', ['only' => ['postPurchase'] ] );
 
-        //$this->middleware( 'selected.character', ['only' => ['postPurchase'] ] );
+        $this->middleware( 'selected.character', ['only' => ['postPurchase'] ] );
     }
 
     public function getIndex()
@@ -92,7 +92,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -103,24 +103,31 @@ class ServicesController extends Controller
         ]);
 
         $user = Auth::user();
-        $quantity = $request->quantity;
+        $role = $user->character()['base']['id'];
 
-        if ( $user->money > ( $quantity * $service->price ) )
+        if ( $user->money > ( $request->quantity * $service->price ) )
         {
-            $user->money = $user->money - ( $quantity * $service->price );
-            $user->save();
+            if ( !$this->checkOnline( $role ) )
+            {
+                $user->money = $user->money - ( $request->quantity * $service->price );
+                $user->save();
 
-            Transfer::create([
-                'user_id' => $user->ID,
-                'zone_id' => 1,
-                'cash' => $quantity * 100
-            ]);
+                Transfer::create([
+                    'user_id' => $user->ID,
+                    'zone_id' => 1,
+                    'cash' => $request->quantity * 100
+                ]);
 
-            flash()->success( trans( 'services.' . $service->key . '.complete' ) );
+                flash()->success( trans( 'services.' . $service->key . '.complete' ) );
+            }
+            else
+            {
+                flash()->error( trans( 'services.must_logout' ) );
+            }
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -169,7 +176,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -182,12 +189,12 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > ( $request->quantity * $service->price ) )
+        if ( !$this->checkOnline( $role ) )
         {
-            if ( !$this->checkOnline( $role ) )
+            $api = new API();
+            if ( $role_data = $api->getRole( $role ) )
             {
-                $api = new API();
-                if ( $role_data = $api->getRole( $role ) )
+                if ( $role_data['pocket']['money'] > $request->quantity * $service->price )
                 {
                     $role_data['pocket']['money'] = $role_data['pocket']['money'] - ( $request->quantity * $service->price );
 
@@ -205,17 +212,17 @@ class ServicesController extends Controller
                 }
                 else
                 {
-                    flash()->error( trans( 'main.server_not_online' ) );
+                    flash()->error( trans( 'main.not_enough_gold' ) );
                 }
             }
             else
             {
-                flash()->error( trans( 'services.must_logout' ) );
+                flash()->error( trans( 'main.server_not_online' ) );
             }
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'services.must_logout' ) );
         }
     }
 
@@ -269,7 +276,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
 
     }
@@ -286,7 +293,7 @@ class ServicesController extends Controller
                 $api = new API();
                 if ( $role_data = $api->getRole( $role ) )
                 {
-                    if ( $role_data['status']['level'] <= 105 )
+                    if ( $role_data['status']['level'] >= 40 )
                     {
                         $meridian_hex = '0000005000000000000000000000000500000064000000000000000100000000000000000000000000000000000000000000000000000000';
 
@@ -326,7 +333,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -368,7 +375,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -410,7 +417,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -459,7 +466,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 
@@ -504,7 +511,7 @@ class ServicesController extends Controller
         }
         else
         {
-            flash()->error( trans( 'services.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
+            flash()->error( trans( 'main.not_enough', ['currency' => strtolower( settings( 'currency_name' ) )] ) );
         }
     }
 }

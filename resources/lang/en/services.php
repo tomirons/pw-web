@@ -12,12 +12,12 @@ return [
     'logged_out' => 'Character must be logged out',
     'cultivation_unlocked' => 'Must have cultivation unlocked',
     'not_max_level' => 'Character must not be level 105 or higher (if allowed)',
+    'level_40' => 'Character must be at least level 40',
     'message' => 'Message',
     'quantity' => 'Quantity',
     'ingame_gold' => 'Ingame Gold',
     'requirements' => 'Requirements:',
     'free' => 'Free',
-    'not_enough' => 'You don\'t have enough :currency.',
     'must_login' => 'Your character must be logged in.',
     'must_logout' => 'Your character must be logged out.',
     'cultivation_not_unlocked' => 'Your character must have cultivation unlocked.',
@@ -25,6 +25,7 @@ return [
     'not_high_enough_level' => 'Your character isn\'t high enough level.',
     'meridian_maxed' => 'Your meridian is already maxed.',
     'no_stash_password' => 'Your character doesn\'t have a stash password .',
+    'not_enough_gold' => 'Your character doesn\'t have enough in-game gold.',
     'broadcast' => [
         'title' => 'Broadcast Message',
         'description' => 'Make an announcement in-game, you will be heard!',
@@ -91,7 +92,8 @@ return [
         'title' => 'Meridian Upgrade',
         'description' => 'Maxes meridian attribute for your character.',
         'requirements' => [
-            0 => 'logged_out'
+            0 => 'logged_out',
+            1 => 'level_40'
         ],
         'complete' => 'Your meridian is now maxed.'
     ],

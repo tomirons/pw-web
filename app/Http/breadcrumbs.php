@@ -20,6 +20,11 @@ Breadcrumbs::register( 'shop.index', function( $breadcrumbs )
     $breadcrumbs->push( trans( 'main.apps.shop' ) );
 });
 
+Breadcrumbs::register( 'shop.mask', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'shop.index' );
+});
+
 /* Donate */
 Breadcrumbs::register( 'donate.index', function( $breadcrumbs )
 {

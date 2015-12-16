@@ -19,7 +19,7 @@ class VoucherLog extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'ip_address', 'reward', 'site_id'];
+    protected $fillable = ['voucher_id', 'user_id'];
 
     public function voucher()
     {

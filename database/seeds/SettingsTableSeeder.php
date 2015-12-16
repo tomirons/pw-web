@@ -93,7 +93,7 @@ class SettingsTableSeeder extends Seeder
 
         DB::table('settings')->insert([
             'key' => 'teleport_world_tag',
-            'value' => serialize('1280.6788')
+            'value' => serialize('1')
         ]);
 
         DB::table('settings')->insert([

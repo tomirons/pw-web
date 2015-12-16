@@ -32,16 +32,19 @@ Route::get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex
 
 /* Shop */
 Route::get( 'shop', ['as' => 'shop.index', 'uses' => 'Front\ShopController@getIndex'] );
-Route::get( 'shop/mask/{mask}', ['as' => 'shop.mask', 'uses' => 'Front\ShopController@getMask'] );
+Route::post( 'shop/purchase/{shop_item}', 'Front\ShopController@postPurchase' );
+Route::post( 'shop/gift/{shop_item}', 'Front\ShopController@postGift' );
+Route::get( 'shop/mask/{shop_mask}', ['as' => 'shop.mask', 'uses' => 'Front\ShopController@getMask'] );
 
 /* Donate */
 Route::get( 'donate', ['as' => 'donate.index', 'uses' => 'Front\DonateController@getIndex'] );
 Route::post( 'donate', 'Front\DonateController@postDonate' );
 Route::post( 'paypal', 'Front\DonateController@postIPN' );
+Route::post( 'paymentwall', 'Front\DonateController@postPaymentwall' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
-Route::get( 'vote/check/{site}', 'Front\VoteController@getCheck' );
+Route::get( 'vote/check/{vote_site}', 'Front\VoteController@getCheck' );
 
 /* Voucher */
 Route::get( 'voucher', ['as' => 'voucher.index', 'uses' => 'Front\VoucherController@getIndex'] );
@@ -50,6 +53,12 @@ Route::post( 'voucher/redeem', 'Front\VoucherController@postRedeem' );
 /* Services */
 Route::get( 'services', ['as' => 'services.index', 'uses' => 'Front\ServicesController@getIndex'] );
 Route::post( 'services/{service}', 'Front\ServicesController@postPurchase' );
+
+/* Ranking */
+Route::get( 'ranking', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getIndex'] );
+Route::get( 'ranking/player', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getPlayer'] );
+Route::get( 'ranking/faction', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getFaction'] );
+Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
 
 /* Admin */
 Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {

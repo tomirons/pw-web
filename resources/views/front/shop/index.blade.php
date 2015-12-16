@@ -1,38 +1,42 @@
 @extends( 'front.header' )
 
 @section( 'content' )
+    @include( 'errors.list' )
     @include( 'front.shop.sidebar' )
     <div class="col-md-9">
         <div class="row">
             @if( $items->count() > 0 )
                 @foreach( $items as $item )
                     <div class="col-md-6">
-                        <div class="grid-item box bg-white">
-                            <div class="grid_icon">
-                                <img src="{{ asset( isset( $item->item_id ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="">
-                            </div>
-                            <div class="grid-item-title">
-                                <span class="font-dark">{{ $item->name }}</span>
-                            </div>
-                            <div class="grid-item-price font-blue">
-                                @if ( $item->discount)
-                                    <s>{{ $item->price }}</s> <span class="font-red">{{ $item->price - ( ( $item->price / 100 ) * $item->discount ) }}</span> {{ settings( 'currency_name' ) }}
-                                @else
-                                    {{ $item->price . ' ' . settings( 'currency_name' ) }}
-                                @endif
-                            </div>
-                            <div class="caption mt-xs p-sm">
-                                <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="#111" data-handle-color="#000">
-                                    {!! $item->about !!}
+                        <form action="{{ url( 'shop/purchase/' . $item->id ) }}" method="post">
+                            {!! csrf_field() !!}
+                            <div class="grid-item box bg-white">
+                                <div class="grid_icon">
+                                    <img src="{{ asset( isset( $item->item_id ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="">
                                 </div>
-                                <div class="grid-item-buy text-center mt-md">
-                                    @if ( $item->shareable )
-                                        <button class="btn purple" data-toggle="modal" data-target="#giftModal_{{ $item->id }}"><i class="icon-paper-plane"></i> Gift</button>
+                                <div class="grid-item-title">
+                                    <span class="font-dark">{{ $item->name }}</span>
+                                </div>
+                                <div class="grid-item-price font-blue">
+                                    @if ( $item->discount)
+                                        <s>{{ $item->price }}</s> <span class="font-red">{{ $item->price - ( ( $item->price / 100 ) * $item->discount ) }}</span> {{ settings( 'currency_name' ) }}
+                                    @else
+                                        {{ $item->price . ' ' . settings( 'currency_name' ) }}
                                     @endif
-                                    <a class="btn green" href="{{ url( 'shop/purchase/' . $item->id ) }}"><i class="fa fa-dollar"></i> Buy</a>
+                                </div>
+                                <div class="caption mt-xs p-sm">
+                                    <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="#111" data-handle-color="#000">
+                                        {!! $item->about !!}
+                                    </div>
+                                    <div class="grid-item-buy text-center mt-md">
+                                        @if ( $item->shareable )
+                                            <button class="btn purple gift-button" data-toggle="modal" data-target="#giftModal_{{ $item->id }}"><i class="icon-paper-plane"></i> {{ trans( 'shop.gift' ) }} </button>
+                                        @endif
+                                        <button class="btn green">{{ trans( 'shop.buy' ) }}</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <!-- Modal -->
                     <div class="modal fade" id="giftModal_{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,7 +54,9 @@
                                         @else
                                             {{--*/ $friends = $api->getRoleFriends( Auth::user()->character()['base']['id'] ) /*--}}
                                             @if ( !$friends )
-                                                {{ trans( 'shop.no_results') }}
+                                                <div class="text-center">
+                                                    {{ trans( 'shop.no_friends') }}
+                                                </div>
                                             @else
                                                 <div class="text-info text-center">
                                                     <small>{{ trans( 'shop.recently_added_friends') }}</small>
@@ -69,7 +75,7 @@
                                         @endif
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-primary " name="submit" type="submit">Send Gift</button>
+                                        <button class="btn btn-primary " name="submit" type="submit">{{ trans( 'shop.send_gift' ) }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -88,4 +94,13 @@
             {!! $items->render() !!}
         </div>
     </div>
+@endsection
+
+@section( 'footer' )
+    @parent
+    <script>
+        $(".gift-button").click(function(e){
+            e.preventDefault(); // cancel default behavior
+        });
+    </script>
 @endsection

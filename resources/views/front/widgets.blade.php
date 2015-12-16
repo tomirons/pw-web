@@ -12,7 +12,7 @@
     <div class="widget-thumb-wrap">
         <i class="widget-thumb-icon bg-blue icon-user font-xlg"></i>
         <div class="widget-thumb-body">
-            <span class="widget-thumb-body-stat mt-xs" data-counter="counterup" data-value="{{ DB::table('point')->where('zoneid', '>', '-1')->count() }}">0</span>
+            <span class="widget-thumb-body-stat mt-xs" data-counter="counterup" data-value="{{ $api->serverOnline() ? count( $api->getOnlineList() ) : 0 }}">0</span>
         </div>
     </div>
 </div>
