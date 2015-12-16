@@ -9,7 +9,10 @@ return array(
 	'path' => storage_path().'/settings.json',
 
 	// if the database store is used, set the name of the table used..
-	'table' => 'settings',
+	'table' => 'pweb_settings',
+
+	// override the default database table name...
+	'db_table' => 'pweb_settings',
 
 	// If the database store is used, you can set which connection to use. if
 	// set to null, the default connection will be used.

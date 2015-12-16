@@ -107,27 +107,11 @@
             <div class="container">
                 <div class="hor-menu">
                     <ul class="nav navbar-nav">
-                        <li {{ Request::is( '/' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/' ) }}"> {{ trans( 'main.apps.news') }} </a>
-                        </li>
-                        <li {{ Request::is( 'shop*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/shop' ) }}"> {{ trans( 'main.apps.shop') }} </a>
-                        </li>
-                        <li {{ Request::is( 'donate*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/donate' ) }}"> {{ trans( 'main.apps.donate') }} </a>
-                        </li>
-                        <li {{ Request::is( 'vote*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/vote' ) }}"> {{ trans( 'main.apps.vote') }} </a>
-                        </li>
-                        <li {{ Request::is( 'voucher*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/voucher' ) }}"> {{ trans( 'main.apps.voucher') }} </a>
-                        </li>
-                        <li {{ Request::is( 'services*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/services' ) }}"> {{ trans( 'main.apps.services') }} </a>
-                        </li>
-                        <li {{ Request::is( 'ranking*' ) ? 'class=active' : NULL }}>
-                            <a href="{{ url( '/ranking' ) }}"> {{ trans( 'main.apps.ranking') }} </a>
-                        </li>
+                        @foreach( $apps as $app )
+                            <li {{ ( $app->key == 'news' ) ? ( Request::is( '/' ) ? 'class=active' : NULL ) : ( Request::is( $app->key . '*' ) ? 'class=active' : NULL ) }}>
+                                <a href="{{ ( $app->key == 'news' ) ? url( '/') : url( '/' . $app->key ) }}"> {{ trans( 'main.apps.' . $app->key ) }} </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
