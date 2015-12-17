@@ -52,3 +52,10 @@ Breadcrumbs::register( 'services.index', function( $breadcrumbs )
     $breadcrumbs->parent( 'home' );
     $breadcrumbs->push( trans( 'main.apps.services' ) );
 });
+
+/* Ranking */
+Breadcrumbs::register( 'ranking.index', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'home' );
+    $breadcrumbs->push( trans( 'main.apps.ranking' ) );
+});

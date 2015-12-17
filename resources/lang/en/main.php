@@ -25,6 +25,20 @@ return [
     'acc_settings' => 'Account Settings',
     'select_character' => 'Select a Character',
 
+    /* Class Names */
+    'classes' => [
+        0 => 'Blademaster',
+        1 => 'Wizard',
+        2 => 'Psychic',
+        3 => 'Venomancer',
+        4 => 'Barbarian',
+        5 => 'Assassin',
+        6 => 'Archer',
+        7 => 'Cleric',
+        8 => 'Seeker',
+        9 => 'Mystic'
+    ],
+
     /* Login/Register Language Lines */
     'login_link' => 'Login | Register',
     'logout' => 'Log Out',

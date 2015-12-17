@@ -55,12 +55,17 @@ Route::get( 'services', ['as' => 'services.index', 'uses' => 'Front\ServicesCont
 Route::post( 'services/{service}', 'Front\ServicesController@postPurchase' );
 
 /* Ranking */
-Route::get( 'ranking', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getIndex'] );
-Route::get( 'ranking/player', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getPlayer'] );
-Route::get( 'ranking/faction', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getFaction'] );
-Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
+Route::get( 'ranking', 'Front\RankingController@getIndex' );
+Route::get( 'ranking/player/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getPlayer'] );
+Route::get( 'ranking/faction', function(){
+    return redirect( 'ranking/faction/level' );
+});
+Route::get( 'ranking/faction/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getFaction'] );
+
+/* Not Working */
+//Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
 
 /* Admin */
 Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::get( '/', ['as' => 'dashboard', 'uses' => 'Admin\IndexController@getIndex'] );
+    Route::get( '/', ['as' => 'index', 'uses' => 'Admin\IndexController@getIndex'] );
 });

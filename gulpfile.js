@@ -11,9 +11,10 @@ var elixir = require('laravel-elixir');
  |
  */
 
+/* FRONT */
 elixir(function(mix) {
 
-    /* FRONT Theme CSS */
+    /* Theme CSS */
     mix.styles([
         '../global/plugins/font-awesome/css/font-awesome.min.css',
         '../global/plugins/simple-line-icons/simple-line-icons.min.css',
@@ -22,28 +23,28 @@ elixir(function(mix) {
         '../global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
     ], 'public/front/css/main.css');
 
-    /* FRONT Global CSS */
+    /* Global CSS */
     mix.styles([
         '../global/css/components.min.css',
         '../global/css/plugins.min.css',
         '../global/css/custom.css'
     ], 'public/front/css/global.css');
 
-    /* FRONT Plugin CSS */
+    /* Plugin CSS */
     mix.styles([
         '../global/plugins/bootstrap-toastr/toastr.min.css',
         '../global/plugins/select2/css/select2.min.css',
         '../global/plugins/select2/css/select2-bootstrap.min.css'
     ], 'public/front/css/plugins.css');
 
-    /* FRONT Layout CSS */
+    /* Layout CSS */
     mix.styles([
         '../layouts/layout3/css/layout.min.css',
         '../layouts/layout3/css/themes/default.min.css',
         '../layouts/layout3/css/custom.min.css'
     ], 'public/front/css/layout.css');
 
-    /* FRONT Theme Scripts */
+    /* Theme Scripts */
     mix.scripts([
         '../global/plugins/jquery.min.js',
         '../global/plugins/bootstrap/js/bootstrap.min.js',
@@ -54,12 +55,12 @@ elixir(function(mix) {
         '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
     ], 'public/front/js/main.js');
 
-    /* FRONT Global Scripts */
+    /* Global Scripts */
     mix.scripts([
         '../global/scripts/app.min.js'
     ], 'public/front/js/global.js');
 
-    /* FRONT Plugin Scripts */
+    /* Plugin Scripts */
     mix.scripts([
         '../global/plugins/jquery-validation/js/jquery.validate.min.js',
         '../global/plugins/jquery-validation/js/additional-methods.min.js',
@@ -71,10 +72,71 @@ elixir(function(mix) {
         '../global/plugins/jquery.countdown/jquery.countdown.min.js'
     ], 'public/front/js/plugins.js');
 
-    /* FRONT Layout Scripts */
+    /* Layout Scripts */
     mix.scripts([
         '../layouts/layout3/scripts/layout.min.js',
         '../layouts/layout3/scripts/demo.min.js'
     ], 'public/front/js/layout.js');
+
+});
+
+/* ADMIN */
+elixir(function(mix) {
+
+    /* Theme CSS */
+    mix.styles([
+        '../global/plugins/font-awesome/css/font-awesome.min.css',
+        '../global/plugins/simple-line-icons/simple-line-icons.min.css',
+        '../global/plugins/bootstrap/css/bootstrap.min.css',
+        '../global/plugins/uniform/css/uniform.default.css',
+        '../global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+    ], 'public/admin/css/main.css');
+
+    /* Global CSS */
+    mix.styles([
+        '../global/css/components.min.css',
+        '../global/css/plugins.min.css',
+    ], 'public/admin/css/global.css');
+
+    /* Plugin CSS */
+    mix.styles([
+        '../global/plugins/bootstrap-toastr/toastr.min.css',
+        '../global/plugins/select2/css/select2.min.css',
+        '../global/plugins/select2/css/select2-bootstrap.min.css'
+    ], 'public/admin/css/plugins.css');
+
+    /* Layout CSS */
+    mix.styles([
+        '../layouts/layout/css/layout.min.css',
+        '../layouts/layout/css/themes/darkbluex.min.css',
+        '../layouts/layout/css/custom.min.css'
+    ], 'public/admin/css/layout.css');
+
+    /* Theme Scripts */
+    mix.scripts([
+        '../global/plugins/jquery.min.js',
+        '../global/plugins/bootstrap/js/bootstrap.min.js',
+        '../global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
+        '../global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
+        '../global/plugins/jquery.blockui.min.js',
+        '../global/plugins/uniform/jquery.uniform.min.js',
+        '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    ], 'public/admin/js/main.js');
+
+    /* Global Scripts */
+    mix.scripts([
+        '../global/scripts/app.min.js'
+    ], 'public/admin/js/global.js');
+
+    /* Plugin Scripts */
+    //mix.scripts([
+
+    //], 'public/front/js/plugins.js');
+
+    /* Layout Scripts */
+    mix.scripts([
+        '../layouts/layout/scripts/layout.min.js',
+        '../layouts/layout/scripts/demo.min.js'
+    ], 'public/admin/js/layout.js');
 
 });
