@@ -67,4 +67,7 @@ return [
         -2147483585 => 'War Avatar',
     ],
 
+    'add' => 'Add Item',
+    'view' => 'View Items',
+
 ];

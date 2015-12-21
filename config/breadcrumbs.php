@@ -2,6 +2,6 @@
 
 return [
 
-	'view' => 'front/breadcrumb',
+	'view' => 'partials/breadcrumbs',
 
 ];

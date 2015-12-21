@@ -9,10 +9,10 @@
         <meta content="" name="author" />
 
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="{{ asset( 'front/css/main.css' ) }}">
-        <link rel="stylesheet" href="{{ asset( 'front/css/plugins.css' ) }}">
-        <link rel="stylesheet" href="{{ asset( 'front/css/global.css' ) }}">
-        <link rel="stylesheet" href="{{ asset( 'front/css/layout.css' ) }}">
+        <link rel="stylesheet" href="{{ asset( 'css/front/main.css' ) }}">
+        <link rel="stylesheet" href="{{ asset( 'css/front/plugins.css' ) }}">
+        <link rel="stylesheet" href="{{ asset( 'css/front/global.css' ) }}">
+        <link rel="stylesheet" href="{{ asset( 'css/front/layout.css' ) }}">
 
         <link rel="shortcut icon" href="favicon.ico" />
     </head>
@@ -146,10 +146,10 @@
         <!-- END CONTAINER -->
         @include( 'front.footer' )
 
-        <script src="{{ asset( 'front/js/main.js' ) }}"></script>
-        <script src="{{ asset( 'front/js/plugins.js' ) }}"></script>
-        <script src="{{ asset( 'front/js/global.js' ) }}"></script>
-        <script src="{{ asset( 'front/js/layout.js' ) }}"></script>
+        <script src="{{ asset( 'js/front/main.js' ) }}"></script>
+        <script src="{{ asset( 'js/front/plugins.js' ) }}"></script>
+        <script src="{{ asset( 'js/front/global.js' ) }}"></script>
+        <script src="{{ asset( 'js/front/layout.js' ) }}"></script>
 
         @if ( !$api->serverOnline() )
             <script>

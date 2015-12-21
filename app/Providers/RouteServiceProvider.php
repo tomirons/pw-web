@@ -31,6 +31,8 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('service', 'App\Service');
 
         $router->model('shop_item', 'App\ShopItem');
+
+        $router->model('news', 'App\Article');
     }
 
     /**

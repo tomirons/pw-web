@@ -20,6 +20,17 @@ class ViewServiceProvider extends ServiceProvider
             $view->with( 'apps', $apps );
         });
 
+        view()->composer( 'admin.news.form', function ( $view ) {
+            $categories = [
+                'update' => trans( 'news.category.update' ),
+                'maintenance' => trans( 'news.category.maintenance' ),
+                'event' => trans( 'news.category.event' ),
+                'contest' => trans( 'news.category.contest' ),
+                'other' => trans( 'news.category.other' )
+            ];
+            $view->with( 'categories', $categories );
+        });
+
         view()->share( 'api', new API() );
     }
 

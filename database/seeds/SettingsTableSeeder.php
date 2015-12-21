@@ -17,12 +17,17 @@ class SettingsTableSeeder extends Seeder
         ]);
 
         DB::table('pweb_settings')->insert([
+            'key' => 'server_version',
+            'value' => serialize('101')
+        ]);
+
+        DB::table('pweb_settings')->insert([
             'key' => 'currency_name',
             'value' => serialize('Coins')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'encrypt_type',
+            'key' => 'encryption_type',
             'value' => serialize('md5')
         ]);
 

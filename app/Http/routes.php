@@ -66,6 +66,24 @@ Route::get( 'ranking/faction/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\
 //Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
 
 /* Admin */
-Route::group( ['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::get( '/', ['as' => 'index', 'uses' => 'Admin\IndexController@getIndex'] );
+Route::group( ['prefix' => 'admin' ], function() {
+
+    Route::get( '/', ['as' => 'admin.index', 'uses' => 'Admin\IndexController@getIndex'] );
+
+    /* System */
+    Route::group( ['prefix' => 'system', 'as' => 'admin.system.'], function() {
+
+        Route::get( 'panel', ['as' => 'panel', 'uses' => 'Admin\SystemController@getPanel'] );
+        Route::post( 'panel', 'Admin\SystemController@postPanel' );
+
+//        Route::get( 'widget', ['as' => 'widget', 'uses' => 'Admin\SystemController@getWidget'] );
+//        Route::post( 'widget', 'Admin\SystemController@postWidget' );
+
+    });
+
+    /* News */
+    Route::get( 'news/settings', ['as' => 'admin.news.settings', 'uses' => 'Admin\NewsController@getSettings'] );
+    Route::post( 'news/settings', 'Admin\NewsController@postSettings' );
+    Route::resource( 'news', 'Admin\NewsController' );
+
 });

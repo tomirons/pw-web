@@ -12,7 +12,7 @@ class Article extends Model
 
     public $fillable = [ 'title', 'content', 'category' ];
 
-    public function categoryColor( $type )
+    public function color( $type )
     {
         $colors = [
             'update' => 'primary',

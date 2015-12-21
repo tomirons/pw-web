@@ -17,6 +17,9 @@ return [
         'hours' => 'hours',
         'minutes' => 'minutes',
         'seconds' => 'seconds'
-    ]
+    ],
+
+    'add' => 'Add Site',
+    'view' => 'View Sites'
 
 ];

@@ -21,28 +21,28 @@ elixir(function(mix) {
         '../global/plugins/bootstrap/css/bootstrap.min.css',
         '../global/plugins/uniform/css/uniform.default.css',
         '../global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
-    ], 'public/front/css/main.css');
+    ], 'public/css/front/main.css');
 
     /* Global CSS */
     mix.styles([
         '../global/css/components.min.css',
         '../global/css/plugins.min.css',
         '../global/css/custom.css'
-    ], 'public/front/css/global.css');
+    ], 'public/css/front/global.css');
 
     /* Plugin CSS */
     mix.styles([
         '../global/plugins/bootstrap-toastr/toastr.min.css',
         '../global/plugins/select2/css/select2.min.css',
         '../global/plugins/select2/css/select2-bootstrap.min.css'
-    ], 'public/front/css/plugins.css');
+    ], 'public/css/front/plugins.css');
 
     /* Layout CSS */
     mix.styles([
         '../layouts/layout3/css/layout.min.css',
         '../layouts/layout3/css/themes/default.min.css',
         '../layouts/layout3/css/custom.min.css'
-    ], 'public/front/css/layout.css');
+    ], 'public/css/front/layout.css');
 
     /* Theme Scripts */
     mix.scripts([
@@ -53,12 +53,12 @@ elixir(function(mix) {
         '../global/plugins/jquery.blockui.min.js',
         '../global/plugins/uniform/jquery.uniform.min.js',
         '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
-    ], 'public/front/js/main.js');
+    ], 'public/js/front/main.js');
 
     /* Global Scripts */
     mix.scripts([
         '../global/scripts/app.min.js'
-    ], 'public/front/js/global.js');
+    ], 'public/js/front/global.js');
 
     /* Plugin Scripts */
     mix.scripts([
@@ -70,13 +70,13 @@ elixir(function(mix) {
         '../global/plugins/bootstrap-toastr/toastr.min.js',
         '../global/plugins/select2/js/select2.full.min.js',
         '../global/plugins/jquery.countdown/jquery.countdown.min.js'
-    ], 'public/front/js/plugins.js');
+    ], 'public/js/front/plugins.js');
 
     /* Layout Scripts */
     mix.scripts([
         '../layouts/layout3/scripts/layout.min.js',
         '../layouts/layout3/scripts/demo.min.js'
-    ], 'public/front/js/layout.js');
+    ], 'public/js/front/layout.js');
 
 });
 
@@ -90,27 +90,30 @@ elixir(function(mix) {
         '../global/plugins/bootstrap/css/bootstrap.min.css',
         '../global/plugins/uniform/css/uniform.default.css',
         '../global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
-    ], 'public/admin/css/main.css');
+    ], 'public/css/admin/main.css');
 
     /* Global CSS */
     mix.styles([
         '../global/css/components.min.css',
         '../global/css/plugins.min.css',
-    ], 'public/admin/css/global.css');
+        '../global/css/admin_custom.css'
+    ], 'public/css/admin/global.css');
 
     /* Plugin CSS */
     mix.styles([
         '../global/plugins/bootstrap-toastr/toastr.min.css',
         '../global/plugins/select2/css/select2.min.css',
-        '../global/plugins/select2/css/select2-bootstrap.min.css'
-    ], 'public/admin/css/plugins.css');
+        '../global/plugins/select2/css/select2-bootstrap.min.css',
+        '../global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
+        '../global/plugins/bootstrap-summernote/summernote.css'
+    ], 'public/css/admin/plugins.css');
 
     /* Layout CSS */
     mix.styles([
         '../layouts/layout/css/layout.min.css',
-        '../layouts/layout/css/themes/darkbluex.min.css',
+        '../layouts/layout/css/themes/default.min.css',
         '../layouts/layout/css/custom.min.css'
-    ], 'public/admin/css/layout.css');
+    ], 'public/css/admin/layout.css');
 
     /* Theme Scripts */
     mix.scripts([
@@ -121,22 +124,23 @@ elixir(function(mix) {
         '../global/plugins/jquery.blockui.min.js',
         '../global/plugins/uniform/jquery.uniform.min.js',
         '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
-    ], 'public/admin/js/main.js');
+    ], 'public/js/admin/main.js');
 
     /* Global Scripts */
     mix.scripts([
         '../global/scripts/app.min.js'
-    ], 'public/admin/js/global.js');
+    ], 'public/js/admin/global.js');
 
     /* Plugin Scripts */
-    //mix.scripts([
-
-    //], 'public/front/js/plugins.js');
+    mix.scripts([
+        '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
+        '../global/plugins/bootstrap-summernote/summernote.min.js'
+    ], 'public/js/admin/plugins.js');
 
     /* Layout Scripts */
     mix.scripts([
         '../layouts/layout/scripts/layout.min.js',
         '../layouts/layout/scripts/demo.min.js'
-    ], 'public/admin/js/layout.js');
+    ], 'public/js/admin/layout.js');
 
 });

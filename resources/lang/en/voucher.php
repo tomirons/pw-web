@@ -23,5 +23,8 @@ return [
     'mail' => [
         'title' => 'Code :code Redeemed',
         'message' => "You received:\r:name x:count\r\r\r"
-    ]
+    ],
+
+    'add' => 'Add Voucher',
+    'view' => 'View Vouchers',
 ];

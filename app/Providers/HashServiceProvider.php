@@ -18,7 +18,7 @@ class HashServiceProvider extends ServiceProvider
     {
         $this->app->singleton('hash', function()
         {
-            switch ( settings( 'encrypt_type' ) )
+            switch ( settings( 'encryption_type' ) )
             {
                 case 'md5':
                     return new MD5Hasher();

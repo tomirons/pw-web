@@ -19,7 +19,9 @@ return [
         'voucher' => 'Voucher',
         'vote' => 'Vote',
         'services' => 'Ingame Services',
-        'ranking' => 'Ranking'
+        'ranking' => 'Ranking',
+        'manage' => 'Ingame Management',
+        'system' => 'System'
     ],
     'acp_link' => 'Admin Control Panel',
     'acc_settings' => 'Account Settings',
@@ -73,5 +75,10 @@ return [
     'buy' => 'Buy',
     'no_character_selected' => 'You must select a character before proceeding.',
     'not_enough' => 'You don\'t have enough :currency.',
+
+    'save_settings' => 'Save Settings',
+    'settings' => 'Settings',
+    'edit' => 'Edit',
+    'remove' => 'Remove'
 
 ];
