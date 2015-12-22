@@ -79,9 +79,12 @@
                     {!! Breadcrumbs::render() !!}
                     <div class="row">
                         <div class="col-md-12">
+                            @include( 'errors.list' )
                             @include( 'flash::message' )
                         </div>
-                        @yield( 'content' )
+                        <div class="col-md-12">
+                            @yield( 'content' )
+                        </div>
                     </div>
                 </div>
             </div>

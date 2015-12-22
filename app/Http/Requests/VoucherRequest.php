@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArticleRequest extends Request
+class VoucherRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,11 @@ class ArticleRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|min:3|max:255',
-            'content' => 'required' ,
-            'category' => 'required'
+            'code' => 'required',
+            'item_name' => 'required',
+            'item_id' => 'required|numeric|min:1',
+            'item_count' => 'required|numeric|min:1',
+            'item_proc_type' => 'required|numeric|min:0',
         ];
     }
 }

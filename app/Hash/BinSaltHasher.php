@@ -18,7 +18,7 @@ class BinSaltHasher implements HasherContract
     public function make( $value, array $options = [] )
     {
         $password = addslashes( $value );
-        dd(DB::select("select fn_varbintohexsubstring ( 1, ?, 1, 0 )", [$password]));
+        dd(DB::raw(DB::select("select fn_varbintohexsubstring ( 1, ?, 1, 0 )", [$password])));
         //return '0x' . md5( $value );
     }
 

@@ -461,3 +461,84 @@
 {
     text-decoration: none;
 }
+
+/* START SHOP/SERVICE ITEM */
+.grid_icon {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    padding: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.grid_icon_service {
+    font-size: 2.5rem;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    padding: 1px;
+    margin-left: 12.5px;
+    margin-top: 2.5px;
+}
+
+.grid-item-title {
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.grid-item-price {
+    color: #A3A3A3;
+    font-size: 11px;
+}
+
+.grid-item {
+    border: 1px solid rgba(153, 153, 153, .8);
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .grid-item {
+        margin-bottom: 10px;
+    }
+}
+
+.grid-service-description {
+    margin: 10px 20px 15px 15px;
+    padding: 2.5px 5px;
+    height: 100px;
+}
+
+.grid-service-buy {
+    height: 40px;
+}
+
+.grid-service-buy button,
+.grid-service-buy a {
+    margin-left: 5%;
+}
+
+.grid-item-buy {
+    padding-right: 12px;
+    height: 40px;
+}
+
+.grid-item-buy button,
+.grid-item-buy a {
+    margin-left: 5%;
+}
+
+div.sale label {
+    display: inline !important;
+    position: absolute;
+    font-size: 8pt;
+    text-shadow: none;
+    float: right;
+    color: #fff;
+    top: 13px;
+    right: 37px;
+}

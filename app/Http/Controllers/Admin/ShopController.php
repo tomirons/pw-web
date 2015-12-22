@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Article;
-use App\Http\Requests\ArticleRequest;
+use App\Http\Requests\ShopItemRequest;
+use App\ShopItem;
 use Efriandika\LaravelSettings\Facades\Settings;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class NewsController extends Controller
+class ShopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate( settings( 'news_items_per_page' ) );
-        return view( 'admin.news.view', compact( 'articles' ) );
+        $items = ShopItem::paginate( settings( 'shop_items_per_page' ) );
+        return view( 'admin.shop.view', compact( 'items' ) );
     }
 
     /**
@@ -30,22 +30,22 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view( 'admin.news.create' );
+        return view( 'admin.shop.create' );
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param ArticleRequest|Request $request
+     * @param ShopItemRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store( ArticleRequest $request )
+    public function store( ShopItemRequest $request )
     {
-        Article::create( $request->all() );
+        ShopItem::create( $request->all() );
 
-        flash()->success( trans( 'news.create_success' ) );
+        flash()->success( trans( 'shop.create_success' ) );
 
-        return redirect( 'admin/news' );
+        return redirect( 'admin/shop' );
     }
 
     /**
@@ -62,55 +62,55 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Article $article
+     * @param ShopItem $item
      * @return \Illuminate\Http\Response
      */
-    public function edit( Article $article )
+    public function edit( ShopItem $item )
     {
-        return view( 'admin.news.edit', compact( 'article' ) );
+        return view( 'admin.shop.edit', compact( 'item' ) );
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Article $article
-     * @param ArticleRequest|Request $request
+     * @param ShopItem $item
+     * @param ShopItemRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function update( Article $article, ArticleRequest $request )
+    public function update( ShopItem $item, ShopItemRequest $request )
     {
-        $article->update( $request->all() );
+        $item->update( $request->all() );
 
-        flash()->success( trans( 'news.edit_success' ) );
+        flash()->success( trans( 'shop.edit_success' ) );
 
-        return redirect( 'admin/news' );
+        return redirect( 'admin/shop' );
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Request $request
-     * @param Article $article
+     * @param ShopItem $item
      */
-    public function destroy( Request $request, Article $article )
+    public function destroy( Request $request, ShopItem $item )
     {
         if ( $request->ajax() )
         {
-            $article->delete();
+            $item->delete();
         }
     }
 
     public function getSettings()
     {
-        return view( 'admin.news.settings' );
+        return view( 'admin.shop.settings' );
     }
 
     public function postSettings( Request $request )
     {
-        Settings::set( 'news_items_per_page', $request->articles_per_page );
+        Settings::set( 'shop_items_per_page', $request->items_per_page );
 
         flash()->success( trans( 'main.settings_saved' ) );
 
-        return redirect( 'admin/news' );
+        return redirect( 'admin/shop' );
     }
 }

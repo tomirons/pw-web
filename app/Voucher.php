@@ -18,7 +18,7 @@ class Voucher extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'ip_address', 'reward', 'site_id'];
+    protected $fillable = ['code', 'item_id', 'item_name', 'item_count', 'item_proc_type'];
 
     /**
      * The primary key for the model.

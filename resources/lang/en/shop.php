@@ -67,7 +67,35 @@ return [
         -2147483585 => 'War Avatar',
     ],
 
+    'fields' => [
+        'name' => 'Name',
+        'price' => 'Price',
+        'item_id' => 'Item ID',
+        'octet' => 'Octets',
+        'mask' => 'Mask',
+        'count' => 'Count',
+        'max_count' => 'Max Count',
+        'protection_type' => 'Protection Type',
+        'expire_date' => 'Expire Date',
+        'discount' => 'Discount',
+        'shareable' => [
+            'title' => 'Shareable',
+            'yes' => 'Yes',
+            'no' => 'No'
+        ],
+        'description' => 'Description'
+    ],
+
+    'index' => 'Viewing Items',
     'add' => 'Add Item',
+    'edit' => 'Edit Item: :name',
     'view' => 'View Items',
+    'create' => 'Create New Item',
+    'create_success' => 'Your item has been created!',
+    'edit_success' => 'Your changes have been saved!',
+    'add_button' => 'Create Item',
+    'update_button' => 'Update Item',
+    'items_per_page' => 'Items Per Page',
+    'items_per_page_desc' => 'The number of items to display per page.'
 
 ];

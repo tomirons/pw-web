@@ -79,6 +79,8 @@ return [
     'save_settings' => 'Save Settings',
     'settings' => 'Settings',
     'edit' => 'Edit',
-    'remove' => 'Remove'
+    'remove' => 'Remove',
+
+    'settings_saved' => 'Your settings have been saved!',
 
 ];

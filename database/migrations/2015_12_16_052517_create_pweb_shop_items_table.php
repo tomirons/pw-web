@@ -15,7 +15,7 @@ class CreatePwebShopItemsTable extends Migration
         Schema::create('pweb_shop_items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('about');
+            $table->text('description');
             $table->integer('price');
             $table->integer('discount');
             $table->integer('item_id');

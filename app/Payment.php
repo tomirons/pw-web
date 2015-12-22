@@ -19,4 +19,6 @@ class Payment extends Model
      * @var array
      */
     protected $fillable = ['user_id', 'transaction_id', 'amount'];
+
+    protected $primaryKey = 'transaction_id';
 }

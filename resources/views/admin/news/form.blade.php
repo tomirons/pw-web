@@ -3,6 +3,7 @@
         {!! Form::label( 'title', trans( 'news.fields.title' ), ['class' => 'col-md-2 control-label'] ) !!}
         <div class="col-md-9">
             {!! Form::text( 'title', NULL, ['class' => 'form-control'] ) !!}
+            <div class="form-control-focus"> </div>
         </div>
     </div>
 
@@ -10,6 +11,7 @@
         {!! Form::label( 'content', trans( 'news.fields.content' ), ['class' => 'col-md-2 control-label'] ) !!}
         <div class="col-md-9">
             {!! Form::textarea( 'content', NULL, ['id' => 'summernote', 'class' => 'form-control'] ) !!}
+            <div class="form-control-focus"> </div>
         </div>
     </div>
 
@@ -17,8 +19,10 @@
         {!! Form::label( 'category', trans( 'news.fields.category' ), ['class' => 'col-md-2 control-label'] ) !!}
         <div class="col-md-9">
             {!! Form::select( 'category', $categories, NULL, ['class' => 'form-control'] ) !!}
+            <div class="form-control-focus"> </div>
         </div>
     </div>
+
 </div>
 <div class="form-actions">
     <div class="row">

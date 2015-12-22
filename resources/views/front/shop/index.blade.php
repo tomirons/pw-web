@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="caption mt-xs p-sm">
                                     <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="#111" data-handle-color="#000">
-                                        {!! $item->about !!}
+                                        {!! $item->description !!}
                                     </div>
                                     <div class="grid-item-buy text-center mt-md">
                                         @if ( $item->shareable )

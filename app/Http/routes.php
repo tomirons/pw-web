@@ -39,8 +39,8 @@ Route::get( 'shop/mask/{shop_mask}', ['as' => 'shop.mask', 'uses' => 'Front\Shop
 /* Donate */
 Route::get( 'donate', ['as' => 'donate.index', 'uses' => 'Front\DonateController@getIndex'] );
 Route::post( 'donate', 'Front\DonateController@postDonate' );
-Route::post( 'paypal', 'Front\DonateController@postIPN' );
-Route::post( 'paymentwall', 'Front\DonateController@postPaymentwall' );
+Route::post( 'donate/paypal', 'Front\DonateController@postIPN' );
+Route::post( 'donate/paymentwall', 'Front\DonateController@postPaymentwall' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
@@ -85,5 +85,18 @@ Route::group( ['prefix' => 'admin' ], function() {
     Route::get( 'news/settings', ['as' => 'admin.news.settings', 'uses' => 'Admin\NewsController@getSettings'] );
     Route::post( 'news/settings', 'Admin\NewsController@postSettings' );
     Route::resource( 'news', 'Admin\NewsController' );
+
+    /* Shop */
+    Route::get( 'shop/settings', ['as' => 'admin.shop.settings', 'uses' => 'Admin\ShopController@getSettings'] );
+    Route::post( 'shop/settings', 'Admin\ShopController@postSettings' );
+    Route::resource( 'shop', 'Admin\ShopController' );
+
+    /* Donate */
+    Route::get( 'donate/settings', ['as' => 'admin.donate.settings', 'uses' => 'Admin\DonateController@getSettings'] );
+    Route::post( 'donate/paypal', 'Admin\DonateController@postPaypalSettings' );
+    Route::post( 'donate/paymentwall', 'Admin\DonateController@postPaymentwallSettings' );
+
+    /* Voucher */
+    Route::resource( 'voucher', 'Admin\VoucherController' );
 
 });
