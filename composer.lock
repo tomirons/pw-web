@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5b6466fcb94d863d367ac380d13ad4ea",
-    "content-hash": "f7ccfb8a12ff382c640cd6fc6497556b",
+    "hash": "05c4a6dff5c4e214cfc15a6d754a5db9",
+    "content-hash": "b8f300d7df32cb43f3dfc3eebc631a6c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -268,16 +268,16 @@
         },
         {
             "name": "efriandika/laravel-settings",
-            "version": "v1.2.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efriandika/laravel-settings.git",
-                "reference": "966d70b6132fcb6e6c797de9b35bebba4eb168ba"
+                "reference": "77224a6507913d2fb61c85e94e13949bfb2bffac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efriandika/laravel-settings/zipball/966d70b6132fcb6e6c797de9b35bebba4eb168ba",
-                "reference": "966d70b6132fcb6e6c797de9b35bebba4eb168ba",
+                "url": "https://api.github.com/repos/efriandika/laravel-settings/zipball/77224a6507913d2fb61c85e94e13949bfb2bffac",
+                "reference": "77224a6507913d2fb61c85e94e13949bfb2bffac",
                 "shasum": ""
             },
             "require": {
@@ -291,6 +291,9 @@
             },
             "type": "library",
             "autoload": {
+                "classmap": [
+                    "src/database/migrations"
+                ],
                 "files": [
                     "src/helpers.php"
                 ],
@@ -314,7 +317,7 @@
                 "laravel",
                 "persistent"
             ],
-            "time": "2015-12-18 17:34:06"
+            "time": "2015-06-15 09:56:40"
         },
         {
             "name": "guzzlehttp/guzzle",
