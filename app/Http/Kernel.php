@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'mask.exists' => \App\Http\Middleware\MaskExists::class,
         'selected.character' => \App\Http\Middleware\SelectedCharacter::class,
-        'service.enabled' => \App\Http\Middleware\ServiceEnabled::class
+        'service.enabled' => \App\Http\Middleware\ServiceEnabled::class,
+        'server.online' => \App\Http\Middleware\ServerOnline::class,
     ];
 }

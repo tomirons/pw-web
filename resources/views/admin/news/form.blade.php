@@ -6,7 +6,6 @@
             <div class="form-control-focus"> </div>
         </div>
     </div>
-
     <div class="form-group form-md-line-input">
         {!! Form::label( 'content', trans( 'news.fields.content' ), ['class' => 'col-md-2 control-label'] ) !!}
         <div class="col-md-9">
@@ -14,7 +13,6 @@
             <div class="form-control-focus"> </div>
         </div>
     </div>
-
     <div class="form-group form-md-line-input">
         {!! Form::label( 'category', trans( 'news.fields.category' ), ['class' => 'col-md-2 control-label'] ) !!}
         <div class="col-md-9">
@@ -22,11 +20,10 @@
             <div class="form-control-focus"> </div>
         </div>
     </div>
-
 </div>
 <div class="form-actions">
     <div class="row">
-        <div class="col-md-offset-3 col-md-9">
+        <div class="col-md-offset-2 col-md-9">
             {!! Form::submit( $submitButtonText, ['id' => 'form_submit', 'class' => 'btn green'] ) !!}
         </div>
     </div>

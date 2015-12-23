@@ -133,6 +133,11 @@
                     <span class="arrow {{ Request::is( '*services*') ? 'open' : NULL }}"></span>
                 </a>
                 <ul class="sub-menu">
+                    <li class="nav-item {{ Request::is( '*services') ? 'active' : NULL }}">
+                        <a href="{{ url( 'admin/services' ) }}" class="nav-link">
+                            <span class="title">{{ trans( 'services.edit' ) }}</span>
+                        </a>
+                    </li>
                     <li class="nav-item {{ Request::is( '*services/settings') ? 'active' : NULL }}">
                         <a href="{{ url( 'admin/services/settings' ) }}" class="nav-link">
                             <span class="title">{{ trans( 'main.settings' ) }}</span>
@@ -161,24 +166,24 @@
                     <span class="arrow {{ Request::is( '*management*') ? 'open' : NULL }}"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is( '*management/broadcast') ? 'active' : NULL }}">
                         <a href="{{ url( 'admin/management/broadcast' ) }}" class="nav-link">
                             <span class="title">{{ trans( 'management.broadcast' ) }}</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is( '*management/mailer') ? 'active' : NULL }}">
                         <a href="{{ url( 'admin/management/mailer' ) }}" class="nav-link">
                             <span class="title">{{ trans( 'management.mailer' ) }}</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is( '*management/forbid') ? 'active' : NULL }}">
                         <a href="{{ url( 'admin/management/forbid' ) }}" class="nav-link">
                             <span class="title">{{ trans( 'management.forbid' ) }}</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ url( 'admin/management/gms' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'management.gms' ) }}</span>
+                    <li class="nav-item {{ Request::is( '*management/gm') ? 'active' : NULL }}">
+                        <a href="{{ url( 'admin/management/gm' ) }}" class="nav-link">
+                            <span class="title">{{ trans( 'management.gm' ) }}</span>
                         </a>
                     </li>
                     <li class="nav-item {{ Request::is( '*management/chat*') ? 'active open' : NULL }}">
@@ -187,10 +192,10 @@
                             <span class="arrow {{ Request::is( '*management/chat*') ? 'open' : NULL }}"></span>
                         </a>
                         <ul class="sub-menu">
-                            <li class="nav-item ">
+                            <li class="nav-item {{ Request::is( '*management/chat/watch') ? 'active' : NULL }}">
                                 <a href="{{ url( 'admin/management/chat/watch' ) }}" class="nav-link "> {{ trans( 'management.watch' ) }} </a>
                             </li>
-                            <li class="nav-item ">
+                            <li class="nav-item {{ Request::is( '*management/chat/settings') ? 'active' : NULL }}">
                                 <a href="{{ url( 'admin/management/chat/settings' ) }}" class="nav-link "> {{ trans( 'main.settings' ) }} </a>
                             </li>
                         </ul>

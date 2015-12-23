@@ -8,10 +8,10 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#news_articles" href="#aricle_{{ $article->id }}"> <span id="title">{{ $article->title }}</span> <span class="label label-{{ $article->color( $article->category ) }} font-white"> {{ ucfirst( $article->category ) }} </span> </a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#news_articles" href="#article_{{ $article->id }}"> <span id="title">{{ $article->title }}</span> <span class="label label-{{ $article->color( $article->category ) }} font-white"> {{ ucfirst( $article->category ) }} </span> </a>
                             </h4>
                         </div>
-                        <div id="aricle_{{ $article->id }}" class="panel-collapse collapse">
+                        <div id="article_{{ $article->id }}" class="panel-collapse collapse">
                             <div class="panel-body">
                                 {!! $article->content !!}
                                 <hr>

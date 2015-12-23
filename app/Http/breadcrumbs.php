@@ -177,3 +177,106 @@ Breadcrumbs::register( 'admin.voucher.edit', function( $breadcrumbs, \App\Vouche
     $breadcrumbs->parent( 'admin.voucher' );
     $breadcrumbs->push( trans( 'voucher.edit', ['code' => $voucher->code] ) );
 });
+
+/* Vote */
+Breadcrumbs::register( 'admin.vote', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'main.apps.vote' ) );
+});
+
+Breadcrumbs::register( 'admin.vote.index', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.vote' );
+    $breadcrumbs->push( trans( 'vote.index' ) );
+});
+
+Breadcrumbs::register( 'admin.vote.create', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.vote' );
+    $breadcrumbs->push( trans( 'vote.create' ) );
+});
+
+Breadcrumbs::register( 'admin.vote.edit', function( $breadcrumbs, \App\VoteSite $site )
+{
+    $breadcrumbs->parent( 'admin.vote' );
+    $breadcrumbs->push( trans( 'vote.edit', ['name' => $site->name] ) );
+});
+
+/* Services */
+Breadcrumbs::register( 'admin.services', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'main.apps.services' ) );
+});
+
+Breadcrumbs::register( 'admin.services.edit', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.services' );
+    $breadcrumbs->push( trans( 'services.edit' ) );
+});
+
+Breadcrumbs::register( 'admin.services.settings', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.services' );
+    $breadcrumbs->push( trans( 'main.settings' ) );
+});
+
+/* Ranking */
+Breadcrumbs::register( 'admin.ranking.settings', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'main.apps.ranking' ) );
+    $breadcrumbs->push( trans( 'main.settings' ) );
+});
+
+/* Management */
+Breadcrumbs::register( 'admin.management', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'main.apps.manage' ) );
+});
+
+Breadcrumbs::register( 'admin.management.broadcast', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.management' );
+    $breadcrumbs->push( trans( 'management.broadcast' ) );
+});
+
+Breadcrumbs::register( 'admin.management.mailer', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.management' );
+    $breadcrumbs->push( trans( 'management.mailer' ) );
+});
+
+Breadcrumbs::register( 'admin.management.forbid', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.management' );
+    $breadcrumbs->push( trans( 'management.forbid' ) );
+});
+
+Breadcrumbs::register( 'admin.management.gm.view', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.management' );
+    $breadcrumbs->push( trans( 'management.gm' ) );
+});
+
+Breadcrumbs::register( 'admin.management.gm.edit', function( $breadcrumbs, App\User $user )
+{
+    $breadcrumbs->parent( 'admin.management' );
+    $breadcrumbs->push( trans( 'management.edit_gm', ['user' => $user->name] ) );
+});
+
+Breadcrumbs::register( 'admin.management.chat.watch', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'management.chat' ) );
+    $breadcrumbs->push( trans( 'management.watch' ) );
+});
+
+Breadcrumbs::register( 'admin.management.chat.settings', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'management.chat' ) );
+    $breadcrumbs->push( trans( 'main.settings' ) );
+});

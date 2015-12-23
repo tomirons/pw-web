@@ -20,6 +20,7 @@ class VoucherController extends Controller
 
         $this->middleware( 'selected.character', ['only' => ['postRedeem'] ] );
     }
+
     public function getIndex()
     {
         $voucher_logs = Auth::user()->voucher_logs;

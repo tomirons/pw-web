@@ -12,43 +12,43 @@
                 {!! csrf_field() !!}
                 <div class="form-body">
                     <div class="form-group form-md-line-input">
-                        <label class="control-label col-md-2" for="paypal_double">{{ trans( 'donate.double_donation' ) }}</label>
+                        {!! Form::label( 'paypal_double', trans( 'donate.double_donation' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input id="paypal_double" name="paypal_double" type="checkbox" class="make-switch" data-size="normal" {{ settings( 'paypal_double' ) ? 'checked' : NULL }}>
+                            {!! Form::checkbox( 'paypal_double', NULL, settings( 'paypal_double' ), ['class' => 'make-switch', 'id' => 'paypal_double', 'data-size' => 'normal', 'data-on-color' => 'danger', 'data-off-color' => 'default'] ) !!}
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paypal_currency">{{ trans( 'donate.paypal_currency' ) }}</label>
+                        {!! Form::label( 'paypal_currency', trans( 'donate.paypal_currency' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
                             {!! Form::select( 'paypal_currency', $currencies, settings( 'paypal_currency' ), ['class' => 'form-control', 'id' => 'paypal_currency'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paypal_email">{{ trans( 'donate.paypal_email' ) }}</label>
+                        {!! Form::label( 'paypal_email', trans( 'donate.paypal_email' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input name="paypal_email" type="text" class="form-control" id="paypal_email" value="{{ settings( 'paypal_email' ) }}">
+                            {!! Form::text( 'paypal_email', settings( 'paypal_email' ), ['class' => 'form-control', 'id' => 'paypal_email'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paypal_per">{{ trans( 'donate.paypal_per', ['currency' => settings( 'paypal_currency' )] ) }}</label>
+                        {!! Form::label( 'paypal_per', trans( 'donate.paypal_per', ['currency' => settings( 'paypal_currency' )] ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input name="paypal_per" type="number" class="form-control" id="paypal_per" value="{{ settings( 'paypal_per' ) }}">
+                            {!! Form::input( 'number', 'paypal_per', settings( 'paypal_per' ), ['class' => 'form-control', 'id' => 'paypal_per'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paypal_min">{{ trans( 'donate.paypal_min', ['currency' => settings( 'paypal_min' )] ) }}</label>
+                        {!! Form::label( 'paypal_min', trans( 'donate.paypal_min', ['currency' => settings( 'paypal_min' )] ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input name="paypal_min" type="number" class="form-control" id="paypal_min" value="{{ settings( 'paypal_min' ) }}">
+                            {!! Form::input( 'number', 'paypal_min', settings( 'paypal_min' ), ['class' => 'form-control', 'id' => 'paypal_min'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions">
                     <div class="row">
-                        <div class="col-md-offset-3 col-md-9">
+                        <div class="col-md-offset-2 col-md-9">
                             <button type="submit" class="btn green">{{ trans( 'main.save_settings' ) }}</button>
                         </div>
                     </div>
@@ -78,29 +78,29 @@
                         </ol>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="control-label col-md-2" for="paymentwall_double">{{ trans( 'donate.double_donation' ) }}</label>
+                        {!! Form::label( 'paymentwall_double', trans( 'donate.double_donation' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input id="paymentwall_double" name="paymentwall_double" type="checkbox" class="make-switch" data-size="normal" {{ settings( 'paymentwall_double' ) ? 'checked' : NULL }}>
+                            {!! Form::checkbox( 'paymentwall_double', NULL, settings( 'paymentwall_double' ), ['class' => 'make-switch', 'id' => 'paymentwall_double', 'data-size' => 'normal', 'data-on-color' => 'danger', 'data-off-color' => 'default'] ) !!}
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paymentwall_link">{{ trans( 'donate.paymentwall_link' ) }}</label>
+                        {!! Form::label( 'paymentwall_link', trans( 'donate.paymentwall_link' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input name="paymentwall_link" type="text" class="form-control" id="paymentwall_link" value="{{ settings( 'paymentwall_link' ) }}">
+                            {!! Form::input( 'url', 'paymentwall_link', settings( 'paymentwall_link' ), ['class' => 'form-control', 'id' => 'paymentwall_link'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="paymentwall_key">{{ trans( 'donate.paymentwall_key' ) }}</label>
+                        {!! Form::label( 'paymentwall_key', trans( 'donate.paymentwall_key' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            <input name="paymentwall_key" type="text" class="form-control" id="paymentwall_key" value="{{ settings( 'paymentwall_key' ) }}">
+                            {!! Form::text( 'paymentwall_link', settings( 'paymentwall_key' ), ['class' => 'form-control', 'id' => 'paymentwall_key'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions">
                     <div class="row">
-                        <div class="col-md-offset-3 col-md-9">
+                        <div class="col-md-offset-2 col-md-9">
                             <button type="submit" class="btn green">{{ trans( 'main.save_settings' ) }}</button>
                         </div>
                     </div>

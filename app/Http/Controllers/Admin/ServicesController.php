@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Service;
+use Efriandika\LaravelSettings\Facades\Settings;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class ServicesController extends Controller
+{
+    public function getEdit()
+    {
+        $services = Service::all();
+        return view( 'admin.services.view', compact( 'services' ) );
+    }
+
+    public function postEdit( Request $request )
+    {
+        $services = Service::all();
+
+        foreach ( $services as $service )
+        {
+            $service->enabled = $request->{$service->key . '_enabled'};
+            $service->price = $request->{$service->key . '_price'};
+            $service->save();
+        }
+
+        flash()->success( trans( 'services.edit_success' ) );
+
+        return redirect( 'admin/services' );
+    }
+
+    public function getSettings()
+    {
+        return view( 'admin.services.settings' );
+    }
+
+    public function postSettings( Request $request )
+    {
+        $this->validate($request, [
+            'teleport_world_tag' => 'required|numeric|min:1',
+            'teleport_x' => 'required|numeric|min:1',
+            'teleport_y' => 'required|numeric|min:1',
+            'teleport_z' => 'required|numeric|min:1'
+        ]);
+
+        Settings::set( 'teleport_world_tag', $request->teleport_world_tag );
+
+        Settings::set( 'teleport_x', $request->teleport_x );
+
+        Settings::set( 'teleport_y', $request->teleport_y );
+
+        Settings::set( 'teleport_z', $request->teleport_z );
+
+        flash()->success( trans( 'main.settings_saved' ) );
+
+        return redirect( 'admin/services/settings' );
+    }
+}

@@ -31,7 +31,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with( 'categories', $categories );
         });
 
-        view()->composer( 'admin.shop.form', function ( $view ) {
+        view()->composer( ['admin.shop.form', 'admin.management.mailer'], function ( $view ) {
             $masks = [
                 0 => trans( 'shop.masks.0' ),
                 1 => trans( 'shop.masks.1' ),

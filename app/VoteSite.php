@@ -18,5 +18,10 @@ class VoteSite extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'link', 'hour_limit', 'double_rewards'];
+    protected $fillable = ['name', 'link', 'hour_limit', 'reward_amount', 'type', 'double_rewards'];
+
+    public function setDoubleRewardsAttribute( $value )
+    {
+        $this->attributes['double_rewards'] = $value ? 1 : 0;
+    }
 }

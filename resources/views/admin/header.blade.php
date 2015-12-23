@@ -71,7 +71,6 @@
                 </div>
             </div>
         </div>
-        <!-- BEGIN CONTAINER -->
         <div class="page-container">
             @include( 'admin.sidebar' )
             <div class="page-content-wrapper">
@@ -88,8 +87,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        @include( 'admin.footer' )
 
         <script src="{{ asset( 'js/admin/main.js' ) }}"></script>
         <script src="{{ asset( 'js/admin/plugins.js' ) }}"></script>

@@ -26,4 +26,9 @@ class Service extends Model
      * @var string
      */
     protected $primaryKey = 'key';
+
+    public function setEnabledAttribute( $value )
+    {
+        $this->attributes['enabled'] = $value ? 1 : 0;
+    }
 }

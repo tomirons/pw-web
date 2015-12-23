@@ -129,4 +129,16 @@ return [
         ],
         'complete' => 'Your character has been teleported.',
     ],
+
+    'edit' => 'Edit Services',
+    'fields' => [
+        'enabled' => 'Enabled',
+        'price' => 'Price',
+        'price_desc' => '0 = Free',
+        'world_tag' => 'World Tag',
+        'x' => 'X Coordinates',
+        'y' => 'Y Coordinates',
+        'z' => 'Z Coordinates'
+    ],
+    'edit_success' => 'Your services have been saved!',
 ];

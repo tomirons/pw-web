@@ -32,8 +32,8 @@ Route::get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex
 
 /* Shop */
 Route::get( 'shop', ['as' => 'shop.index', 'uses' => 'Front\ShopController@getIndex'] );
-Route::post( 'shop/purchase/{shop_item}', 'Front\ShopController@postPurchase' );
-Route::post( 'shop/gift/{shop_item}', 'Front\ShopController@postGift' );
+Route::post( 'shop/purchase/{shop}', 'Front\ShopController@postPurchase' );
+Route::post( 'shop/gift/{shop}', 'Front\ShopController@postGift' );
 Route::get( 'shop/mask/{shop_mask}', ['as' => 'shop.mask', 'uses' => 'Front\ShopController@getMask'] );
 
 /* Donate */
@@ -44,7 +44,7 @@ Route::post( 'donate/paymentwall', 'Front\DonateController@postPaymentwall' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
-Route::get( 'vote/check/{vote_site}', 'Front\VoteController@getCheck' );
+Route::get( 'vote/check/{vote}', 'Front\VoteController@getCheck' );
 
 /* Voucher */
 Route::get( 'voucher', ['as' => 'voucher.index', 'uses' => 'Front\VoucherController@getIndex'] );
@@ -98,5 +98,34 @@ Route::group( ['prefix' => 'admin' ], function() {
 
     /* Voucher */
     Route::resource( 'voucher', 'Admin\VoucherController' );
+
+    /* Vote */
+    Route::resource( 'vote', 'Admin\VoteController' );
+
+    /* Services */
+    Route::get( 'services', ['as' => 'admin.services.edit', 'uses' => 'Admin\ServicesController@getEdit'] );
+    Route::post( 'services', 'Admin\ServicesController@postEdit' );
+    Route::get( 'services/settings', ['as' => 'admin.services.settings', 'uses' => 'Admin\ServicesController@getSettings'] );
+    Route::post( 'services/settings', 'Admin\ServicesController@postSettings' );
+
+    /* Ranking */
+    Route::get( 'ranking/settings', ['as' => 'admin.ranking.settings', 'uses' => 'Admin\RankingController@getSettings'] );
+    Route::post( 'ranking/settings', 'Admin\RankingController@postSettings' );
+
+    /* Management */
+    Route::get( 'management/gm', ['as' => 'admin.management.gm.view', 'uses' => 'Admin\ManagementController@getGM'] );
+    Route::post( 'management/gm', 'Admin\ManagementController@postGM' );
+    Route::get( 'management/gm/edit/{user}', ['as' => 'admin.management.gm.edit', 'uses' => 'Admin\ManagementController@getGMEdit'] );
+    Route::post( 'management/gm/edit/{user}', 'Admin\ManagementController@postGMEdit' );
+    Route::get( 'management/gm/remove/{user}', 'Admin\ManagementController@getGMRemove' );
+    Route::get( 'management/chat/watch', ['as' => 'admin.management.chat.watch', 'uses' => 'Admin\ManagementController@getChatWatch'] );
+    Route::post( 'management/chat/logs', 'Admin\ManagementController@postChatLogs' );
+    Route::get( 'management/chat/settings', ['as' => 'admin.management.chat.settings', 'uses' => 'Admin\ManagementController@getChatSettings'] );
+    Route::post( 'management/chat/settings', 'Admin\ManagementController@postChatSettings' );
+    Route::controller( 'management', 'Admin\ManagementController', [
+        'getBroadcast' => 'admin.management.broadcast',
+        'getMailer' => 'admin.management.mailer',
+        'getForbid' => 'admin.management.forbid'
+    ]);
 
 });

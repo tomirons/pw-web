@@ -3,15 +3,15 @@
 @section( 'content' )
     <div class="portlet light bordered">
         <div class="portlet-body form">
-            <form action="{{ url( 'admin/shop/settings' ) }}" method="post" class="form-horizontal">
+            <form action="{{ url( 'admin/management/chat/settings' ) }}" method="post" class="form-horizontal">
                 {!! csrf_field() !!}
                 <div class="form-body">
                     <div class="form-group form-md-line-input">
-                        <label class="col-md-2 control-label" for="items_per_page">{{ trans( 'shop.items_per_page' ) }}</label>
+                        <label class="col-md-2 control-label" for="log_path">{{ trans( 'management.fields.chat.path' ) }}</label>
                         <div class="col-md-9">
-                            <input name="items_per_page" type="number" class="form-control" id="items_per_page" value="{{ settings( 'shop_items_per_page' ) }}">
+                            <input name="log_path" type="text" class="form-control" id="log_path" value="{{ settings( 'chat_log_path' ) }}">
                             <div class="form-control-focus"> </div>
-                            <span class="help-block">{{ trans( 'shop.items_per_page_desc' ) }}</span>
+                            <span class="help-block">{!! trans( 'management.fields.chat.path_desc' ) !!}</span>
                         </div>
                     </div>
                 </div>

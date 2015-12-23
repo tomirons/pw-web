@@ -542,3 +542,9 @@ div.sale label {
     top: 13px;
     right: 37px;
 }
+
+.portlet-body.live-chat {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}

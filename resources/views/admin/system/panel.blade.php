@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-actions">
                     <div class="row">
-                        <div class="col-md-offset-3 col-md-9">
+                        <div class="col-md-offset-2 col-md-9">
                             <button type="submit" class="btn green">{{ trans( 'main.save_settings' ) }}</button>
                         </div>
                     </div>

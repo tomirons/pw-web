@@ -12,3 +12,16 @@ function makeTime( $time )
 
     return $time;
 }
+
+function setupTasks()
+{
+    $jobs = shell_exec( 'crontab -l' );
+
+    foreach ( preg_split( "/((\r?\n)|(\r\n?))/", $jobs ) as $line )
+    {
+        if ( !str_contains( $line, ['php', 'artisan'] ) )
+        {
+            return TRUE;
+        }
+    }
+}

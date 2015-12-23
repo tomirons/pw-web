@@ -102,16 +102,6 @@ class SettingsTableSeeder extends Seeder
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'ranking_player_column_type',
-            'value' => serialize(1)
-        ]);
-
-        DB::table('pweb_settings')->insert([
-            'key' => 'ranking_faction_column_type',
-            'value' => serialize(1)
-        ]);
-
-        DB::table('pweb_settings')->insert([
             'key' => 'ranking_ignore_roles',
             'value' => serialize(NULL)
         ]);
