@@ -12,108 +12,108 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         DB::table('pweb_settings')->insert([
-            'key' => 'server_name',
-            'value' => serialize('Perfect World')
+            'setting_key' => 'server_name',
+            'setting_value' => serialize('Perfect World')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'server_version',
-            'value' => serialize('101')
+            'setting_key' => 'server_version',
+            'setting_value' => serialize('101')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'currency_name',
-            'value' => serialize('Coins')
+            'setting_key' => 'currency_name',
+            'setting_value' => serialize('Coins')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'encryption_type',
-            'value' => serialize('md5')
+            'setting_key' => 'encryption_type',
+            'setting_value' => serialize('md5')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paypal_per',
-            'value' => serialize(2)
+            'setting_key' => 'paypal_per',
+            'setting_value' => serialize(2)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paypal_min',
-            'value' => serialize(5)
+            'setting_key' => 'paypal_min',
+            'setting_value' => serialize(5)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paypal_double',
-            'value' => serialize(FALSE)
+            'setting_key' => 'paypal_double',
+            'setting_value' => serialize(FALSE)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paypal_email',
-            'value' => serialize(NULL)
+            'setting_key' => 'paypal_email',
+            'setting_value' => serialize(NULL)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paypal_currency',
-            'value' => serialize('USD')
+            'setting_key' => 'paypal_currency',
+            'setting_value' => serialize('USD')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paymentwall_double',
-            'value' => serialize(FALSE)
+            'setting_key' => 'paymentwall_double',
+            'setting_value' => serialize(FALSE)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paymentwall_link',
-            'value' => serialize(NULL)
+            'setting_key' => 'paymentwall_link',
+            'setting_value' => serialize(NULL)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'paymentwall_key',
-            'value' => serialize(NULL)
+            'setting_key' => 'paymentwall_setting_key',
+            'setting_value' => serialize(NULL)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'news_items_per_page',
-            'value' => serialize(12)
+            'setting_key' => 'news_items_per_page',
+            'setting_value' => serialize(12)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'shop_items_per_page',
-            'value' => serialize(12)
+            'setting_key' => 'shop_items_per_page',
+            'setting_value' => serialize(12)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'teleport_x',
-            'value' => serialize('1280.6788')
+            'setting_key' => 'teleport_x',
+            'setting_value' => serialize('1280.6788')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'teleport_y',
-            'value' => serialize('219.61784')
+            'setting_key' => 'teleport_y',
+            'setting_value' => serialize('219.61784')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'teleport_z',
-            'value' => serialize('1021.2097')
+            'setting_key' => 'teleport_z',
+            'setting_value' => serialize('1021.2097')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'teleport_world_tag',
-            'value' => serialize('1')
+            'setting_key' => 'teleport_world_tag',
+            'setting_value' => serialize('1')
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'ranking_ignore_roles',
-            'value' => serialize(NULL)
+            'setting_key' => 'ranking_ignore_roles',
+            'setting_value' => serialize(NULL)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'ranking_ignore_factions',
-            'value' => serialize(NULL)
+            'setting_key' => 'ranking_ignore_factions',
+            'setting_value' => serialize(NULL)
         ]);
 
         DB::table('pweb_settings')->insert([
-            'key' => 'chat_log_path',
-            'value' => serialize('/home/logs/')
+            'setting_key' => 'chat_log_path',
+            'setting_value' => serialize('/home/logs/')
         ]);
     }
 }

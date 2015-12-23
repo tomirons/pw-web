@@ -13,8 +13,8 @@ class CreatePwebSettingsTable extends Migration
     public function up()
     {
         Schema::create('pweb_settings', function (Blueprint $table) {
-            $table->string('key', 100)->index()->unique('key');
-            $table->text('value', 65535)->nullable();
+            $table->string('setting_key', 100)->index()->unique('key');
+            $table->text('setting_value', 65535)->nullable();
         });
     }
 

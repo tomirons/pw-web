@@ -212,7 +212,7 @@ return [
         'Settings'  => Efriandika\LaravelSettings\Facades\Settings::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
-        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class
     ],
 
 ];
