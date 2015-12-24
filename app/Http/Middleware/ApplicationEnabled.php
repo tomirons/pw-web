@@ -19,7 +19,7 @@ class ApplicationEnabled
         if ( !$request->is( 'admin*' ) )
         {
             $application = Application::find( ( $request->segment( 1 ) != NULL ) ? $request->segment( 1 ) : 'news' );
-
+            dd($request->segment(1));
             // If application is disabled, redirect to next enabled application
             if ( !$application->enabled )
             {
