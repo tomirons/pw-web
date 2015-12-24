@@ -16,7 +16,7 @@ class ApplicationEnabled
      */
     public function handle( $request, Closure $next )
     {
-        if ( !$request->is( 'admin*' ) )
+        if ( !$request->is( 'admin*' ) && !$request->is( 'auth/*' ) )
         {
             // If application is disabled, redirect to next enabled application
             $application = Application::find( ( $request->segment( 1 ) !== NULL ) ? $request->segment( 1 ) : 'news' );
