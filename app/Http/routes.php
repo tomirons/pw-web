@@ -75,6 +75,8 @@ Route::group( ['prefix' => 'admin' ], function() {
 
         Route::get( 'panel', ['as' => 'panel', 'uses' => 'Admin\SystemController@getPanel'] );
         Route::post( 'panel', 'Admin\SystemController@postPanel' );
+        Route::get( 'apps', ['as' => 'apps', 'uses' => 'Admin\SystemController@getApps'] );
+        Route::post( 'apps', 'Admin\SystemController@postApps' );
 
 //        Route::get( 'widget', ['as' => 'widget', 'uses' => 'Admin\SystemController@getWidget'] );
 //        Route::post( 'widget', 'Admin\SystemController@postWidget' );

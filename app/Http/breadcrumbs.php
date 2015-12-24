@@ -77,6 +77,12 @@ Breadcrumbs::register( 'admin.system.panel', function( $breadcrumbs )
     $breadcrumbs->push( trans( 'system.panel' ) );
 });
 
+Breadcrumbs::register( 'admin.system.apps', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'system.apps' ) );
+});
+
 Breadcrumbs::register( 'admin.system.widget', function( $breadcrumbs )
 {
     $breadcrumbs->parent( 'admin.index' );

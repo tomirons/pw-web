@@ -10,6 +10,8 @@ return [
 
     'panel' => 'Panel',
     'widget' => 'Widget',
+    'apps' => 'Applications',
+    'apps_edit_success' => 'Your application settings have been saved.',
     'server_name' => 'Server Name',
     'encrypt' => [
         'md5' => 'MD5',

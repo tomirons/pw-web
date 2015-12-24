@@ -12,6 +12,7 @@ return [
     */
 
     'home' => 'Home',
+    'dashboard' => 'Dashboard',
     'apps' => [
         'news' => 'News',
         'shop' => 'Shop',
@@ -42,6 +43,7 @@ return [
     ],
 
     /* Login/Register Language Lines */
+    'login' => 'Login',
     'login_link' => 'Login | Register',
     'logout' => 'Log Out',
     'signin' => [

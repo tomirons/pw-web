@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Application;
 use Efriandika\LaravelSettings\Facades\Settings;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class SystemController extends Controller
 {
     public function getPanel()
     {
+        pagetitle( [ trans( 'system.panel' ), trans( 'main.apps.system' ), settings( 'server_name' ) ] );
         return view( 'admin.system.panel' );
     }
 
@@ -27,7 +29,29 @@ class SystemController extends Controller
 
         flash()->success( trans( 'system.success' ) );
 
-        return redirect( 'admin/system/panel' );
+        return redirect()->back();
+    }
+
+    public function getApps()
+    {
+        pagetitle( [ trans( 'system.apps' ), trans( 'main.apps.system' ), settings( 'server_name' ) ] );
+        $apps = Application::all();
+        return view( 'admin.system.apps', compact( 'apps' ) );
+    }
+
+    public function postApps( Request $request )
+    {
+        $apps = Application::all();
+
+        foreach ( $apps as $app )
+        {
+            $app->enabled = $request->{$app->key . '_enabled'};
+            $app->save();
+        }
+
+        flash()->success( trans( 'system.apps_edit_success' ) );
+
+        return redirect()->back();
     }
 
     public function getWidget()

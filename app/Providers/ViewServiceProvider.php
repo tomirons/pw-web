@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\App;
+use App\Application;
 use Huludini\PerfectWorldAPI\API;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +16,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer( 'front.header', function ( $view ) {
-            $apps = App::all();
+            $apps = Application::all();
             $view->with( 'apps', $apps );
         });
 
