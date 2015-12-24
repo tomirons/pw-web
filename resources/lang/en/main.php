@@ -65,7 +65,7 @@ return [
         'back' => 'Back',
     ],
 
-    'char_list_error' => 'An error occurred while retrieving your characters, please try again later.',
+    'char_list_error' => 'We can\'t retrieve your characters, please try again later.',
     'server_not_online' => 'The server isn\'t online, please try again later.',
     'server_offline' => [
         'title' => 'Attention',

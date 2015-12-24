@@ -32,19 +32,27 @@
                                         {{ Auth::user()->character() ? Auth::user()->character()['base']['name'] : trans( 'main.select_character' ) }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
-                                        {{--*/ $roles = Auth::user()->roles() /*--}}
-                                        @if ( count( $roles ) > 0 )
-                                            @foreach( $roles as $role )
+                                        @if ( $api->serverOnline() )
+                                            {{--*/ $roles = Auth::user()->roles() /*--}}
+                                            @if ( count( $roles ) > 0 )
+                                                @foreach( $roles as $role )
+                                                    <li>
+                                                        <a href="{{ url( 'character/select/' . $role['id'] ) }}">
+                                                            {{ $role['name'] }}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            @else
                                                 <li>
-                                                    <a href="{{ url( 'character/select/' . $role['id'] ) }}">
-                                                        {{ $role['name'] }}
+                                                    <a href="#">
+                                                        {{ trans( 'main.char_list_error' ) }}
                                                     </a>
                                                 </li>
-                                            @endforeach
+                                            @endif
                                         @else
                                             <li>
                                                 <a href="#">
-                                                    {{ trans( 'main.char_list_error' ) }}
+                                                    {{ trans( 'main.server_not_online' ) }}
                                                 </a>
                                             </li>
                                         @endif
