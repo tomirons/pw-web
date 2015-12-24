@@ -25,7 +25,7 @@ class ManagementController extends Controller
     public function postBroadcast( Request $request )
     {
         $this->validate($request, [
-            'user' => 'min:1024',
+            'user' => 'numeric|min:1024',
             'message' => 'required',
         ]);
 
@@ -47,7 +47,7 @@ class ManagementController extends Controller
         $this->validate($request, [
             'item_id' => 'required|numeric|min:1',
             'quantity' => 'required|numeric|min:1',
-            'protection_type' => 'required|numeric|min:1',
+            'protection_type' => 'required|numeric|min:0',
             'time_limit' => 'numeric',
             'gold' => 'numeric',
             'subject' => 'required',
@@ -65,9 +65,9 @@ class ManagementController extends Controller
                 'pos' => 0,
                 'count' => $request->quantity,
                 'max_count' => $request->quantity,
-                'data' => $request->octet,
-                'proctype' => $request->protection_type,
-                'expire_date' => time() + $request->time_limit,
+                'data' => ( $request->octet ) ? $request->octet : NULL,
+                'proctype' => ( $request->protection_type ) ? $request->protection_type : 0,
+                'expire_date' => ( $request->time_limit ) ? time() + $request->time_limit : 0,
                 'guid1' => 0,
                 'guid2' => 0,
                 'mask' => $request->mask,
@@ -91,15 +91,12 @@ class ManagementController extends Controller
                 $users = User::all();
                 foreach ( $users as $user )
                 {
-                    $roles = $api->getRoles( $user->ID );
-                    foreach ( $roles as $role )
+                    $roles = $api->getRoles( $user->ID ) ? $api->getRoles( $user->ID )['roles'] : NULL;
+                    if ( count( $roles ) > 0 )
                     {
-                        if ( count( $roles['roles'] > 0) )
+                        foreach ( $roles as $role )
                         {
-                            for ( $i = 0; $i < count( $roles ); $i++ )
-                            {
-                                $api->sendMail( $roles[$i]['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
-                            }
+                            $api->sendMail( $role['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
                         }
                     }
                 }

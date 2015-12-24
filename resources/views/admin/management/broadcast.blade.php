@@ -11,6 +11,7 @@
                         <div class="col-md-9">
                             {!! Form::input( 'number', 'user', NULL, ['class' => 'form-control', 'id' => 'user'] ) !!}
                             <div class="form-control-focus"> </div>
+                            <span class="help-block">{{ trans( 'management.fields.broadcast.user_desc' ) }}</span>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
