@@ -1,4 +1,4 @@
-@if ( Route::is( 'admin*' ) )
+@if ( Request::is( 'admin*' ) )
     <div class="page-bar">
         @if ( $breadcrumbs )
             <ul class="page-breadcrumb">

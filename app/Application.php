@@ -13,6 +13,8 @@ class Application extends Model
      */
     protected $table = 'pweb_apps';
 
+    protected $primaryKey = 'key';
+
     public function setEnabledAttribute( $value )
     {
         $this->attributes['enabled'] = $value ? 1 : 0;
