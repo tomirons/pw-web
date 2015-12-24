@@ -21,12 +21,14 @@ class ShopController extends Controller
 
     public function getIndex()
     {
+        pagetitle( [ trans( 'main.apps.shop' ), settings( 'server_name' ) ] );
         $items = ShopItem::paginate( settings( 'shop_items_per_page' ) );
         return view( 'front.shop.index', compact( 'items' ) );
     }
 
     public function getMask( $mask )
     {
+        pagetitle( [ trans( 'main.apps.shop' ), settings( 'server_name' ) ] );
         $items = ShopItem::where( 'mask', $mask )->paginate( settings( 'shop_items_per_page' ) );
         return view( 'front.shop.index', compact( 'items' ) );
     }

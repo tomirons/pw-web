@@ -19,6 +19,7 @@ class ShopController extends Controller
      */
     public function index()
     {
+        pagetitle( [ trans( 'shop.index' ), settings( 'server_name' ) ] );
         $items = ShopItem::paginate( settings( 'shop_items_per_page' ) );
         return view( 'admin.shop.view', compact( 'items' ) );
     }
@@ -30,6 +31,7 @@ class ShopController extends Controller
      */
     public function create()
     {
+        pagetitle( [ trans( 'shop.create' ), settings( 'server_name' ) ] );
         return view( 'admin.shop.create' );
     }
 
@@ -67,6 +69,7 @@ class ShopController extends Controller
      */
     public function edit( ShopItem $item )
     {
+        pagetitle( [ trans( 'shop.edit', ['name' => $item->name] ), settings( 'server_name' ) ] );
         return view( 'admin.shop.edit', compact( 'item' ) );
     }
 
@@ -102,6 +105,7 @@ class ShopController extends Controller
 
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'main.apps.shop' ), settings( 'server_name' ) ] );
         return view( 'admin.shop.settings' );
     }
 

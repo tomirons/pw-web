@@ -12,6 +12,7 @@ class IndexController extends Controller
 {
     public function getIndex()
     {
+        pagetitle( [ trans( 'main.dashboard' ), settings( 'server_name' ) ] );
         return view( 'admin.index' );
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Perfect World Panel</title>
+        <title>{{ pagetitle()->get() }}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -20,7 +20,7 @@
         <div class="page-header navbar navbar-fixed-top">
             <div class="page-header-inner ">
                 <div class="page-logo">
-                    <a class="logo-default uppercase font-grey" href="{{ url( '/' ) }}">{{ settings( 'server_name' ) . ' ACP' }}</a>
+                    <a class="logo-default uppercase font-grey" href="{{ url( 'admin' ) }}">{{ settings( 'server_name' ) . ' ACP' }}</a>
                     <div class="menu-toggler sidebar-toggler"> </div>
                 </div>
                 <a href="#" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>

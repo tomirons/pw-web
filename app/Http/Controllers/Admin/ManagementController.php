@@ -19,6 +19,7 @@ class ManagementController extends Controller
     }
     public function getBroadcast()
     {
+        pagetitle( [ trans( 'management.broadcast' ), settings( 'server_name' ) ] );
         return view( 'admin.management.broadcast' );
     }
 
@@ -39,6 +40,7 @@ class ManagementController extends Controller
 
     public function getMailer()
     {
+        pagetitle( [ trans( 'management.mailer' ), settings( 'server_name' ) ] );
         return view( 'admin.management.mailer' );
     }
 
@@ -116,6 +118,7 @@ class ManagementController extends Controller
 
     public function getForbid()
     {
+        pagetitle( [ trans( 'management.forbid' ), settings( 'server_name' ) ] );
         return view( 'admin.management.forbid' );
     }
 
@@ -155,6 +158,7 @@ class ManagementController extends Controller
 
     public function getGM()
     {
+        pagetitle( [ trans( 'management.gm' ), settings( 'server_name' ) ] );
         $gms = DB::table( 'auth' )->select( 'userid' )->distinct()->get();
         return view( 'admin.management.gm.view', compact( 'gms' ) );
     }
@@ -186,6 +190,7 @@ class ManagementController extends Controller
 
     public function getGMEdit( User $user )
     {
+        pagetitle( [ trans( 'management.edit_gm', ['user' => $user->name] ), settings( 'server_name' ) ] );
         $permissions = DB::table( 'auth' )->where( 'userid', $user->ID )->get();
 
         foreach ( $permissions as $permission )
@@ -235,6 +240,7 @@ class ManagementController extends Controller
 
     public function getChatWatch()
     {
+        pagetitle( [ trans( 'management.watch' ), settings( 'server_name' ) ] );
         return view( 'admin.management.chat.watch' );
     }
 
@@ -279,6 +285,7 @@ class ManagementController extends Controller
 
     public function getChatSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'management.chat' ), settings( 'server_name' ) ] );
         return view( 'admin.management.chat.settings' );
     }
 

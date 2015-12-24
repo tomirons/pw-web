@@ -20,6 +20,7 @@ class DonateController extends Controller
 
     public function getIndex()
     {
+        pagetitle( [ trans( 'main.apps.donate' ), settings( 'server_name' ) ] );
         return view( 'front.donate.index' );
     }
 

@@ -14,6 +14,11 @@
                     <span class="arrow {{ Request::is( '*system*') ? 'open' : NULL }}"></span>
                 </a>
                 <ul class="sub-menu">
+                    <li class="nav-item {{ Request::is( '*system/apps') ? 'active' : NULL }}">
+                        <a href="{{ url( 'admin/system/apps' ) }}" class="nav-link">
+                            <span class="title">{{ trans( 'system.apps' ) }}</span>
+                        </a>
+                    </li>
                     <li class="nav-item {{ Request::is( '*system/panel') ? 'active' : NULL }}">
                         <a href="{{ url( 'admin/system/panel' ) }}" class="nav-link">
                             <span class="title">{{ trans( 'system.panel' ) }}</span>

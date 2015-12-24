@@ -19,6 +19,7 @@ class NewsController extends Controller
      */
     public function index()
     {
+        pagetitle( [ trans( 'news.index' ), settings( 'server_name' ) ] );
         $articles = Article::paginate( settings( 'news_items_per_page' ) );
         return view( 'admin.news.view', compact( 'articles' ) );
     }
@@ -30,6 +31,7 @@ class NewsController extends Controller
      */
     public function create()
     {
+        pagetitle( [ trans( 'news.create' ), settings( 'server_name' ) ] );
         return view( 'admin.news.create' );
     }
 
@@ -67,6 +69,7 @@ class NewsController extends Controller
      */
     public function edit( Article $article )
     {
+        pagetitle( [ trans( 'news.edit', ['title' => $article->title] ), settings( 'server_name' ) ] );
         return view( 'admin.news.edit', compact( 'article' ) );
     }
 
@@ -102,6 +105,7 @@ class NewsController extends Controller
 
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'main.apps.news' ), settings( 'server_name' ) ] );
         return view( 'admin.news.settings' );
     }
 

@@ -18,6 +18,7 @@ class VoteController extends Controller
      */
     public function index()
     {
+        pagetitle( [ trans( 'vote.index' ), settings( 'server_name' ) ] );
         $sites = VoteSite::paginate();
         return view( 'admin.vote.view', compact( 'sites' ) );
     }
@@ -29,6 +30,7 @@ class VoteController extends Controller
      */
     public function create()
     {
+        pagetitle( [ trans( 'vote.create' ), settings( 'server_name' ) ] );
         return view( 'admin.vote.create' );
     }
 
@@ -66,6 +68,7 @@ class VoteController extends Controller
      */
     public function edit( VoteSite $site )
     {
+        pagetitle( [ trans( 'vote.edit', ['name' => $site->name] ), settings( 'server_name' ) ] );
         return view( 'admin.vote.edit', compact( 'site' ) );
     }
 

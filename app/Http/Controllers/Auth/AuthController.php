@@ -45,6 +45,7 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
+        pagetitle( [ trans( 'main.login' ), settings( 'server_name' ) ] );
         return view('front.auth.login');
     }
 

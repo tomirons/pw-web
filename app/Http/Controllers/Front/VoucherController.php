@@ -23,6 +23,7 @@ class VoucherController extends Controller
 
     public function getIndex()
     {
+        pagetitle( [ trans( 'main.apps.voucher' ), settings( 'server_name' ) ] );
         $voucher_logs = Auth::user()->voucher_logs;
         return view( 'front.voucher.index', compact( 'voucher_logs' ) );
     }

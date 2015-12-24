@@ -13,6 +13,7 @@ class ServicesController extends Controller
 {
     public function getEdit()
     {
+        pagetitle( [ trans( 'services.edit' ), settings( 'server_name' ) ] );
         $services = Service::all();
         return view( 'admin.services.view', compact( 'services' ) );
     }
@@ -35,6 +36,7 @@ class ServicesController extends Controller
 
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'main.apps.services' ), settings( 'server_name' ) ] );
         return view( 'admin.services.settings' );
     }
 

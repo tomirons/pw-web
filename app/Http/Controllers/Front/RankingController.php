@@ -24,12 +24,14 @@ class RankingController extends Controller
 
     public function getPlayer( Request $request )
     {
+        pagetitle( [ trans( 'ranking.player' ) . ' ' . trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
         $ranks = Player::subtype( $request->segment( 3 ) )->paginate();
         return view( 'front.ranking.player', compact( 'ranks' ) );
     }
 
     public function getFaction( Request $request )
     {
+        pagetitle( [ trans( 'ranking.faction' ) . ' ' . trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
         $ranks = Faction::subtype( $request->segment( 3 ) )->paginate();
         return view( 'front.ranking.faction', compact( 'ranks' ) );
     }

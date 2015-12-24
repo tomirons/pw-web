@@ -155,6 +155,7 @@ return [
         Efriandika\LaravelSettings\SettingsServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Rephlux\PageTitle\PageTitleServiceProvider::class
 
     ],
 
@@ -212,7 +213,8 @@ return [
         'Settings'  => Efriandika\LaravelSettings\Facades\Settings::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
-        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
     ],
 
 ];

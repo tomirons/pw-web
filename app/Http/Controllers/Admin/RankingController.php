@@ -12,6 +12,7 @@ class RankingController extends Controller
 {
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
         return view( 'admin.ranking.settings' );
     }
 

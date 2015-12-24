@@ -18,6 +18,7 @@ class VoucherController extends Controller
      */
     public function index()
     {
+        pagetitle( [ trans( 'voucher.index' ), settings( 'server_name' ) ] );
         $vouchers = Voucher::paginate();
         return view( 'admin.voucher.view', compact( 'vouchers' ) );
     }
@@ -29,6 +30,7 @@ class VoucherController extends Controller
      */
     public function create()
     {
+        pagetitle( [ trans( 'voucher.create' ), settings( 'server_name' ) ] );
         return view( 'admin.voucher.create' );
     }
 
@@ -66,6 +68,7 @@ class VoucherController extends Controller
      */
     public function edit( Voucher $voucher )
     {
+        pagetitle( [ trans( 'voucher.edit', ['code' => $voucher->code] ), settings( 'server_name' ) ] );
         return view( 'admin.voucher.edit', compact( 'voucher' ) );
     }
 

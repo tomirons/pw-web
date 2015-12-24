@@ -12,6 +12,7 @@ class DonateController extends Controller
 {
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), trans( 'main.apps.donate' ), settings( 'server_name' ) ] );
         return view( 'admin.donate.settings' );
     }
 

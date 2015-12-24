@@ -24,6 +24,7 @@ class ServicesController extends Controller
 
     public function getIndex()
     {
+        pagetitle( [ trans( 'main.apps.services' ), settings( 'server_name' ) ] );
         $services = Service::all();
         return view( 'front.services.index', compact( 'services' ) );
     }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class App extends Model
+class Application extends Model
 {
     /**
      * The database table used by the model.
@@ -12,4 +12,9 @@ class App extends Model
      * @var string
      */
     protected $table = 'pweb_apps';
+
+    public function setEnabledAttribute( $value )
+    {
+        $this->attributes['enabled'] = $value ? 1 : 0;
+    }
 }

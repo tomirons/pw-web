@@ -13,7 +13,8 @@
         "efriandika/laravel-settings": "1.1.0",
         "illuminate/html": "^5.0",
         "wadeshuler/php-paypal-ipn": "^2.5",
-        "davejamesmiller/laravel-breadcrumbs": "^3.0"
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "rephlux/pagetitle": "^0.6.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

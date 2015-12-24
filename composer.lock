@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac2d5cc1c1b8568262c0209004c09fa0",
-    "content-hash": "cda9a67d2cc625d16aee38377db635ea",
+    "hash": "6fc12362c94f7f53606ce05ba7b673c4",
+    "content-hash": "da08094da1df840cfb3247a30f69dcc1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1398,6 +1398,49 @@
                 "shell"
             ],
             "time": "2015-11-12 16:18:56"
+        },
+        {
+            "name": "rephlux/pagetitle",
+            "version": "v0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rephluX/laravel-pagetitle.git",
+                "reference": "b8b9b5df35e828f8e1b90d7a34b1672f424620b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rephluX/laravel-pagetitle/zipball/b8b9b5df35e828f8e1b90d7a34b1672f424620b4",
+                "reference": "b8b9b5df35e828f8e1b90d7a34b1672f424620b4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Rephlux\\PageTitle": "src/"
+                },
+                "files": [
+                    "src/Rephlux/PageTitle/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris van Daele",
+                    "email": "engine_no9@gmx.net"
+                }
+            ],
+            "description": "Manage page title in Laravel views",
+            "time": "2015-09-12 09:43:23"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -21,6 +21,8 @@ class VoteController extends Controller
 
     public function getIndex( Request $request )
     {
+        pagetitle( [ trans( 'main.apps.vote' ), settings( 'server_name' ) ] );
+
         $vote_info = [];
         $sites = VoteSite::all();
 
