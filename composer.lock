@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05c4a6dff5c4e214cfc15a6d754a5db9",
-    "content-hash": "b8f300d7df32cb43f3dfc3eebc631a6c",
+    "hash": "ac2d5cc1c1b8568262c0209004c09fa0",
+    "content-hash": "cda9a67d2cc625d16aee38377db635ea",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -492,16 +492,16 @@
         },
         {
             "name": "huludini/pw-api",
-            "version": "1.1.5.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/huludini/pw-api.git",
-                "reference": "59761f3ab6507add86da5847a96de7c6f5b646a8"
+                "reference": "751e7d33ca413625f59b371a3bd58d147bf9dad6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/huludini/pw-api/zipball/59761f3ab6507add86da5847a96de7c6f5b646a8",
-                "reference": "59761f3ab6507add86da5847a96de7c6f5b646a8",
+                "url": "https://api.github.com/repos/huludini/pw-api/zipball/751e7d33ca413625f59b371a3bd58d147bf9dad6",
+                "reference": "751e7d33ca413625f59b371a3bd58d147bf9dad6",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +525,7 @@
                 }
             ],
             "description": "A package to retrieve data from a Perfect World game server",
-            "time": "2015-12-23 06:35:47"
+            "time": "2015-12-23 07:00:42"
         },
         {
             "name": "illuminate/html",
