@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "huludini/pw-api": "1.0.0",
+        "huludini/pw-api": "^1.0",
         "laracasts/flash": "^1.3",
         "guzzlehttp/guzzle": "^6.1",
         "efriandika/laravel-settings": "1.1.0",
