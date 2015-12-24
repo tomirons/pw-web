@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Session;
 
 class CharacterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware( 'auth' );
+
+        $this->middleware( 'server.online' );
+    }
     public function getSelect( $role_id )
     {
         if ( $role_id !== Auth::user()->ID )
