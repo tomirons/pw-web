@@ -3,7 +3,14 @@
 /* Home */
 Breadcrumbs::register( 'home', function( $breadcrumbs )
 {
-    $breadcrumbs->push( trans( 'main.home' ) );
+    $breadcrumbs->push( trans( 'main.home' ), url( '/' ) );
+});
+
+Breadcrumbs::register( 'account.settings', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'home' );
+    $breadcrumbs->push( trans( 'main.account' ) );
+    $breadcrumbs->push( trans( 'main.settings' ) );
 });
 
 /* News */

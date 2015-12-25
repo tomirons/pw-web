@@ -155,7 +155,8 @@ return [
         Efriandika\LaravelSettings\SettingsServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
-        Rephlux\PageTitle\PageTitleServiceProvider::class
+        Rephlux\PageTitle\PageTitleServiceProvider::class,
+        \App\Providers\CustomValidation::class,
 
     ],
 

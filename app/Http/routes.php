@@ -17,6 +17,10 @@ Route::controller( 'auth', 'Auth\AuthController', [
     'getLogin'    => 'auth.login',
 ]);
 
+Route::get( 'account/settings', ['as' => 'account.settings', 'uses' => 'Front\AccountController@getSettings'] );
+Route::post( 'account/settings/email', 'Front\AccountController@postEmail' );
+Route::post( 'account/settings/password', 'Front\AccountController@postPassword' );
+
 /* Character */
 Route::get( 'character/select/{role_id}', 'Front\CharacterController@getSelect' );
 

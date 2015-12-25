@@ -76,10 +76,13 @@ return [
     'acc_balance' => 'Account Balance: :money :currency',
     'buy' => 'Buy',
     'no_character_selected' => 'You must select a character before proceeding.',
+    'no_characters' => 'You haven\'t created any characters.',
     'not_enough' => 'You don\'t have enough :currency.',
 
+    'save' => 'Save',
     'save_settings' => 'Save Settings',
     'settings' => 'Settings',
+    'account' => 'Account',
     'edit' => 'Edit',
     'remove' => 'Remove',
     'loading' => 'Loading...',
@@ -89,6 +92,37 @@ return [
         'add' => 'Automate Your Panel',
         'info' => 'Adding this cron job will automate the voting transfer and ranking updates.',
         'job' => '* * * * * php ' . base_path( 'artisan' ) . ' schedule:run >> /dev/null 2>&1'
+    ],
+
+    'acc_tabs' => [
+        'overview' => [
+            'title' => 'Overview',
+            'fields' => [
+                'name' => 'Name',
+                'email' => 'Email',
+                'password' => 'Password'
+            ]
+        ],
+        'email' => [
+            'title' => 'Email Address',
+            'fields' => [
+                'email' => 'Email Address'
+            ]
+        ],
+        'password' => [
+            'title' => 'Password',
+            'fields' => [
+                'current' => 'Current Password',
+                'current_desc' => 'To ensure this change is secure',
+                'new' => 'New Password',
+                'confirm' => 'Confirm New Password'
+            ]
+        ]
+    ],
+
+    'char_list' => [
+        'title' => 'My Characters',
+        'id' => 'ID: :n'
     ]
 
 ];

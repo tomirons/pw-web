@@ -121,6 +121,7 @@
                 <div class="page-content">
                     <div class="container">
                         <div class="page-content-inner">
+                            @include( 'errors.list' )
                             @include( 'flash::message' )
                             <div class="row">
                                 <div class="col-md-{{ Request::is( 'shop*' ) ? '12' : '9' }}">
