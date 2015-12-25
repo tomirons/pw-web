@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Transfer;
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,7 +26,25 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->call(function () {
+            $transfers = Transfer::all();
+            foreach ( $transfers as $transfer )
+            {
+                if ( !DB::table( 'usecashnow' )->where( 'userid', $transfer->userid )->where( 'zoneid', $transfer->zoneid )->take(1)->exists() )
+                {
+                    DB::table( 'usecashnow' )->insert([
+                        'userid' => $transfer->userid,
+                        'zoneid' => $transfer->zoneid,
+                        'sn' => 0,
+                        'aid' => 1,
+                        'point' => 0,
+                        'cash' => $transfer->cash,
+                        'status' => 1,
+                        'creatime' => Carbon::now()
+                    ]);
+                    $transfer->delete();
+                }
+            }
+        })->everyMinute();
     }
 }
