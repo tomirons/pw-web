@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Front;
 use App\Faction;
 use App\Player;
 use App\Territory;
+use App\User;
+use Huludini\PerfectWorldAPI\API;
+use Huludini\PerfectWorldAPI\Gamed;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

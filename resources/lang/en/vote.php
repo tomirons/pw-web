@@ -13,6 +13,7 @@ return [
     'cooldown' => 'You can vote again in...',
     'cooldown_done' => 'You can vote again!',
     'no_sites' => 'There aren\'t any sites to vote for, please contact an administrator.',
+    'already_voted' => 'Sorry, but you\'ve already voted for this site.',
     'time' => [
         'hours' => 'hours',
         'minutes' => 'minutes',

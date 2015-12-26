@@ -13,6 +13,8 @@ class Faction extends Model
      */
     protected $table = 'pweb_ranking_factions';
 
+    protected $fillable = [ 'id', 'name', 'level', 'master', 'master_name', 'members', 'time_used', 'pk_count', 'announce', 'sys_info', 'last_op_time', 'territories', 'contribution' ];
+
     public function scopeSubType( $query, $sub )
     {
         $column = [

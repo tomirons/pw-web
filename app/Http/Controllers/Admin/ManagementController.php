@@ -93,13 +93,10 @@ class ManagementController extends Controller
                 $users = User::all();
                 foreach ( $users as $user )
                 {
-                    $roles = $api->getRoles( $user->ID ) ? $api->getRoles( $user->ID )['roles'] : NULL;
-                    if ( count( $roles ) > 0 )
+                    $roles = $api->getRoles( $user->ID ) ? $api->getRoles( $user->ID )['roles'] : [];
+                    foreach ( $roles as $role )
                     {
-                        foreach ( $roles as $role )
-                        {
-                            $api->sendMail( $role['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
-                        }
+                        $api->sendMail( $role['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
                     }
                 }
                 flash()->success( trans( 'management.complete.mailer.all' ) );
