@@ -4,7 +4,7 @@
     <div class="portlet light">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-ticket"></i> {{ trans( 'voucher.redeem_title' ) }}
+                {{ trans( 'voucher.redeem_title' ) }}
             </div>
         </div>
         <div class="portlet-body">
