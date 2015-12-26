@@ -27,6 +27,7 @@ return [
     'acp_link' => 'Admin Control Panel',
     'acc_settings' => 'Account Settings',
     'select_character' => 'Select a Character',
+    'site' => 'Go to Site',
 
     /* Class Names */
     'classes' => [
@@ -128,6 +129,11 @@ return [
     '404' => [
         'title' => 'Houston, we have a problem.',
         'content' => 'Actually, the page you are looking for does not exist.',
+        'button' => 'Return home'
+    ],
+    '500' => [
+        'title' => 'Oops! Something went wrong.',
+        'content' => 'We are fixing it! Please come back in a while.',
         'button' => 'Return home'
     ]
 
