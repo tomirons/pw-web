@@ -123,6 +123,12 @@ return [
     'char_list' => [
         'title' => 'My Characters',
         'id' => 'ID: :n'
+    ],
+
+    '404' => [
+        'title' => 'Houston, we have a problem.',
+        'content' => 'Actually, the page you are looking for does not exist.',
+        'button' => 'Return home'
     ]
 
 ];

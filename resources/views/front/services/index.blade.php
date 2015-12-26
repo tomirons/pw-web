@@ -11,7 +11,7 @@
                 <form action="{{ url( 'services/' . $service->key ) }}" method="post">
                     <div class="grid-item box bg-white">
                         <div class="grid_icon_service">
-                            <i class="fa fa-{{ $service->icon }}"></i>
+                            <i class="icon-{{ $service->icon }}"></i>
                         </div>
                         <div class="grid-item-title">
                             <span class="font-dark">{{ trans( 'services.' . $service->key . '.title') }}</span>

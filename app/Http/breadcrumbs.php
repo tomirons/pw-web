@@ -46,6 +46,12 @@ Breadcrumbs::register( 'vote.index', function( $breadcrumbs )
     $breadcrumbs->push( trans( 'main.apps.vote' ) );
 });
 
+Breadcrumbs::register( 'vote.success', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'vote.index' );
+    $breadcrumbs->push( trans( 'vote.success.title' ) );
+});
+
 /* Voucher */
 Breadcrumbs::register( 'voucher.index', function( $breadcrumbs )
 {

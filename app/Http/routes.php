@@ -48,7 +48,8 @@ Route::post( 'donate/paymentwall', 'Front\DonateController@postPaymentwall' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
-Route::get( 'vote/check/{vote}', 'Front\VoteController@getCheck' );
+Route::get( 'vote/success/{vote}', ['as' => 'vote.success', 'uses' => 'Front\VoteController@getSuccess'] );
+Route::post( 'vote/check/{vote}', 'Front\VoteController@postCheck' );
 
 /* Voucher */
 Route::get( 'voucher', ['as' => 'voucher.index', 'uses' => 'Front\VoucherController@getIndex'] );

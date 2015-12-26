@@ -22,7 +22,10 @@
                 </div>
                 <div class="portlet-body">
                     @if ( $vote_info[ $site->id ]['status'] )
-                        <a class="btn btn-block btn-lg btn-primary" href="{{ url( 'vote/check/' . $site->id ) }}">{{ trans( 'vote.button', ['name' => $site->name] ) }}</a>
+                        <form action="{{ url( 'vote/check/' . $site->id ) }}" method="post">
+                            {!! csrf_field() !!}
+                            <button class="btn btn-block btn-lg btn-primary" type="submit">{{ trans( 'vote.button', ['name' => $site->name] ) }}</button>
+                        </form>
                     @else
                         <div class="bg-grey text-center p-md">
                             <span>{{ trans( 'vote.cooldown' ) }}</span>

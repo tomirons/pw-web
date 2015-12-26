@@ -20,6 +20,13 @@ return [
         'seconds' => 'seconds'
     ],
 
+    'success' => [
+        'title' => 'Success',
+        'continue' => 'Click below to continue!',
+        'notice' => 'Enter the code on the next page accurately or you will <b>NOT</b> get your reward!',
+        'button' => 'Continue'
+    ],
+
     'add' => 'Add Site',
     'view' => 'View Sites',
 

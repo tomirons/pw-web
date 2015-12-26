@@ -51,7 +51,13 @@ class VoteController extends Controller
         return view( 'front.vote.index', compact( 'sites', 'vote_info' ) );
     }
 
-    public function getCheck( Request $request, VoteSite $site )
+    public function getSuccess( VoteSite $site )
+    {
+        pagetitle( [ trans( 'vote.success.title' ), trans( 'main.apps.vote' ), settings( 'server_name' ) ] );
+        return view( 'front.vote.success', compact( 'site' ) );
+    }
+
+    public function postCheck( Request $request, VoteSite $site )
     {
         if ( !VoteLog::recent( $request, $site )->exists() )
         {
@@ -77,11 +83,12 @@ class VoteController extends Controller
                 'reward' => ( $site->double_rewards ) ? ( $site->reward_amount * 2 ) : $site->reward_amount,
                 'site_id' => $site->id
             ]);
+            return redirect( 'vote/success/' . $site->id );
         }
         else
         {
             flash()->error( trans( 'vote.already_voted' ) );
-            return redirect( 'vote' );
+            return redirect()->back();
         }
     }
 }

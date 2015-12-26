@@ -13,7 +13,7 @@ class ServicesTableSeeder extends Seeder
     {
         DB::table('pweb_services')->insert([
             'key' => 'broadcast',
-            'icon' => 'bullhorn',
+            'icon' => 'microphone',
             'currency_type' => 'virtual',
             'price' => 50,
             'enabled' => 1,
@@ -23,7 +23,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'virtual_to_cubi',
-            'icon' => 'exchange',
+            'icon' => 'shuffle',
             'currency_type' => 'virtual',
             'price' => 10,
             'enabled' => 1,
@@ -33,7 +33,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'cultivation_change',
-            'icon' => 'retweet',
+            'icon' => 'refresh',
             'currency_type' => 'virtual',
             'price' => 100,
             'enabled' => 1,
@@ -43,7 +43,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'gold_to_virtual',
-            'icon' => 'exchange',
+            'icon' => 'shuffle',
             'currency_type' => 'gold',
             'price' => 1000000,
             'enabled' => 1,
@@ -53,7 +53,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'level_up',
-            'icon' => 'plus-circle',
+            'icon' => 'plus',
             'currency_type' => 'virtual',
             'price' => 10,
             'enabled' => 1,
@@ -63,7 +63,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'max_meridian',
-            'icon' => 'unlock',
+            'icon' => 'lock-open',
             'currency_type' => 'virtual',
             'price' => 500,
             'enabled' => 1,
@@ -73,7 +73,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'reset_exp',
-            'icon' => 'refresh',
+            'icon' => 'reload',
             'currency_type' => 'virtual',
             'price' => 0,
             'enabled' => 1,
@@ -83,7 +83,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'reset_sp',
-            'icon' => 'refresh',
+            'icon' => 'reload',
             'currency_type' => 'virtual',
             'price' => 0,
             'enabled' => 1,
@@ -93,7 +93,7 @@ class ServicesTableSeeder extends Seeder
 
         DB::table('pweb_services')->insert([
             'key' => 'reset_stash_password',
-            'icon' => 'unlock',
+            'icon' => 'lock-open',
             'currency_type' => 'virtual',
             'price' => 150,
             'enabled' => 1,
