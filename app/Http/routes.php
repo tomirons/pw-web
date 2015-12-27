@@ -136,7 +136,7 @@ Route::group( ['prefix' => 'admin' ], function() {
     ]);
 
     /* Installer */
-    Route::group( ['prefix' => 'install', 'as' => 'admin.installer.'], function()
+    /*Route::group( ['prefix' => 'install', 'as' => 'admin.installer.'], function()
     {
         Route::group( ['middleware' => 'installed'], function()
         {
@@ -175,6 +175,6 @@ Route::group( ['prefix' => 'admin' ], function() {
                 'uses' => 'Admin\InstallController@complete'
             ]);
         });
-    });
+    });*/
 
 });

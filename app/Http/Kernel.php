@@ -20,7 +20,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\VerifyCsrfToken::class,
         \App\Http\Middleware\EmptyCharacterIfServerOffline::class,
         \App\Http\Middleware\ApplicationEnabled::class,
-        \App\Http\Middleware\NotInstalled::class,
+        //\App\Http\Middleware\NotInstalled::class,
     ];
 
     /**
