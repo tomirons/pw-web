@@ -548,3 +548,20 @@ div.sale label {
     overflow-x: hidden;
     height: 400px;
 }
+
+.page-content.installer {
+    margin-left: 0 !important;
+    margin-top: 0;
+    padding: 25px 20px 10px;
+}
+
+.list-group.installer span {
+    padding: 7px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 16px;
+}
