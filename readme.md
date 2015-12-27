@@ -18,7 +18,7 @@ Then set the permissions to 775 for the following directories/files:
 4. bootstrap/cache/
 5. .env
 
-Once that is done you need to edit the .env file and change the database credentials.
+Once that is done you'll need to edit the .env file and change the database credentials.
 
 Then run the following command to install all the required packages:
 ````
@@ -27,6 +27,14 @@ composer run
 Make sure your inside the `pw-web` directory.
 
 The next step is to create all the database tables and default records, run the following command:
+
+**Note:** If you have **ANY** of the following columns in the `users` table, **REMOVE** them!
+- money
+- role
+- remember_token
+- created_at
+- updated_at
+
 ````
 php artisan migrate --seed
 ````
