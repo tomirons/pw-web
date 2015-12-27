@@ -19,6 +19,7 @@ class AccountController extends Controller
 
     public function getSettings()
     {
+        pagetitle( [ trans( 'main.settings' ), settings( 'server_name' ) ] );
         return view( 'front.account.index' );
     }
 
