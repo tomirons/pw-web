@@ -64,7 +64,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function isAdmin()
     {
-        return true;
+        return ( $this->role === 'administrator' ) ? TRUE : FALSE;
     }
 
     public function voucher_logs()
