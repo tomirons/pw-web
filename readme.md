@@ -59,6 +59,6 @@ Finally, run this last command to generate an application key:
 php artisan key:generate
 ````
 
-If you receive a 500 error after installation, redo the permissions again.
+**Note:** If you receive a 500 error after installation, redo the permissions again.
 
 If you receive any other errors please create an [issue](https://github.com/huludini/pw-web/issues).
