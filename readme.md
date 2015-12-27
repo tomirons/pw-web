@@ -16,7 +16,7 @@ Then set the permissions to 777 for the following directories/files:
 4. bootstrap/cache/
 5. .env
 
-Once that is done you'll need to edit the .env file and change the database credentials.
+Next, edit the `.env` file and change the database credentials.
 
 **Note:** Make sure your inside the `pw-web` directory when you run the commands.
 
@@ -59,5 +59,6 @@ Finally, run this last command to generate an application key:
 php artisan key:generate
 ````
 
-If you haven't received any errors then you should be good to go!
-If you receive any errors please create an [issue](https://github.com/huludini/pw-web/issues).
+If you receive a 500 error after installation, redo the permissions again.
+
+If you receive any other errors please create an [issue](https://github.com/huludini/pw-web/issues).
