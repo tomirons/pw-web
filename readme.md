@@ -6,8 +6,6 @@
 
 ### Setup
 
-Once you've go the requirements done, next is the setup.
-
 First you need to rename `.env.example` to `.env`
 
 Then set the permissions to 775 for the following directories/files:
@@ -22,7 +20,7 @@ Once that is done you'll need to edit the .env file and change the database cred
 
 **Note:** Make sure your inside the `pw-web` directory when you run the commands.
 
-Then run the following command to install all the required packages:
+Run the following command to install all the required packages:
 ````
 composer install
 ````
@@ -33,6 +31,23 @@ composer install
 - remember_token
 - created_at
 - updated_at
+
+**Note:** If you have **ANY** of the following tables in your database, **REMOVE** them!
+- migrations
+- password_resets
+- pweb_apps
+- pweb_articles
+- pweb_payments
+- pweb_ranking_factions
+- pweb_ranking_players
+- pweb_ranking_territories
+- pweb_services
+- pweb_settings
+- pweb_shop_items
+- pweb_transfer
+- pweb_vote_logs
+- pweb_voucher_logs
+- pweb_vouchers
 
 The next step is to create all the database tables and default records, run the following command:
 ````
