@@ -8,7 +8,7 @@
 
 First you need to rename `.env.example` to `.env`
 
-Then set the permissions to 775 for the following directories/files:
+Then set the permissions to 777 for the following directories/files:
 
 1. storage/app/
 2. storage/framework/
