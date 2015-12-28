@@ -12,6 +12,8 @@ return [
     'server_status_online' => 'Online',
     'server_status_offline' => 'Offline',
     'players_online_title' => 'Players Online',
-    'acc_registered_title' => 'Accounts Registered'
+    'acc_registered_title' => 'Accounts Registered',
+    'total_characters_title' => 'Characters Created',
+    'total_factions_title' => 'Factions Created',
 
 ];
