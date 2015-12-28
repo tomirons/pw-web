@@ -28,6 +28,6 @@
         <div class="number">
             <span data-counter="counterup" data-value="{{ DB::table('point')->count() }}">0</span>
         </div>
-        <div class="desc"> {{ trans( 'widget.players_online_title' ) }} </div>
+        <div class="desc"> {{ trans( 'widget.acc_registered_title' ) }} </div>
     </div>
 </div>
