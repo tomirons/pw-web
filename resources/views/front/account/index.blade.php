@@ -49,7 +49,7 @@
                                 <div class="col-md-6">
                                     <h4 class="block">{{ trans( 'main.char_list.title' ) }}</h4>
                                     <ul class="list-group">
-                                        @if ( $api->serverOnline() )
+                                        @if ( $api->online )
                                             {{--*/ $roles = Auth::user()->roles() /*--}}
                                             @if ( count( $roles ) > 0 )
                                                 @foreach ( $roles as $role )

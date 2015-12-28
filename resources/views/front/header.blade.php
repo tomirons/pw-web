@@ -32,7 +32,7 @@
                                         {{ Auth::user()->character() ? Auth::user()->character()['base']['name'] : trans( 'main.select_character' ) }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
-                                        @if ( $api->serverOnline() )
+                                        @if ( $api->online )
                                             {{--*/ $roles = Auth::user()->roles() /*--}}
                                             @if ( count( $roles ) > 0 )
                                                 @foreach( $roles as $role )
@@ -145,7 +145,7 @@
         <script src="{{ asset( 'js/front/global.js' ) }}"></script>
         <script src="{{ asset( 'js/front/layout.js' ) }}"></script>
 
-        @if ( !$api->serverOnline() )
+        @if ( !$api->online )
             <script>
                 $(function() {
                     toastr.options = {

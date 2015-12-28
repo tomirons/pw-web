@@ -62,7 +62,7 @@ class Kernel extends ConsoleKernel
          */
         $schedule->call(function () {
             $api = new API();
-            if ( $api->serverOnline() )
+            if ( $api->online )
             {
                 set_time_limit( 0 );
                 $users = User::all();
@@ -134,7 +134,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             $api = new API();
             $handler = NULL;
-            if ( $api->serverOnline() )
+            if ( $api->online )
             {
                 set_time_limit( 0 );
                 do{
@@ -191,7 +191,7 @@ class Kernel extends ConsoleKernel
          */
         $schedule->call(function() {
             $api = new API();
-            if ( $api->serverOnline() )
+            if ( $api->online )
             {
                 $territories = $api->getTerritories() ? $api->getTerritories()['Territory'] : [];
                 foreach( $territories as $territory )

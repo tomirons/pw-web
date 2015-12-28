@@ -17,7 +17,7 @@ class ServerOnline
     public function handle($request, Closure $next)
     {
         $api = new API();
-        if ( !$api->serverOnline() )
+        if ( !$api->online )
         {
             flash()->error( trans( 'main.server_not_online' ) );
             return redirect()->back();

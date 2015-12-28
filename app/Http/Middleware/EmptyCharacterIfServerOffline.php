@@ -17,7 +17,7 @@ class EmptyCharacterIfServerOffline
     public function handle($request, Closure $next)
     {
         $api = new API();
-        if ( !$api->serverOnline() )
+        if ( !$api->online )
         {
             $request->session()->forget('character');
         }
