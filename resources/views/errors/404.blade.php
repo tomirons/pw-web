@@ -26,7 +26,7 @@
             <h2>{{ trans( 'main.404.title' ) }}</h2>
             <p> {{ trans( 'main.404.content' ) }} </p>
             <p>
-                <a href="{{ ( Request::is( 'admin/*' ) ? 'admin' : '/' ) }}" class="btn red btn-outline"> {{ trans( 'main.404.button' ) }} </a>
+                <a href="{{ url( Request::is( 'admin/*' ) ? 'admin' : '/' ) }}" class="btn red btn-outline"> {{ trans( 'main.404.button' ) }} </a>
                 <br>
             </p>
         </div>
