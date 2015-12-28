@@ -80,14 +80,14 @@ Breadcrumbs::register( 'ranking.index', function( $breadcrumbs )
 */
 Breadcrumbs::register( 'admin.index', function( $breadcrumbs )
 {
-    $breadcrumbs->push( trans( 'main.home' ), route( 'admin.index' ) );
+    $breadcrumbs->push( trans( 'main.dashboard' ), route( 'admin.index' ) );
 });
 
 /* System */
-Breadcrumbs::register( 'admin.system.panel', function( $breadcrumbs )
+Breadcrumbs::register( 'admin.system.settings', function( $breadcrumbs )
 {
     $breadcrumbs->parent( 'admin.index' );
-    $breadcrumbs->push( trans( 'system.panel' ) );
+    $breadcrumbs->push( trans( 'main.settings' ) );
 });
 
 Breadcrumbs::register( 'admin.system.apps', function( $breadcrumbs )

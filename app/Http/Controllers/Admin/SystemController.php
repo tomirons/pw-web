@@ -11,13 +11,13 @@ use App\Http\Controllers\Controller;
 
 class SystemController extends Controller
 {
-    public function getPanel()
+    public function getSettings()
     {
         pagetitle( [ trans( 'system.panel' ), trans( 'main.apps.system' ), settings( 'server_name' ) ] );
-        return view( 'admin.system.panel' );
+        return view( 'admin.system.settings' );
     }
 
-    public function postPanel( Request $request )
+    public function postSettings( Request $request )
     {
         Settings::set( 'server_name', $request->server_name );
 

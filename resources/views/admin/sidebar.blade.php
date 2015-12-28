@@ -19,9 +19,9 @@
                             <span class="title">{{ trans( 'system.apps' ) }}</span>
                         </a>
                     </li>
-                    <li class="nav-item {{ Request::is( '*system/panel') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/system/panel' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'system.panel' ) }}</span>
+                    <li class="nav-item {{ Request::is( '*system/settings') ? 'active' : NULL }}">
+                        <a href="{{ url( 'admin/system/settings' ) }}" class="nav-link">
+                            <span class="title">{{ trans( 'main.settings' ) }}</span>
                         </a>
                     </li>
                     <!--<li class="nav-item {{ Request::is( '*system/widget') ? 'active' : NULL }}">

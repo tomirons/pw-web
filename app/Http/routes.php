@@ -78,8 +78,8 @@ Route::group( ['prefix' => 'admin' ], function() {
     /* System */
     Route::group( ['prefix' => 'system', 'as' => 'admin.system.'], function() {
 
-        Route::get( 'panel', ['as' => 'panel', 'uses' => 'Admin\SystemController@getPanel'] );
-        Route::post( 'panel', 'Admin\SystemController@postPanel' );
+        Route::get( 'settings', ['as' => 'settings', 'uses' => 'Admin\SystemController@getSettings'] );
+        Route::post( 'settings', 'Admin\SystemController@postSettings' );
         Route::get( 'apps', ['as' => 'apps', 'uses' => 'Admin\SystemController@getApps'] );
         Route::post( 'apps', 'Admin\SystemController@postApps' );
 
