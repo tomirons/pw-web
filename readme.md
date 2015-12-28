@@ -6,15 +6,20 @@
 
 ### Setup
 
+Run this command to retrieve the panel:
+````
+git clone https://github.com/huludini/pw-web
+````
+
 First you need to rename `.env.example` to `.env`
 
 Then set the permissions to 777 for the following directories/files:
 
-1. storage/app/
-2. storage/framework/
-3. storage/logs/
-4. bootstrap/cache/
-5. .env
+- storage/app/
+- storage/framework/
+- storage/logs/
+- bootstrap/cache/
+- .env
 
 Next, edit the `.env` file and change the database credentials.
 
