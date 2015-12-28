@@ -31,139 +31,153 @@
                     </li>-->
                 </ul>
             </li>
-            <li class="nav-item {{ Request::is( '*news*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-book-open"></i>
-                    <span class="title">{{ trans( 'main.apps.news' ) }}</span>
-                    <span class="arrow {{ Request::is( '*news*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*news/create') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/news/create' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'news.add' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*news') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/news' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'news.view' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*news/settings') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/news/settings' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'main.settings' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*shop*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-basket"></i>
-                    <span class="title">{{ trans( 'main.apps.shop' ) }}</span>
-                    <span class="arrow {{ Request::is( '*shop*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*shop/create') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/shop/create' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'shop.add' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*shop') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/shop' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'shop.view' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*shop/settings') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/shop/settings' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'main.settings' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*donate*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-credit-card"></i>
-                    <span class="title">{{ trans( 'main.apps.donate' ) }}</span>
-                    <span class="arrow {{ Request::is( '*donate*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*donate/settings') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/donate/settings' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'main.settings' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*voucher*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-tag"></i>
-                    <span class="title">{{ trans( 'main.apps.voucher' ) }}</span>
-                    <span class="arrow {{ Request::is( '*voucher*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*voucher/create') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/voucher/create' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'voucher.add' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*voucher') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/voucher' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'voucher.view' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*vote*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-like"></i>
-                    <span class="title">{{ trans( 'main.apps.vote' ) }}</span>
-                    <span class="arrow {{ Request::is( '*vote*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*vote/create') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/vote/create' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'vote.add' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*vote') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/vote' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'vote.view' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*services*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-magic-wand"></i>
-                    <span class="title">{{ trans( 'main.apps.services' ) }}</span>
-                    <span class="arrow {{ Request::is( '*services*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*services') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/services' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'services.edit' ) }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is( '*services/settings') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/services/settings' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'main.settings' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item {{ Request::is( '*ranking*') ? 'active open' : NULL }}">
-                <a href="#" class="nav-link nav-toggle">
-                    <i class="icon-bar-chart"></i>
-                    <span class="title">{{ trans( 'main.apps.ranking' ) }}</span>
-                    <span class="arrow {{ Request::is( '*ranking*') ? 'open' : NULL }}"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item {{ Request::is( '*ranking/settings') ? 'active' : NULL }}">
-                        <a href="{{ url( 'admin/ranking/settings' ) }}" class="nav-link">
-                            <span class="title">{{ trans( 'main.settings' ) }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            @if ( \App\Application::find( 'news' )->enabled )
+                <li class="nav-item {{ Request::is( '*news*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-book-open"></i>
+                        <span class="title">{{ trans( 'main.apps.news' ) }}</span>
+                        <span class="arrow {{ Request::is( '*news*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*news/create') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/news/create' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'news.add' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*news') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/news' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'news.view' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*news/settings') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/news/settings' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'main.settings' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'shop' )->enabled )
+                <li class="nav-item {{ Request::is( '*shop*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-basket"></i>
+                        <span class="title">{{ trans( 'main.apps.shop' ) }}</span>
+                        <span class="arrow {{ Request::is( '*shop*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*shop/create') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/shop/create' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'shop.add' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*shop') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/shop' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'shop.view' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*shop/settings') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/shop/settings' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'main.settings' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'donate' )->enabled )
+                <li class="nav-item {{ Request::is( '*donate*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-credit-card"></i>
+                        <span class="title">{{ trans( 'main.apps.donate' ) }}</span>
+                        <span class="arrow {{ Request::is( '*donate*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*donate/settings') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/donate/settings' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'main.settings' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'voucher' )->enabled )
+                <li class="nav-item {{ Request::is( '*voucher*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-tag"></i>
+                        <span class="title">{{ trans( 'main.apps.voucher' ) }}</span>
+                        <span class="arrow {{ Request::is( '*voucher*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*voucher/create') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/voucher/create' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'voucher.add' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*voucher') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/voucher' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'voucher.view' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'vote' )->enabled )
+                <li class="nav-item {{ Request::is( '*vote*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-like"></i>
+                        <span class="title">{{ trans( 'main.apps.vote' ) }}</span>
+                        <span class="arrow {{ Request::is( '*vote*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*vote/create') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/vote/create' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'vote.add' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*vote') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/vote' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'vote.view' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'services' )->enabled )
+                <li class="nav-item {{ Request::is( '*services*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-magic-wand"></i>
+                        <span class="title">{{ trans( 'main.apps.services' ) }}</span>
+                        <span class="arrow {{ Request::is( '*services*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*services') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/services' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'services.edit' ) }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is( '*services/settings') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/services/settings' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'main.settings' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            @if ( \App\Application::find( 'ranking' )->enabled )
+                <li class="nav-item {{ Request::is( '*ranking*') ? 'active open' : NULL }}">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="icon-bar-chart"></i>
+                        <span class="title">{{ trans( 'main.apps.ranking' ) }}</span>
+                        <span class="arrow {{ Request::is( '*ranking*') ? 'open' : NULL }}"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is( '*ranking/settings') ? 'active' : NULL }}">
+                            <a href="{{ url( 'admin/ranking/settings' ) }}" class="nav-link">
+                                <span class="title">{{ trans( 'main.settings' ) }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
             <li class="nav-item {{ Request::is( '*management*') ? 'active open' : NULL }}">
                 <a href="#" class="nav-link nav-toggle">
                     <i class="icon-users"></i>
