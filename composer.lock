@@ -492,16 +492,16 @@
         },
         {
             "name": "huludini/pw-api",
-            "version": "v1.0.1",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/huludini/pw-api.git",
-                "reference": "41934a5f4aa93323b202566e90aba4935e65cc66"
+                "reference": "3549432daa493afc77654c17dab1bcd697ad6cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/huludini/pw-api/zipball/41934a5f4aa93323b202566e90aba4935e65cc66",
-                "reference": "41934a5f4aa93323b202566e90aba4935e65cc66",
+                "url": "https://api.github.com/repos/huludini/pw-api/zipball/3549432daa493afc77654c17dab1bcd697ad6cc3",
+                "reference": "3549432daa493afc77654c17dab1bcd697ad6cc3",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +525,7 @@
                 }
             ],
             "description": "A package to retrieve data from a Perfect World game server",
-            "time": "2015-12-28 00:49:02"
+            "time": "2015-12-29 02:39:20"
         },
         {
             "name": "illuminate/html",

@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -81,7 +82,7 @@ class AuthController extends Controller
             $this->incrementLoginAttempts($request);
         }
 
-        return redirect($this->loginPath())
+        return redirect()->back()
             ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
@@ -107,7 +108,7 @@ class AuthController extends Controller
         Auth::login($this->create($request->all()));
 
         flash()->success( trans( 'main.reg_complete' ) );
-        return redirect($this->redirectPath());
+        return redirect()->back();
     }
 
     /**

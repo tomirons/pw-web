@@ -71,7 +71,7 @@ Route::get( 'ranking/faction/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\
 //Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
 
 /* Admin */
-Route::group( ['prefix' => 'admin' ], function() {
+Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], function() {
 
     Route::get( '/', ['as' => 'admin.index', 'uses' => 'Admin\IndexController@getIndex'] );
 
