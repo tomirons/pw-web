@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Application;
 use Huludini\PerfectWorldAPI\API;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
@@ -72,7 +73,10 @@ class ViewServiceProvider extends ServiceProvider
             $view->with( 'currencies', trans( 'donate.currency' ) );
         });
 
-        view()->share( 'api', new API() );
+        if ( Schema::hasTable( 'pweb_settings' ) )
+        {
+            view()->share( 'api', new API() );
+        }
     }
 
     /**

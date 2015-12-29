@@ -68,7 +68,7 @@ class ServicesController extends Controller
         $role = $user->character()['base']['id'];
         $message = $request->message;
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( $this->checkOnline( $role ) )
             {
@@ -106,7 +106,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > ( $request->quantity * $service->price ) )
+        if ( $user->money >= ( $request->quantity * $service->price ) )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -137,7 +137,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -236,7 +236,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > ( $request->quantity * $service->price ) )
+        if ( $user->money >= ( $request->quantity * $service->price ) )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -287,7 +287,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -343,7 +343,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -385,7 +385,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -427,7 +427,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {
@@ -476,7 +476,7 @@ class ServicesController extends Controller
         $user = Auth::user();
         $role = $user->character()['base']['id'];
 
-        if ( $user->money > $service->price )
+        if ( $user->money >= $service->price )
         {
             if ( !$this->checkOnline( $role ) )
             {

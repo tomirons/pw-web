@@ -18,6 +18,7 @@ class CharacterController extends Controller
 
         $this->middleware( 'server.online' );
     }
+
     public function getSelect( $role_id )
     {
         if ( $role_id !== Auth::user()->ID )

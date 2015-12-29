@@ -79,6 +79,7 @@ return [
     'no_character_selected' => 'You must select a character before proceeding.',
     'no_characters' => 'You haven\'t created any characters.',
     'not_enough' => 'You don\'t have enough :currency.',
+    'not_enough_gold' => 'You don\'t have enough gold.',
 
     'save' => 'Save',
     'save_settings' => 'Save Settings',

@@ -3,13 +3,6 @@
 return [
 
     /**
-     * The IP of your machine the API will be connecting to.
-     *
-     * @var string
-     */
-    'local' => '127.0.0.1',
-
-    /**
      * These ports MUST be open if you the package isn't on the host machine
      *
      * @var array
@@ -20,15 +13,6 @@ return [
         'gacd' => 29300,
         'client' => 29000
     ],
-
-    /**
-     * Your game version
-     *
-     * Available versions: 07, 63, 69, 70, 80, 85, 88, 101
-     *
-     * @var int
-     */
-    'game_version' => '101',
 
     'maxbuffer' => 65536,
 

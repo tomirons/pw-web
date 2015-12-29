@@ -17,6 +17,11 @@ class SettingsTableSeeder extends Seeder
         ]);
 
         DB::table('pweb_settings')->insert([
+            'key' => 'server_ip',
+            'value' => serialize('127.0.0.1')
+        ]);
+
+        DB::table('pweb_settings')->insert([
             'key' => 'server_version',
             'value' => serialize('101')
         ]);

@@ -3,7 +3,7 @@
 @section( 'content' )
     <div class="portlet light bordered">
         <div class="portlet-body form">
-            <form action="{{ url( 'admin/system/panel' ) }}" method="post" class="form-horizontal">
+            <form action="{{ url( 'admin/system/settings' ) }}" method="post" class="form-horizontal">
                 {!! csrf_field() !!}
                 <div class="form-body">
                     <div class="form-group form-md-line-input">
@@ -17,6 +17,13 @@
                         <label class="col-md-2 control-label" for="currency_name">{{ trans( 'system.currency_name' ) }}</label>
                         <div class="col-md-9">
                             <input name="currency_name" type="text" class="form-control" id="currency_name" placeholder="{{ trans( 'system.currency_name' ) }}" value="{{ settings( 'currency_name' ) }}">
+                            <div class="form-control-focus"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-2 control-label" for="server_ip">{{ trans( 'system.server_ip' ) }}</label>
+                        <div class="col-md-9">
+                            <input name="server_ip" type="text" class="form-control" id="server_ip" placeholder="{{ trans( 'system.server_ip' ) }}" value="{{ settings( 'server_ip' ) }}">
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>

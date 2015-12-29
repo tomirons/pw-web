@@ -23,6 +23,8 @@ class SystemController extends Controller
 
         Settings::set( 'currency_name', $request->currency_name );
 
+        Settings::set( 'server_ip', $request->server_ip );
+
         Settings::set( 'server_version', $request->server_version );
 
         Settings::set( 'encryption_type', $request->encryption_type );
