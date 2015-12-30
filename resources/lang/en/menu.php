@@ -16,13 +16,13 @@ return [
     ],
     'news' => [
         'title' => 'News',
-        'add' => 'Add Article',
+        'create' => 'Add Article',
         'view' => 'View Articles',
         'settings' => 'Settings'
     ],
     'shop' => [
         'title' => 'Shop',
-        'add' => 'Add Item',
+        'create' => 'Add Item',
         'view' => 'View Items',
         'settings' => 'Settings'
     ],
@@ -32,12 +32,12 @@ return [
     ],
     'voucher' => [
         'title' => 'Voucher',
-        'add' => 'Add Voucher',
+        'create' => 'Add Voucher',
         'view' => 'View Vouchers'
     ],
     'vote' => [
         'title' => 'Vote',
-        'add' => 'Add Site',
+        'create' => 'Add Site',
         'view' => 'View Sites'
     ],
     'services' => [

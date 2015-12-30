@@ -29,13 +29,13 @@ return [
         ],
         'news' => [
             'application' => TRUE,
-            'add',
+            'create',
             'view',
             'settings'
         ],
         'shop' => [
             'application' => TRUE,
-            'add',
+            'create',
             'view',
             'settings'
         ],
@@ -45,12 +45,12 @@ return [
         ],
         'voucher' => [
             'application' => TRUE,
-            'add',
+            'create',
             'view'
         ],
         'vote' => [
             'application' => TRUE,
-            'add',
+            'create',
             'view'
         ],
         'services' => [
