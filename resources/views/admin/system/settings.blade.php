@@ -25,6 +25,7 @@
                         <div class="col-md-9">
                             <input name="server_ip" type="text" class="form-control" id="server_ip" placeholder="{{ trans( 'system.server_ip' ) }}" value="{{ settings( 'server_ip' ) }}">
                             <div class="form-control-focus"> </div>
+                            <span class="help-block">{{ trans( 'system.server_ip_desc' ) }}</span>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">

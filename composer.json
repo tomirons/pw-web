@@ -14,7 +14,8 @@
         "illuminate/html": "^5.0",
         "wadeshuler/php-paypal-ipn": "^2.5",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
-        "rephlux/pagetitle": "^0.6.0"
+        "rephlux/pagetitle": "^0.6.0",
+        "knplabs/github-api": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

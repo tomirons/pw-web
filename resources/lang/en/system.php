@@ -18,6 +18,8 @@ return [
         'base64' => 'Base64'
     ],
     'currency_name' => 'Currency Name',
+    'server_ip' => 'Server IP',
+    'server_ip_desc' => 'Only change if server is hosted on a different machine',
     'server_version' => 'Server Version',
     'server_version_desc' => 'Version of Perfect World your running.',
     'encrypt_type' => 'Encryption Type',

@@ -156,7 +156,7 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Rephlux\PageTitle\PageTitleServiceProvider::class,
-        \App\Providers\CustomValidation::class,
+        \App\Providers\CustomValidation::class
 
     ],
 
@@ -215,7 +215,7 @@ return [
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-        'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
+        'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class
     ],
 
 ];
