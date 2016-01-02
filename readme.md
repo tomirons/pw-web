@@ -6,10 +6,7 @@
 
 ### Setup
 
-Run this command to retrieve the panel:
-````
-git clone https://github.com/huludini/pw-web
-````
+Download the latest zip and upload the files.
 
 First you need to rename `.env.example` to `.env`
 
