@@ -83,6 +83,14 @@ Breadcrumbs::register( 'admin.index', function( $breadcrumbs )
     $breadcrumbs->push( trans( 'main.dashboard' ), route( 'admin.index' ) );
 });
 
+/* Members */
+Breadcrumbs::register( 'admin.members.manage', function( $breadcrumbs )
+{
+    $breadcrumbs->parent( 'admin.index' );
+    $breadcrumbs->push( trans( 'main.apps.members' ) );
+    $breadcrumbs->push( trans( 'members.manage' ) );
+});
+
 /* System */
 Breadcrumbs::register( 'admin.system.settings', function( $breadcrumbs )
 {

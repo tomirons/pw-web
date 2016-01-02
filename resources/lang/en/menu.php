@@ -14,6 +14,10 @@ return [
         'apps' => 'Applications',
         'settings' => 'Settings'
     ],
+    'members' => [
+        'title' => 'Members',
+        'manage' => 'Manage'
+    ],
     'news' => [
         'title' => 'News',
         'create' => 'Add Article',

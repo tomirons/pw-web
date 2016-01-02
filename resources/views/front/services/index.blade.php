@@ -3,7 +3,7 @@
 @section( 'content' )
     @include( 'errors.list' )
     <div class="row">
-        <a href="{{ url( 'donate' ) }}" class="btn blue mb-md ml-md"> {{ trans( 'main.acc_balance', ['money' => number_format( Auth::user()->money, 2 ), 'currency' => settings('currency_name')] ) }} </a>
+        <a href="{{ url( 'donate' ) }}" class="btn blue mb-md ml-md"> {{ trans( 'main.acc_balance', ['money' => Auth::user()->money, 'currency' => settings('currency_name')] ) }} </a>
     </div>
     @foreach( $services as $service )
         @if ( $service->enabled)

@@ -134,7 +134,9 @@ elixir(function(mix) {
     /* Plugin Scripts */
     mix.scripts([
         '../global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
-        '../global/plugins/bootstrap-summernote/summernote.min.js'
+        '../global/plugins/bootstrap-summernote/summernote.min.js',
+        '../global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js',
+        '../global/plugins/jquery.input-ip-address-control-1.0.min.js'
     ], 'public/js/admin/plugins.js');
 
     /* Layout Scripts */

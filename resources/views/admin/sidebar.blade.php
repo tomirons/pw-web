@@ -3,7 +3,7 @@
         <ul class="page-sidebar-menu page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
             {{--*/ $menus = config( 'menu.admin' ) /*--}}
             @foreach( $menus as $name => $menu )
-                @if( count( $menu ) == 1 )
+                @if( !is_array( $menu ) )
                     @if( $menu == 'dashboard' )
                         <li class="nav-item start {{ Request::is( 'admin' ) ? 'active' : NULL }}">
                             <a href="{{ url( 'admin/') }}" class="nav-link">

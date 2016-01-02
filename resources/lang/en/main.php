@@ -22,7 +22,8 @@ return [
         'services' => 'Ingame Services',
         'ranking' => 'Ranking',
         'manage' => 'Ingame Management',
-        'system' => 'System'
+        'system' => 'System',
+        'members' => 'Members'
     ],
     'acp_link' => 'Admin Control Panel',
     'acc_settings' => 'Account Settings',

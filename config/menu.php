@@ -11,6 +11,7 @@ return [
     'icons' => [
         'dashboard' => 'home',
         'system' => 'settings',
+        'members' => 'user',
         'news' => 'book-open',
         'shop' => 'basket',
         'donate' => 'credit-card',
@@ -26,6 +27,9 @@ return [
         'system' => [
             'apps',
             'settings'
+        ],
+        'members' => [
+            'manage'
         ],
         'news' => [
             'application' => TRUE,

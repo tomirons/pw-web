@@ -45,6 +45,11 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public function getMoneyAttribute( $value )
+    {
+        return number_format( $value, 2 );
+    }
+
     public function character()
     {
         return session()->get('character');
@@ -54,7 +59,7 @@ class User extends Model implements AuthenticatableContract,
     {
         $api = new API();
         $roles = $api->getRoles( $this->ID );
-        return isset( $roles['roles'] ) ? $roles['roles'] : NULL;
+        return isset( $roles['roles'] ) ? $roles['roles'] : [];
     }
 
     public function getAuthPassword()
