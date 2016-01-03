@@ -28,6 +28,9 @@ return [
         'amount' => [
             'label' => 'Amount to give',
         ]
+    ],
+    'ajax' => [
+        'title' => 'Give :currency to'
     ]
 
 

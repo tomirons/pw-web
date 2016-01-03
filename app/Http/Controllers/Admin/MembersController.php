@@ -28,4 +28,9 @@ class MembersController extends Controller
         flash()->success( trans( 'members.success', ['user' => $user->name, 'count' => $request->amount, 'currency' => strtolower( settings( 'currency_name' ) )] ) );
         return redirect()->back();
     }
+
+    public function postSearch( Request $request )
+    {
+        return User::where( 'name', 'LIKE', '%' . $request->search_query . '%' )->get();
+    }
 }

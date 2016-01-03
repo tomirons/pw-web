@@ -50,6 +50,11 @@ class User extends Model implements AuthenticatableContract,
         return number_format( $value, 2 );
     }
 
+    public function getRoleAttribute( $value )
+    {
+        return ucfirst( $value );
+    }
+
     public function character()
     {
         return session()->get('character');
@@ -69,7 +74,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function isAdmin()
     {
-        return ( $this->role === 'administrator' ) ? TRUE : FALSE;
+        return ( $this->role === 'Administrator' ) ? TRUE : FALSE;
     }
 
     public function voucher_logs()

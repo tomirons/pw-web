@@ -78,6 +78,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
     /* Members */
     Route::get( 'members/manage', ['as' => 'admin.members.manage', 'uses' => 'Admin\MembersController@getManage'] );
     Route::post( 'members/balance/{user}', 'Admin\MembersController@postBalance' );
+    Route::post( 'members/search', 'Admin\MembersController@postSearch' );
 
     /* System */
     Route::group( ['prefix' => 'system', 'as' => 'admin.system.'], function() {

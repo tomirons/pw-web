@@ -25057,6 +25057,10 @@ pre[class*=language-] code {
   border-radius: 5px;
 }
 
+.bb-none {
+  border-bottom: none !important;
+}
+
 .b-thin {
   border-width: 3px;
 }
