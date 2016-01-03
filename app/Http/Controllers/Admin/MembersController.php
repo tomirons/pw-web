@@ -12,6 +12,7 @@ class MembersController extends Controller
 {
     public function getManage()
     {
+        pagetitle( [ trans( 'members.manage' ), trans( 'main.apps.members' ), settings( 'server_name' ) ] );
         $users = User::paginate();
         return view( 'admin.members.manage', compact( 'users' ) );
     }
