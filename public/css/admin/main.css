@@ -11561,7 +11561,7 @@ div.uploader,
 div.uploader span.action,
 div.button,
 div.button span {
-  background-image: url("../../img/sprite.png");
+  background-image: url("../images/sprite.png");
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
 }
@@ -11602,7 +11602,7 @@ div.button * {
 }
 
 .highContrastDetect {
-  background: url("../img/bg-input.png") repeat-x 0 0;
+  background: url("../images/bg-input.png") repeat-x 0 0;
   width: 0px;
   height: 0px;
 }
@@ -11613,14 +11613,14 @@ input.uniform-input,
 select.uniform-multiselect,
 textarea.uniform {
   padding: 3px;
-  background: url("../img/bg-input.png") repeat-x 0 0;
+  background: url("../images/bg-input.png") repeat-x 0 0;
   outline: 0;
 }
 
 input.uniform-input.active,
 select.uniform-multiselect.active,
 textarea.uniform.active {
-  background: url("../img/bg-input-focus.png") repeat-x 0 0;
+  background: url("../images/bg-input-focus.png") repeat-x 0 0;
 }
 
 /* Remove default webkit and possible mozilla .search styles.

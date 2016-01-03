@@ -25021,6 +25021,8 @@ pre[class*=language-] code {
   border-color: #2ab4c0;
   background: #e43a45;
 }
+/* here you can put your own css to customize and override the theme */
+
 .text-weight-light {
   font-weight: 300;
 }
