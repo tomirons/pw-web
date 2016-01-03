@@ -1,7 +1,7 @@
 ## Perfect World Web
 
 ### Requirements
-1. Composer & Git - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
+1. Composer - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
 2. PHP 5.5.9 or higher
 
 ### Setup
