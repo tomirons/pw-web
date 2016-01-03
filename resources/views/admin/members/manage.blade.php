@@ -4,10 +4,10 @@
 <div class="portlet light bordered">
     <div class="portlet-title bb-none mb-none">
         <div class="inputs">
-            <div class="portlet-input input-inline input-small">
+            <div class="portlet-input input-inline">
                 <div class="input-icon right">
                     <i class="icon-magnifier"></i>
-                    <input name="search_query" id="search" type="text" class="form-control input-circle" placeholder="search...">
+                    <input name="search_query" id="search" type="text" class="form-control input-circle" placeholder="{{ trans( 'members.fields.search.placeholder' ) }}">
                 </div>
             </div>
         </div>

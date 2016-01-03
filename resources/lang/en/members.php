@@ -27,6 +27,9 @@ return [
     'fields' => [
         'amount' => [
             'label' => 'Amount to give',
+        ],
+        'search' => [
+            'placeholder' => 'Search...'
         ]
     ],
     'ajax' => [
