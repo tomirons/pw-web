@@ -106,7 +106,13 @@
                     {{--*/ $date = new \Carbon\Carbon( $release['published_at'] ) /*--}}
                     <div class="list-group">
                         <a target="_blank" href="{{ $release['zipball_url'] }}" class="list-group-item">
-                            <h4 class="list-group-item-heading">{{ $release['tag_name'] }} {!! ( $date > \Carbon\Carbon::now()->subHours( 48 ) ) ? '<span class="badge badge-danger badge-roundless"> New </span>' : NULL !!}</h4>
+                            <h4 class="list-group-item-heading">{{ $release['name'] }} {!! ( $date > \Carbon\Carbon::now()->subHours( 48 ) ) ? '<span class="badge badge-danger badge-roundless">' . trans( 'system.releases.new' ) . '</span>' : NULL !!}</h4>
+                            @if( $release['prerelease'] )
+                                <div class="note note-danger mt-md">
+                                    <h4 class="block"> {{ trans( 'system.releases.notice.title' ) }} </h4>
+                                    <p> {!! trans( 'system.releases.notice.body', ['tag' => $release['tag_name']] ) !!} </p>
+                                </div>
+                            @endif
                             <p class="list-group-item-text"> {{ $release['body'] }} </p>
                         </a>
                     </div>
