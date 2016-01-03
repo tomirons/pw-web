@@ -6,7 +6,7 @@
 
 ### Setup
 
-Download the latest zip and upload the files.
+Download the latest release and upload the files.
 
 First you need to rename `.env.example` to `.env`
 
