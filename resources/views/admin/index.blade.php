@@ -113,7 +113,7 @@
                                     <p> {!! trans( 'system.releases.notice.body', ['tag' => $release['tag_name']] ) !!} </p>
                                 </div>
                             @endif
-                            <p class="list-group-item-text"> {{ $release['body'] }} </p>
+                            <p class="list-group-item-text"> {!! $release['body'] !!} </p>
                         </a>
                     @endforeach
                 </div>
