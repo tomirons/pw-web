@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'default' => 'main',
+    'default' => 'alternative',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,15 +39,15 @@ return [
     'connections' => [
 
         'main' => [
-            'token'   => '98c2e0b184d9daa1f1b917c7ae3f5a1e4f38dc12',
+            'token'   => 'my-token',
             'method'  => 'token',
             // 'baseUrl' => 'https://api.github.com/',
             // 'version' => 'v3',
         ],
 
         'alternative' => [
-            'clientId'     => 'your-client-id',
-            'clientSecret' => 'your-client-secret',
+            'clientId'     => '19bb464bbfb95d28d585',
+            'clientSecret' => 'ba14c0556ef8e3e39afd4da0fc77266ccfb294ed',
             'method'       => 'application',
             // 'baseUrl'      => 'https://api.github.com/',
             // 'version'      => 'v3',
