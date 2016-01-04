@@ -30,6 +30,7 @@ composer install
 **Note:** If you have **ANY** of the following columns in the `users` table, **REMOVE** them!
 - money
 - role
+- language
 - remember_token
 - created_at
 - updated_at
