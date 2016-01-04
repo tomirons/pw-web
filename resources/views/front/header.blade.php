@@ -110,6 +110,21 @@
                                     </li>
                                 @endif
                             @endforeach
+                            <li class="menu-dropdown classic-menu-dropdown visible-lg" style="position: absolute; right: 0">
+                                <a href="#">
+                                    <i class="icon-globe"></i>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    @foreach( $languages as $language )
+                                        <li>
+                                            <a href="{{ Request::url() . '?language=' . $language }}">
+                                                <img src="{{ asset( 'img/flags/' . $language . '.png' ) }}"> {{ trans( 'language.' . $language ) }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>

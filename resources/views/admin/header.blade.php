@@ -26,8 +26,8 @@
                 <a href="#" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
-                        <li class="dropdown dropdown-user pr-md">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <span class="username username-hide-on-mobile"> {{ Auth::user()->name }} </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -42,6 +42,20 @@
                                         <i class="icon-key"></i> {{ trans( 'main.logout' ) }}
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown visible-lg">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-globe"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                @foreach( $languages as $language )
+                                    <li>
+                                        <a href="{{ Request::url() . '?language=' . $language }}">
+                                            <img src="{{ asset( 'img/flags/' . $language . '.png' ) }}"> {{ trans( 'language.' . $language ) }}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>
