@@ -55,6 +55,7 @@ return [
         'broadcast' => [
             'user' => 'Role ID',
             'user_desc' => 'User that you want to say the message (optional)',
+            'channel' => 'Channel',
             'message' => 'Message'
         ],
         'mailer' => [
@@ -141,14 +142,15 @@ return [
         'refresh' => 'Refresh'
     ],
 
-    'destinations' => [
+    'channels' => [
         0 => 'Common',
         1 => 'World',
         2 => 'Party',
+        3 => 'Faction',
+        4 => 'Whisper',
         7 => 'Horn',
         9 => 'Broadcast',
-        'faction' => 'Faction',
-        'whisper' => 'Whisper'
+        12 => 'Unknown'
     ],
     'faction_id' => 'Faction ID: ',
 

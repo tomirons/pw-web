@@ -15,6 +15,13 @@
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
+                        {!! Form::label( 'channel', trans( 'management.fields.broadcast.channel' ), ['class' => 'col-md-2 control-label'] ) !!}
+                        <div class="col-md-9">
+                            {!! Form::select( 'channel', trans( 'management.channels' ), NULL, ['class' => 'form-control', 'id' => 'channel'] ) !!}
+                            <div class="form-control-focus"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
                         {!! Form::label( 'message', trans( 'management.fields.broadcast.message' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
                             {!! Form::text( 'message', NULL, ['class' => 'form-control', 'id' => 'message'] ) !!}

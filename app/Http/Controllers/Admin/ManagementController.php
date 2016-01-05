@@ -27,12 +27,13 @@ class ManagementController extends Controller
     {
         $this->validate($request, [
             'user' => 'numeric|min:32',
+            'channel' => 'required',
             'message' => 'required',
         ]);
 
         $api = new API();
 
-        $api->WorldChat( $request->user, $request->message, 9 );
+        $api->WorldChat( $request->user, $request->message, $request->channel );
         flash()->success( trans( 'management.complete.broadcast' ) );
 
         return redirect()->back();
@@ -253,7 +254,7 @@ class ManagementController extends Controller
             9 => 'font-red-thunderbird'
         ];
 
-        $type = trans( 'management.destinations' );
+        $type = trans( 'management.channels' );
 
         $handle = fopen( settings( 'chat_log_path' ) . 'world2.chat', "r" );
         if ( $handle )
@@ -270,7 +271,7 @@ class ManagementController extends Controller
                     'date' => $o[0]." ".$o[1],
                     'type' => str_replace( ":", "", $o[6] ),
                     'uid' => substr( $o[7], 4 ),
-                    'channel' => ( !array_key_exists( substr( $o[8], 4 ), $type ) ) ? ( substr( $o[8], 4 ) <= 1024 ) ? $type['faction'] : $type['whisper']: $type[ substr( $o[8], 4 ) ],
+                    'channel' => ( !array_key_exists( substr( $o[8], 4 ), $type ) ) ? ( substr( $o[8], 4 ) <= 1024 ) ? $type[3] : $type[4]: $type[ substr( $o[8], 4 ) ],
                     'dest' => ( strpos( $o[8], 'fid' ) !== false ) ? trans( 'management.faction_id' ) . substr( $o[8], 4 ) : substr( $o[8], 4 ),
                     'msg' => base64_decode( base64_encode( iconv( "UCS-2LE", "UTF-8", base64_decode( substr( $o[9], 4 ) ) ) ) )
                 );
