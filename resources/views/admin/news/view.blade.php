@@ -16,8 +16,8 @@
                                 {!! $article->content !!}
                                 <hr>
                                 <div class="text-center fs20">
-                                    <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.news.edit', $article->id ) }}"> <i class="icon-pencil"></i> </a>
-                                    <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.news.destroy', $article->id ) }}"> <i class="icon-trash"></i> </a>
+                                    <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.news.edit', $article->id ) }}"><i class="icon-pencil"></i></a>
+                                    <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.news.destroy', $article->id ) }}"><i class="icon-trash"></i></a>
                                 </div>
                             </div>
                         </div>

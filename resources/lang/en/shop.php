@@ -96,6 +96,10 @@ return [
     'add_button' => 'Create Item',
     'update_button' => 'Update Item',
     'items_per_page' => 'Items Per Page',
-    'items_per_page_desc' => 'The number of items to display per page.'
+    'items_per_page_desc' => 'The number of items to display per page.',
+    'missing' => [
+        'title' => 'Missing Icon',
+        'body' => 'To fix this, upload <b>:id.gif</b> to <b>:path</b>.'
+    ]
 
 ];

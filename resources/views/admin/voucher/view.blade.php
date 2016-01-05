@@ -22,8 +22,8 @@
                                     <td> {{ $voucher->times_redeemed }} </td>
                                     <td>
                                         <div class="fs20">
-                                            <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.voucher.edit', $voucher->code ) }}"> <i class="icon-pencil"></i> </a>
-                                            <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.voucher.destroy', $voucher->code ) }}"> <i class="icon-trash"></i> </a>
+                                            <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.voucher.edit', $voucher->code ) }}"><i class="icon-pencil"></i></a>
+                                            <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.voucher.destroy', $voucher->code ) }}"><i class="icon-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>

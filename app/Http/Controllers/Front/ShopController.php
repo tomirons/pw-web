@@ -17,6 +17,8 @@ class ShopController extends Controller
         $this->middleware( 'auth' );
 
         $this->middleware( 'selected.character', ['only' => ['getPurchase', 'postGift'] ] );
+
+        $this->middleware( 'server.online', ['only' => 'postPurchase'] );
     }
 
     public function getIndex()
@@ -38,7 +40,7 @@ class ShopController extends Controller
         $user = Auth::user();
         $item_price = ( $item->discout > 0 ) ? $item->price - ( $item->price / 100 * $item->discount ) : $item->price;
 
-        if ( $user->money > $item_price )
+        if ( $user->money >= $item_price )
         {
             $api = new API();
             $mail = array(
@@ -58,16 +60,10 @@ class ShopController extends Controller
                     'mask' => $item->mask,
                 ),
             );
-            if ( $api->sendMail( Auth::user()->character()['base']['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] ) )
-            {
-                $user->money = $user->money - $item_price;
-                $user->save();
-                flash()->success( trans( 'shop.purchase_complete', ['name' => $item->name] ) );
-            }
-            else
-            {
-                flash()->error( trans( 'main.server_not_online' ) );
-            }
+            $api->sendMail( Auth::user()->character()['base']['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
+            $user->money = $user->money - $item_price;
+            $user->save();
+            flash()->success( trans( 'shop.purchase_complete', ['name' => $item->name] ) );
         }
         else
         {

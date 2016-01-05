@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <div class="grid-item box bg-white">
                     <div class="grid_icon">
-                        <img src="{{ asset( isset( $item->item_id ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="">
+                        <img src="{{ asset( File::exists( base_path( 'public/img/icons/' . $item->item_id . '.gif' ) ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="{{ $item->name }}">
                     </div>
                     <div class="grid-item-title">
                         <span class="font-dark" id="name">{{ $item->name }}</span>
@@ -19,13 +19,19 @@
                         @endif
                     </div>
                     <div class="caption mt-xs p-sm">
+                        @if ( !File::exists( base_path( 'public/img/icons/' . $item->item_id . '.gif' ) ) )
+                            <div class="note note-danger">
+                                <h4 class="block">{{ trans( 'shop.missing.title' ) }}</h4>
+                                <p> {!! trans( 'shop.missing.body', ['path' => base_path( 'public/img/icons/' ), 'id' => $item->item_id] ) !!} </p>
+                            </div>
+                        @endif
                         <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="#111" data-handle-color="#000">
                             {!! $item->description !!}
                         </div>
                         <div class="grid-item-buy text-center mt-md">
                             <div class="text-center fs20">
-                                <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.shop.edit', $item->id ) }}"> <i class="icon-pencil"></i> </a>
-                                <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.shop.destroy', $item->id ) }}"> <i class="icon-trash"></i> </a>
+                                <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.shop.edit', $item->id ) }}"><i class="icon-pencil"></i></a>
+                                <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.shop.destroy', $item->id ) }}"><i class="icon-trash"></i></a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +56,7 @@
             e.preventDefault();
             e.stopPropagation();
 
-            var item_name = $(this).closest('div.col-md-4').find('#title').html();
+            var item_name = $(this).closest('div.col-md-4').find('#name').html();
 
             $.ajax({
                 method: 'DELETE',

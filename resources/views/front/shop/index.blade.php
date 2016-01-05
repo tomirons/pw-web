@@ -12,7 +12,7 @@
                             {!! csrf_field() !!}
                             <div class="grid-item box bg-white">
                                 <div class="grid_icon">
-                                    <img src="{{ asset( isset( $item->item_id ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="">
+                                    <img src="{{ asset( File::exists( base_path( 'public/img/icons/' . $item->item_id . '.gif' ) ) ? 'img/icons/' . $item->item_id . '.gif' : 'img/icons/0.gif' ) }}" alt="{{ $item->name }}">
                                 </div>
                                 <div class="grid-item-title">
                                     <span class="font-dark">{{ $item->name }}</span>

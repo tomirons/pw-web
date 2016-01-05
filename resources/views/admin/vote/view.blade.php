@@ -68,8 +68,8 @@
                                 </form>
                                 <hr>
                                 <div class="text-center fs20">
-                                    <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.vote.edit', $site->id ) }}"> <i class="icon-pencil"></i> </a>
-                                    <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.vote.destroy', $site->id ) }}"> <i class="icon-trash"></i> </a>
+                                    <a class="font-green tooltips mr-md" data-placement="top" data-original-title="{{ trans( 'main.edit' ) }}" href="{{ route( 'admin.vote.edit', $site->id ) }}"><i class="icon-pencil"></i></a>
+                                    <a class="font-red tooltips delete" data-placement="top" data-original-title="{{ trans( 'main.remove' ) }}" href="{{ route( 'admin.vote.destroy', $site->id ) }}"><i class="icon-trash"></i></a>
                                 </div>
                             </div>
                         </div>
