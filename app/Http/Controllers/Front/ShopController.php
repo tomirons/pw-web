@@ -60,7 +60,7 @@ class ShopController extends Controller
                     'mask' => $item->mask,
                 ),
             );
-            $api->sendMail( Auth::user()->character()['base']['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
+            $api->sendMail( Auth::user()->characterId(), $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
             $user->money = $user->money - $item_price;
             $user->save();
             flash()->success( trans( 'shop.purchase_complete', ['name' => $item->name] ) );
@@ -86,7 +86,7 @@ class ShopController extends Controller
             $api = new API();
             $mail = array(
                 'title' => trans( 'shop.gift_item.title' ),
-                'message' => trans( 'shop.gift_item.message', ['name' => $item->name, 'count' => $item->count, 'player' => $user->character()['base']['name']] ),
+                'message' => trans( 'shop.gift_item.message', ['name' => $item->name, 'count' => $item->count, 'player' => $user->characterName()] ),
                 'money' => 0,
                 'item' => array(
                     'id' => $item->item_id,

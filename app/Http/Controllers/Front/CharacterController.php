@@ -21,30 +21,50 @@ class CharacterController extends Controller
 
     public function getSelect( $role_id )
     {
+        //TODO Check to see if the role belongs to the user.
         $api = new API();
-        $role_data = $api->getRole( $role_id );
-        if ( isset( $role_data ) )
+        if ( settings( 'server_version' ) == '07' )
         {
-            // Doens't work yet
-            /*if($roleData['base']['userid'])
+            $role_name = NULL;
+            $roles = $api->getRoles( Auth::user()->ID );
+            foreach ( $roles['roles'] as $role )
             {
-                //$_SESSION['selectedRoleId'] = $role;
-                //$_SESSION['selectedRoleName'] = $roleData['base']['name'];
-                Session::set($action, time());
-                Session::set('selectedRoleId', $role);
-                Session::set('selectedRoleName', $roleData['base']['name']);
-                echo 'selected';
+                if ( $role_id == $role['id'] )
+                {
+                    $role_name = $role['name'];
+                }
             }
-            else
-            {
-                echo 'Character does not belong to your Account.';
-            }*/
-            session()->put( 'character', $role_data );
+            session()->put( 'character_id', $role_id );
+            session()->put( 'character_name', $role_name );
             flash()->success( trans( 'character.success' ) );
         }
         else
         {
-            flash()->error( trans( 'character.error.role' ) );
+            $role_data = $api->getRole( $role_id );
+            if ( isset( $role_data ) )
+            {
+                // Doens't work yet
+                /*if($roleData['base']['userid'])
+                {
+                    //$_SESSION['selectedRoleId'] = $role;
+                    //$_SESSION['selectedRoleName'] = $roleData['base']['name'];
+                    Session::set($action, time());
+                    Session::set('selectedRoleId', $role);
+                    Session::set('selectedRoleName', $roleData['base']['name']);
+                    echo 'selected';
+                }
+                else
+                {
+                    echo 'Character does not belong to your Account.';
+                }*/
+                session()->put( 'character_id', $role_data['base']['id'] );
+                session()->put( 'character_name', $role_data['base']['name'] );
+                flash()->success( trans( 'character.success' ) );
+            }
+            else
+            {
+                flash()->error( trans( 'character.error.role' ) );
+            }
         }
         return redirect()->back();
     }

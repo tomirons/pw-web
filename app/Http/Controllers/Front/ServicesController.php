@@ -65,7 +65,7 @@ class ServicesController extends Controller
         ]);
 
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
         $message = $request->message;
 
         if ( $user->money >= $service->price )
@@ -104,7 +104,7 @@ class ServicesController extends Controller
         ]);
 
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= ( $request->quantity * $service->price ) )
         {
@@ -135,7 +135,7 @@ class ServicesController extends Controller
     public function cultivation_change( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {
@@ -188,7 +188,7 @@ class ServicesController extends Controller
         ]);
 
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( !$this->checkOnline( $role ) )
         {
@@ -234,7 +234,7 @@ class ServicesController extends Controller
         ]);
 
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= ( $request->quantity * $service->price ) )
         {
@@ -285,7 +285,7 @@ class ServicesController extends Controller
     public function max_meridian( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {
@@ -341,7 +341,7 @@ class ServicesController extends Controller
     public function reset_exp( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {
@@ -383,7 +383,7 @@ class ServicesController extends Controller
     public function reset_sp( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {
@@ -425,7 +425,7 @@ class ServicesController extends Controller
     public function reset_stash_password( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {
@@ -474,7 +474,7 @@ class ServicesController extends Controller
     public function teleport( Request $request, Service $service )
     {
         $user = Auth::user();
-        $role = $user->character()['base']['id'];
+        $role = $user->characterId();
 
         if ( $user->money >= $service->price )
         {

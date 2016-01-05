@@ -55,9 +55,14 @@ class User extends Model implements AuthenticatableContract,
         return ucfirst( $value );
     }
 
-    public function character()
+    public function characterId()
     {
-        return session()->get('character');
+        return session()->get( 'character_id' );
+    }
+
+    public function characterName()
+    {
+        return session()->get( 'character_name' );
     }
 
     public function roles()

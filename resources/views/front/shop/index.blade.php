@@ -49,10 +49,10 @@
                                         <h4 class="modal-title" id="myModalLabel">{{ trans( 'shop.gift_title', ['name' => $item->name]) }}</h4>
                                     </div>
                                     <div class="modal-body">
-                                        @if ( !Auth::user()->character() )
+                                        @if ( !Auth::user()->characterId() )
                                             <p class="text-center font-red"> {{ trans( 'shop.select_char_first' ) }}</p>
                                         @else
-                                            {{--*/ $friends = $api->getRoleFriends( Auth::user()->character()['base']['id'] ) /*--}}
+                                            {{--*/ $friends = $api->getRoleFriends( Auth::user()->characterId() ) /*--}}
                                             @if ( !$friends )
                                                 <div class="text-center">
                                                     {{ trans( 'shop.no_friends') }}

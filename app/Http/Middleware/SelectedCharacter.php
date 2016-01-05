@@ -16,7 +16,7 @@ class SelectedCharacter
      */
     public function handle($request, Closure $next)
     {
-        if ( !Auth::user()->character() )
+        if ( !Auth::user()->characterId() )
         {
             flash()->error( trans( 'main.no_character_selected' ) );
             return redirect()->back();

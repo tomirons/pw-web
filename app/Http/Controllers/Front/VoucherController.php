@@ -19,6 +19,8 @@ class VoucherController extends Controller
         $this->middleware( 'auth' );
 
         $this->middleware( 'selected.character', ['only' => ['postRedeem'] ] );
+
+        $this->middleware( 'server.online', ['only' => 'postRedeem'] );
     }
 
     public function getIndex()
@@ -52,18 +54,12 @@ class VoucherController extends Controller
                     'mask' => $voucher->item_mask,
                 ],
             ];
-            if ( $api->sendMail( Auth::user()->character()['base']['id'], $mail['title'], $mail['message'], $mail['item'], $mail['money'] ) )
-            {
-                VoucherLog::create([
-                    'voucher_id' => $voucher->id,
-                    'user_id' => Auth::user()->ID
-                ]);
-                flash()->success( trans( 'voucher.successfully_redeemed' ) );
-            }
-            else
-            {
-                flash()->error( trans( 'main.server_not_online' ) );
-            }
+            $api->sendMail( Auth::user()->characterId(), $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
+            VoucherLog::create([
+                'voucher_id' => $voucher->id,
+                'user_id' => Auth::user()->ID
+            ]);
+            flash()->success( trans( 'voucher.successfully_redeemed' ) );
         }
         else
         {

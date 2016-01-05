@@ -29,7 +29,7 @@
                             @if ( Auth::user() )
                                 <li class="dropdown dropdown-notification dropdown-dark" id="header_notification_bar">
                                     <a id="charList" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        {{ Auth::user()->character() ? Auth::user()->character()['base']['name'] : trans( 'main.select_character' ) }}
+                                        {{ Auth::user()->characterId() ? Auth::user()->characterName() : trans( 'main.select_character' ) }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
                                         @if ( $api->online )
