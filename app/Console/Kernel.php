@@ -72,7 +72,7 @@ class Kernel extends ConsoleKernel
                     foreach ( $roles as $role )
                     {
                         $role_data = $api->getRole( $role['id'] );
-                        $var_data = $api->parseOctet( $role_data['status']['var_data'], 'var_data' );
+                        $var_data = ( settings( 'server_version' ) != '07' ) ? $api->parseOctet( $role_data['status']['var_data'], 'var_data' ) : ['pk_count' => 0, 'dead_flag' => 0];
                         if ( !empty( $role_data['status']['faction_contrib'] ) )
                         {
                             $faction_contrib = $api->parseOctet( $role_data['status']['faction_contrib'], 'faction_contrib' );
@@ -132,6 +132,7 @@ class Kernel extends ConsoleKernel
          * Update Factions
          */
         $schedule->call(function () {
+            $gamed = new Gamed();
             $api = new API();
             $handler = NULL;
             if ( $api->online )
@@ -147,9 +148,9 @@ class Kernel extends ConsoleKernel
                             unset( $raw_info['Raw'][$i] );
                             continue;
                         }
-                        $id = Gamed::getArrayValue( unpack( "N", pack( "H*", $raw_info['Raw'][$i]['key'] ) ), 1 );
+                        $id = $gamed->getArrayValue( unpack( "N", pack( "H*", $raw_info['Raw'][$i]['key'] ) ), 1 );
                         $pack = pack( "H*", $raw_info['Raw'][$i]['value'] );
-                        $faction = Gamed::unmarshal( $pack, $api->data['FactionInfo'] );
+                        $faction = $gamed->unmarshal( $pack, $api->data['FactionInfo'] );
                         if ( !empty( $faction['master']['roleid'] ) && $faction['master']['roleid'] > 0 )
                         {
                             $user_faction = $api->getUserFaction( $faction['master']['roleid'] );

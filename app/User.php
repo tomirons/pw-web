@@ -45,9 +45,9 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function getMoneyAttribute( $value )
+    public function balance()
     {
-        return number_format( $value, 2 );
+        return number_format( $this->money, 2 );
     }
 
     public function getRoleAttribute( $value )

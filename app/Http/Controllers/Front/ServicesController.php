@@ -195,7 +195,7 @@ class ServicesController extends Controller
             $api = new API();
             if ( $role_data = $api->getRole( $role ) )
             {
-                if ( $role_data['pocket']['money'] > $request->quantity * $service->price )
+                if ( $role_data['pocket']['money'] > ( $request->quantity * $service->price ) )
                 {
                     $role_data['pocket']['money'] = $role_data['pocket']['money'] - ( $request->quantity * $service->price );
 
@@ -246,11 +246,11 @@ class ServicesController extends Controller
                     if ( ( $role_data['status']['level'] + $request->quantity ) <= 105 )
                     {
                         $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
-                        $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quanity * 5 );
+                        $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
 
                         if ( $api->putRole( $role, $role_data ) )
                         {
-                            $user->money = $user->money + $request->quantity;
+                            $user->money = $user->money - ( $request->quantity * $service->price );
                             $user->save();
 
                             flash()->success( trans( 'services.' . $service->key . '.complete', ['quantity' => $request->quantity] ) );
