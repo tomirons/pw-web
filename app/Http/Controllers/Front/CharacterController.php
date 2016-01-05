@@ -21,37 +21,30 @@ class CharacterController extends Controller
 
     public function getSelect( $role_id )
     {
-        if ( $role_id !== Auth::user()->ID )
+        $api = new API();
+        $role_data = $api->getRole( $role_id );
+        if ( isset( $role_data ) )
         {
-            $api = new API();
-            $role_data = $api->getRole( $role_id );
-            if ( isset( $role_data ) )
+            // Doens't work yet
+            /*if($roleData['base']['userid'])
             {
-                // Doens't work yet
-                /*if($roleData['base']['userid'])
-                {
-                    //$_SESSION['selectedRoleId'] = $role;
-                    //$_SESSION['selectedRoleName'] = $roleData['base']['name'];
-                    Session::set($action, time());
-                    Session::set('selectedRoleId', $role);
-                    Session::set('selectedRoleName', $roleData['base']['name']);
-                    echo 'selected';
-                }
-                else
-                {
-                    echo 'Character does not belong to your Account.';
-                }*/
-                session()->put('character', $role_data);
-                flash()->success( 'You\'ve successfully selected a character.' );
+                //$_SESSION['selectedRoleId'] = $role;
+                //$_SESSION['selectedRoleName'] = $roleData['base']['name'];
+                Session::set($action, time());
+                Session::set('selectedRoleId', $role);
+                Session::set('selectedRoleName', $roleData['base']['name']);
+                echo 'selected';
             }
             else
             {
-                flash()->error( 'Can\'t get role!' );
-            }
+                echo 'Character does not belong to your Account.';
+            }*/
+            session()->put( 'character', $role_data );
+            flash()->success( trans( 'character.success' ) );
         }
         else
         {
-            flash()->error( 'Role already selected!' );
+            flash()->error( trans( 'character.error.role' ) );
         }
         return redirect()->back();
     }

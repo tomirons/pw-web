@@ -16,7 +16,7 @@ class ShopController extends Controller
     {
         $this->middleware( 'auth' );
 
-        $this->middleware( 'selected.character', ['only' => ['getPurchase', 'postGift'] ] );
+        $this->middleware( 'selected.character', ['only' => ['postPurchase', 'postGift'] ] );
 
         $this->middleware( 'server.online', ['only' => 'postPurchase'] );
     }
