@@ -19,7 +19,8 @@ class EmptyCharacterIfServerOffline
         $api = new API();
         if ( !$api->online )
         {
-            $request->session()->forget('character');
+            $request->session()->forget('character_id');
+            $request->session()->forget('character_name');
         }
         return $next($request);
     }

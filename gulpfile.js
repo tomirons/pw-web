@@ -133,6 +133,8 @@ elixir(function(mix) {
         'bootstrap-switch/js/bootstrap-switch.min.js',
         'bootstrap-summernote/summernote.min.js',
         'jquery-inputmask/jquery.inputmask.bundle.min.js',
+        'counterup/jquery.waypoints.min.js',
+        'counterup/jquery.counterup.min.js',
         'jquery.input-ip-address-control-1.0.min.js'
     ], 'public/js/admin/plugins.js', 'resources/assets/vendor');
 
