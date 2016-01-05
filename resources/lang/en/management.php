@@ -148,9 +148,9 @@ return [
         2 => 'Party',
         3 => 'Faction',
         4 => 'Whisper',
-        7 => 'Horn',
+        7 => 'Trade',
         9 => 'Broadcast',
-        12 => 'Unknown'
+        12 => 'Horn'
     ],
     'faction_id' => 'Faction ID: ',
 

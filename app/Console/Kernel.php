@@ -140,7 +140,7 @@ class Kernel extends ConsoleKernel
                 set_time_limit( 0 );
                 do{
                     $raw_info = $api->getRaw( 'factioninfo', $handler );
-                    if ( count( $raw_info['Raw'] ) < 1 || !isset( $raw_info['Raw'] ) ) return true;
+                    if ( isset( $raw_info['Raw'] ) || count( $raw_info['Raw'] ) > 1 ) return true;
                     for ( $i=0; $i < count( $raw_info['Raw'] ); $i++ )
                     {
                         if ( empty( $raw_info['Raw'][$i]['key'] ) || empty( $raw_info['Raw'][$i]['value'] ) )

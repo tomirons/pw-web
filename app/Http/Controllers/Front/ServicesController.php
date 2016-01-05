@@ -300,6 +300,8 @@ class ServicesController extends Controller
 
                         if ( $role_data['status']['meridian_data'] != $meridian_hex )
                         {
+                            $role_data['status']['meridian_data'] = $meridian_hex;
+
                             if ( $api->putRole( $role, $role_data ) )
                             {
                                 $user->money = $user->money - $service->price;
