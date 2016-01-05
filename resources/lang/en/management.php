@@ -53,7 +53,7 @@ return [
 
     'fields' => [
         'broadcast' => [
-            'user' => 'User ID',
+            'user' => 'Role ID',
             'user_desc' => 'User that you want to say the message (optional)',
             'message' => 'Message'
         ],
