@@ -243,7 +243,7 @@ class ServicesController extends Controller
                 $api = new API();
                 if ( $role_data = $api->getRole( $role ) )
                 {
-                    if ( ( $role_data['status']['level'] + $request->quantity ) <= 105 )
+                    if ( ( $role_data['status']['level'] + $request->quantity ) <= settings( 'level_up_cap' ) )
                     {
                         $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
                         $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );

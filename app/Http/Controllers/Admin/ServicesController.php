@@ -46,7 +46,8 @@ class ServicesController extends Controller
             'teleport_world_tag' => 'required|numeric|min:1',
             'teleport_x' => 'required|numeric|min:1',
             'teleport_y' => 'required|numeric|min:1',
-            'teleport_z' => 'required|numeric|min:1'
+            'teleport_z' => 'required|numeric|min:1',
+            'level_cap' => 'required|numeric|min:1'
         ]);
 
         Settings::set( 'teleport_world_tag', $request->teleport_world_tag );
@@ -56,6 +57,8 @@ class ServicesController extends Controller
         Settings::set( 'teleport_y', $request->teleport_y );
 
         Settings::set( 'teleport_z', $request->teleport_z );
+
+        Settings::set( 'level_up_cap', $request->level_cap );
 
         flash()->success( trans( 'main.settings_saved' ) );
 

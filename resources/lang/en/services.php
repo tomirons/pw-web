@@ -11,7 +11,7 @@ return [
     'logged_in' => 'Character must be logged in',
     'logged_out' => 'Character must be logged out',
     'cultivation_unlocked' => 'Must have cultivation unlocked',
-    'not_max_level' => 'Character must not be level 105 or higher (if allowed)',
+    'not_max_level' => 'Character level must be lower then ' . settings( 'level_up_cap' ),
     'level_40' => 'Character must be at least level 40',
     'message' => 'Message',
     'quantity' => 'Quantity',
@@ -138,7 +138,8 @@ return [
         'world_tag' => 'World Tag',
         'x' => 'X Coordinates',
         'y' => 'Y Coordinates',
-        'z' => 'Z Coordinates'
+        'z' => 'Z Coordinates',
+        'cap' => 'Level Cap'
     ],
     'edit_success' => 'Your services have been saved!',
 ];

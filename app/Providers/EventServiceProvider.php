@@ -29,8 +29,7 @@ class EventServiceProvider extends ServiceProvider
         parent::boot($events);
 
         $events->listen('auth.logout', function () {
-            session()->forget('character_id');
-            session()->forget('character_name');
+            session()->flush();
         });
     }
 }
