@@ -1,20 +1,33 @@
 <?php
-return array(
-	// which type of store to use.
-	// valid options: 'json', 'database'
-	'store' => 'json',
+return [
+    /*
+	|--------------------------------------------------------------------------
+	| Cache Filename
+	|--------------------------------------------------------------------------
+	|
+	| Cache configuration path
+	|
+	*/
+    'cache_file' => storage_path('settings.json'),
 
-	// if the json store is used, give the full path to the .json file
-	// that the store writes to.
-	'path' => storage_path().'/settings.json',
+    /*
+	|--------------------------------------------------------------------------
+	| Table name to store settings
+	|--------------------------------------------------------------------------
+	|
+	| Info: If you change this table name, dont forget to update your settings migrations file.
+	|
+	*/
+    'db_table'   => 'pweb_settings',
 
-	// if the database store is used, set the name of the table used..
-	'table' => 'pweb_settings',
-
-	// override the default database table name...
-	'db_table' => 'pweb_settings',
-
-	// If the database store is used, you can set which connection to use. if
-	// set to null, the default connection will be used.
-	'connection' => null,
-);
+    /*
+	|--------------------------------------------------------------------------
+	| Fallback setting
+	|--------------------------------------------------------------------------
+	|
+	| Return Laravel config if the value with particular key is not found in cache or DB.
+    | It will work if default value in laravel setting is not set, and this value is set to true
+	|
+	*/
+    'fallback'   => true
+];

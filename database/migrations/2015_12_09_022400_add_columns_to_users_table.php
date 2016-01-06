@@ -15,6 +15,7 @@ class AddColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->decimal('money', 10, 2);
             $table->enum('role', ['member', 'game master', 'administrator'])->default('member');
+            $table->string('language')->default('en');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,6 +31,7 @@ class AddColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('money');
             $table->dropColumn('role');
+            $table->dropColumn('language');
             $table->dropColumn('remember_token');
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
