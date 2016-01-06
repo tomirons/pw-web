@@ -1,5 +1,4 @@
 <div class="col-md-3 mb-md">
-    <a href="{{ url( 'donate' ) }}" class="btn default btn-block blue mb-md"> {{ trans( 'main.acc_balance', ['money' => Auth::user()->balance(), 'currency' => settings('currency_name')] ) }} </a>
     <div class="mt-element-list">
         <div class="mt-list-container list-simple ext-1 group">
             <a class="list-toggle-container" href="{{ url( 'shop/' ) }}">

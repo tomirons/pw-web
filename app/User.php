@@ -52,7 +52,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function getRoleAttribute( $value )
     {
-        return ucfirst( $value );
+        return ucwords( $value );
     }
 
     public function characterId()

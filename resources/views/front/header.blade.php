@@ -26,9 +26,23 @@
                     <a href="#" class="menu-toggler"></a>
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
-                            @if ( Auth::user() )
-                                <li class="dropdown dropdown-notification dropdown-dark" id="header_notification_bar">
-                                    <a id="charList" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            @if ( Auth::guest() )
+                                <li class="dropdown">
+                                    <a href="{{ url( 'auth/login' ) }}">
+                                       {{ trans( 'main.login_link' ) }}
+                                    </a>
+                                </li>
+                            @else
+                                <li class="dropdown">
+                                    <a href="{{ url( 'donate' ) }}">
+                                        {{ trans( 'main.acc_balance', ['money' => Auth::user()->balance(), 'currency' => settings('currency_name')] ) }}
+                                    </a>
+                                </li>
+                                <li class="dropdown dropdown-separator">
+                                    <span class="separator"></span>
+                                </li>
+                                <li class="dropdown dropdown-dark">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                         {{ Auth::user()->characterId() ? Auth::user()->characterName() : trans( 'main.select_character' ) }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
@@ -58,20 +72,12 @@
                                         @endif
                                     </ul>
                                 </li>
-                                <li class="droddown dropdown-separator">
+                                <li class="dropdown dropdown-separator">
                                     <span class="separator"></span>
                                 </li>
-                            @endif
-                            @if ( Auth::guest() )
-                                <li>
-                                    <a href="{{ url( 'auth/login' ) }}" class="nav-link">
-                                       {{ trans( 'main.login_link' ) }}
-                                    </a>
-                                </li>
-                            @else
-                                <li class="dropdown dropdown-user dropdown-dark">
+                                <li class="dropdown dropdown-dark">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        <span class="username">{{ Auth::user()->name }}</span>
+                                        {{ Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
                                         @if ( Auth::user()->isAdmin() )

@@ -504,7 +504,8 @@ div.sale label {
 .class.s-50.c3 { background-position: 0 -400px; } /* Venomancer */
 .class.s-50.c1 { background-position: 0 -450px; } /* Wizard */
 
-a.nav-link, a.nav-link:hover {
+div.top-menu ul.nav.navbar-nav > li > a, div.top-menu ul.nav.navbar-nav > li > a:hover {
+    padding: 17px 10px 8px;
     color: #8ea3b6;
 }
 

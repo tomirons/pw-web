@@ -25685,8 +25685,9 @@ div.sale label {
 
 /* Wizard */
 
-a.nav-link,
-a.nav-link:hover {
+div.top-menu ul.nav.navbar-nav > li > a,
+div.top-menu ul.nav.navbar-nav > li > a:hover {
+  padding: 17px 10px 8px;
   color: #8ea3b6;
 }
 

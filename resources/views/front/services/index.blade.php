@@ -2,9 +2,6 @@
 
 @section( 'content' )
     @include( 'errors.list' )
-    <div class="row">
-        <a href="{{ url( 'donate' ) }}" class="btn blue mb-md ml-md"> {{ trans( 'main.acc_balance', ['money' => Auth::user()->balance(), 'currency' => settings('currency_name')] ) }} </a>
-    </div>
     @foreach( $services as $service )
         @if ( $service->enabled)
             <div class="col-md-6">
