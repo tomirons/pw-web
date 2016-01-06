@@ -24,6 +24,14 @@ class CustomValidation extends ServiceProvider
             }
             return TRUE;
         });
+
+        Validator::extend('channel_available', function($attribute, $value, $parameters, $validator) {
+            if ( settings( 'server_version' ) == '07' && $value == 12 )
+            {
+                return FALSE;
+            }
+            return TRUE;
+        });
     }
 
     /**

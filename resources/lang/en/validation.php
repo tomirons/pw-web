@@ -88,6 +88,7 @@ return [
     */
 
     'current_pass' => 'Your password doesn\'t match your current one.',
+    'channel_available' => 'You can\'t use this channel with your server version.',
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

@@ -27,7 +27,7 @@ class ManagementController extends Controller
     {
         $this->validate($request, [
             'user' => 'numeric|min:32',
-            'channel' => 'required',
+            'channel' => 'required|channel_available',
             'message' => 'required',
         ]);
 
