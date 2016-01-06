@@ -139,47 +139,46 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
         'getMailer' => 'admin.management.mailer',
         'getForbid' => 'admin.management.forbid'
     ]);
+});
 
-    /* Installer */
-    /*Route::group( ['prefix' => 'install', 'as' => 'admin.installer.'], function()
+/* Installer */
+Route::group( ['prefix' => 'admin/install', 'as' => 'admin.installer.'], function()
+{
+    Route::group( ['middleware' => 'installed'], function()
     {
-        Route::group( ['middleware' => 'installed'], function()
-        {
-            get( '/', [
-                'as' => 'welcome',
-                'uses' => 'Admin\InstallController@welcome'
-            ]);
+        get( '/', [
+            'as' => 'welcome',
+            'uses' => 'Admin\InstallController@welcome'
+        ]);
 
-            get( 'environment', [
-                'as' => 'environment',
-                'uses' => 'Admin\InstallController@environment'
-            ]);
+        get( 'environment', [
+            'as' => 'environment',
+            'uses' => 'Admin\InstallController@environment'
+        ]);
 
-            post( 'environment/save', [
-                'as' => 'environment.save',
-                'uses' => 'Admin\InstallController@save'
-            ]);
+        post( 'environment/save', [
+            'as' => 'environment.save',
+            'uses' => 'Admin\InstallController@save'
+        ]);
 
-            get( 'requirements', [
-                'as' => 'requirements',
-                'uses' => 'Admin\InstallController@requirements'
-            ]);
+        get( 'requirements', [
+            'as' => 'requirements',
+            'uses' => 'Admin\InstallController@requirements'
+        ]);
 
-            get( 'permissions', [
-                'as' => 'permissions',
-                'uses' => 'Admin\InstallController@permissions'
-            ]);
+        get( 'permissions', [
+            'as' => 'permissions',
+            'uses' => 'Admin\InstallController@permissions'
+        ]);
 
-            get( 'database', [
-                'as' => 'database',
-                'uses' => 'Admin\InstallController@database'
-            ]);
+        get( 'database', [
+            'as' => 'database',
+            'uses' => 'Admin\InstallController@database'
+        ]);
 
-            get( 'complete', [
-                'as' => 'complete',
-                'uses' => 'Admin\InstallController@complete'
-            ]);
-        });
-    });*/
-
+        get( 'complete', [
+            'as' => 'complete',
+            'uses' => 'Admin\InstallController@complete'
+        ]);
+    });
 });

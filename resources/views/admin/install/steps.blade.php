@@ -16,7 +16,7 @@
             <div class="mt-step-number bg-white">4</div>
             <div class="mt-step-title uppercase font-grey-cascade">{{ trans( 'install.permissions.title' ) }}</div>
         </div>
-        <div class="col-md-2 mt-step-col last {{ ( session( 'message' )['status'] === 'success' ) ? 'done' : NULL . isActive( 'admin.installer.complete' ) }}">
+        <div class="col-md-2 mt-step-col last {{ ( session( 'message' ) === 'success' ) ? 'done' : NULL . isActive( 'admin.installer.complete' ) }}">
             <div class="mt-step-number bg-white">5</div>
             <div class="mt-step-title uppercase font-grey-cascade">{{ trans( 'install.complete.title' ) }}</div>
         </div>
