@@ -75,7 +75,7 @@ return [
     ],
     'no_results' => 'Sorry, but there\'s nothing to display...',
     'reg_complete' => 'Your account has been registered, you can now login!',
-    'acc_balance' => 'Account Balance: :money :currency',
+    'acc_balance' => 'Balance: :money :currency',
     'buy' => 'Buy',
     'no_character_selected' => 'You must select a character before proceeding.',
     'no_characters' => 'You haven\'t created any characters.',

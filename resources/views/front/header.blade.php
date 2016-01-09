@@ -27,21 +27,21 @@
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
                             @if ( Auth::guest() )
-                                <li class="dropdown">
+                                <li>
                                     <a href="{{ url( 'auth/login' ) }}">
                                        {{ trans( 'main.login_link' ) }}
                                     </a>
                                 </li>
                             @else
-                                <li class="dropdown">
+                                <li>
                                     <a href="{{ url( 'donate' ) }}">
                                         {{ trans( 'main.acc_balance', ['money' => Auth::user()->balance(), 'currency' => settings('currency_name')] ) }}
                                     </a>
                                 </li>
-                                <li class="dropdown dropdown-separator">
+                                <li class="dropdown dropdown-separator hidden-xs">
                                     <span class="separator"></span>
                                 </li>
-                                <li class="dropdown dropdown-dark">
+                                <li class="dropdown dropdown-dark hidden-xs">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                         {{ Auth::user()->characterId() ? Auth::user()->characterName() : trans( 'main.select_character' ) }}
                                     </a>
@@ -165,28 +165,6 @@
         <script src="{{ asset( 'js/front/plugins.js' ) }}"></script>
         <script src="{{ asset( 'js/front/global.js' ) }}"></script>
         <script src="{{ asset( 'js/front/layout.js' ) }}"></script>
-
-        @if ( !$api->online )
-            <script>
-                $(function() {
-                    toastr.options = {
-                        "closeButton": false,
-                        "debug": false,
-                        "positionClass": "toast-top-full-width",
-                        "onclick": null,
-                        "showDuration": "0",
-                        "hideDuration": "0",
-                        "timeOut": "0",
-                        "extendedTimeOut": "0",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    };
-                    toastr.error("{{ trans( 'main.server_offline.message' ) }}", "{{ trans( 'main.server_offline.title' ) }}");
-                });
-            </script>
-        @endif
 
         @yield( 'footer' )
     </body>

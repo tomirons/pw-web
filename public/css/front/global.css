@@ -25691,6 +25691,10 @@ div.top-menu ul.nav.navbar-nav > li > a:hover {
   color: #8ea3b6;
 }
 
+div.top-menu ul.nav.navbar-nav > li {
+  padding: 0 4px;
+}
+
 div [data-countdown] span {
   display: inline-block;
   font-size: 2em;
