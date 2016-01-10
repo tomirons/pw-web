@@ -109,7 +109,7 @@ class Kernel extends ConsoleKernel
                             'title_id' => !empty( $title_data['cur_title_id'] ) ? $title_data['cur_title_id'] : 0,
                             'faction_id' => !empty( $user_faction['fid'] ) ? $user_faction['fid'] : '',
                             'faction_name' => !empty( $faction_info['name'] ) ? $faction_info['name'] : '',
-                            'faction_role' => !empty ($user_faction['role'] ) ? $user_faction['role'] : '',
+                            'faction_role' => !empty ( $user_faction['role'] ) ? $user_faction['role'] : '',
                             'faction_contrib' => !empty( $faction_contrib['consume_contrib'] ) ? $faction_contrib['consume_contrib'] : 0,
                             'faction_feat' => !empty( $faction_contrib['cumulate_contrib'] ) ? $faction_contrib['cumulate_contrib'] : 0,
                             'equipment' => json_encode( $role_data['equipment'] ),
@@ -123,6 +123,12 @@ class Kernel extends ConsoleKernel
                         {
                             Player::create( $role_info );
                         }
+                        unset( $role_data );
+                        unset( $var_data );
+                        unset( $force_data );
+                        unset( $faction_info );
+                        unset( $faction_contrib );
+                        unset( $user_faction );
                     }
                 }
             }
@@ -177,12 +183,16 @@ class Kernel extends ConsoleKernel
                                 Faction::create( $faction_info );
                             }
                         }
+                        unset( $id );
+                        unset( $faction );
+                        unset( $user_faction );
+                        unset( $raw_info['Raw'][$i]['value'] );
                     }
-                    $rawcount = count( $raw_info['Raw'] ) - 1;
-                    $lastraw = $raw_info['Raw'][$rawcount];
-                    $lastkey = $lastraw['key'];
-                    $newkey = hexdec( $lastkey ) + 1;
-                    $handler = bin2hex( pack( "N*", $newkey ) );
+                    $raw_count = count( $raw_info['Raw'] ) - 1;
+                    $last_raw = $raw_info['Raw'][$raw_count];
+                    $last_key = $last_raw['key'];
+                    $new_key = hexdec( $last_key ) + 1;
+                    $handler = bin2hex( pack( "N*", $new_key ) );
                 }while( TRUE );
             }
         })->everyTenMinutes();
@@ -232,6 +242,8 @@ class Kernel extends ConsoleKernel
                     {
                         Territory::create( $territory_info );
                     }
+                    unset( $owner );
+                    unset( $challenger );
                 }
             }
         })->everyTenMinutes();
