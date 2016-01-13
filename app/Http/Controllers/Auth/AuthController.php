@@ -135,7 +135,7 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'ID' => User::all() ? User::orderBy( 'ID', 'desc' )->first()->ID + 16 : 1024,
+            'ID' => ( User::all()->count() > 0 ) ? User::orderBy( 'ID', 'desc' )->first()->ID + 16 : 1024,
             'name' => $data['name'],
             'email' => $data['email'],
             'passwd' => Hash::make($data['name'].$data['password']),
