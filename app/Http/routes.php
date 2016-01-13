@@ -32,7 +32,7 @@ Route::get( 'password/reset/{token}', 'Auth\PasswordController@getReset' );
 Route::post( 'password/reset', 'Auth\PasswordController@postReset' );
 
 /* News */
-Route::get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex'] );
+get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex'] );
 
 /* Shop */
 Route::get( 'shop', ['as' => 'shop.index', 'uses' => 'Front\ShopController@getIndex'] );
@@ -142,7 +142,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
 });
 
 /* Installer */
-/*Route::group( ['prefix' => 'admin/install', 'as' => 'admin.installer.'], function()
+Route::group( ['prefix' => 'admin/install', 'as' => 'admin.installer.'], function()
 {
     Route::group( ['middleware' => 'installed'], function()
     {
@@ -151,7 +151,17 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
             'uses' => 'Admin\InstallController@welcome'
         ]);
 
-        get( 'environment', [
+        get( 'settings', [
+            'as' => 'settings',
+            'uses' => 'Admin\InstallController@getSettings'
+        ]);
+
+        post( 'setup', [
+            'as' => 'settings.save',
+            'uses' => 'Admin\InstallController@postSettings'
+        ]);
+
+        /*get( 'environment', [
             'as' => 'environment',
             'uses' => 'Admin\InstallController@environment'
         ]);
@@ -174,11 +184,11 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
         get( 'database', [
             'as' => 'database',
             'uses' => 'Admin\InstallController@database'
-        ]);
+        ]);*/
 
         get( 'complete', [
             'as' => 'complete',
             'uses' => 'Admin\InstallController@complete'
         ]);
     });
-});*/
+});

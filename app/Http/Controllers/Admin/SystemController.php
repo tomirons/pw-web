@@ -19,6 +19,14 @@ class SystemController extends Controller
 
     public function postSettings( Request $request )
     {
+        $this->validate($request, [
+            'server_name' => 'required|min:5',
+            'currency_name' => 'required|min:3',
+            'server_ip' => 'required|ip',
+            'server_version' => 'required',
+            'encryption_type' => 'required'
+        ]);
+
         Settings::set( 'server_name', $request->server_name );
 
         Settings::set( 'currency_name', $request->currency_name );

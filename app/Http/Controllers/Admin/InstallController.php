@@ -37,7 +37,7 @@ class InstallController extends Controller
     }
 
     /**
-     * Display the Environment page.
+     * Display the Welcome page.
      *
      * @return \Illuminate\View\View
      */
@@ -45,7 +45,47 @@ class InstallController extends Controller
     {
         return view( 'admin.install.welcome' );
     }
-    
+
+    /**
+     * Display the Setup page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function getSettings()
+    {
+        return view( 'admin.install.settings' );
+    }
+
+
+    /**
+     * Save the settings to the database
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postSettings( Request $request )
+    {
+        $this->validate($request, [
+            'server_name' => 'required|min:5',
+            'currency_name' => 'required|min:3',
+            'server_ip' => 'required|ip',
+            'server_version' => 'required',
+            'encryption_type' => 'required'
+        ]);
+
+        Settings::set( 'server_name', $request->server_name );
+
+        Settings::set( 'currency_name', $request->currency_name );
+
+        Settings::set( 'server_ip', $request->server_ip );
+
+        Settings::set( 'server_version', $request->server_version );
+
+        Settings::set( 'encryption_type', $request->encryption_type );
+
+        return redirect()->route( 'admin.installer.complete' )->with( 'message', [ 'message' => trans( 'system.success' ), 'status' => 'success' ] );
+    }
+
     /**
      * Display the Environment page.
      *

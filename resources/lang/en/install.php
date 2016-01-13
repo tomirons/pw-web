@@ -13,6 +13,9 @@ return [
         'title' => 'Welcome',
         'content' => 'Welcome to the setup of PW Web! This installer will help you setup everything that\'s needed to run our application.'
     ],
+    'settings' => [
+        'title' => 'System Settings'
+    ],
     'environment' => [
         'title' => 'Environment',
         'message' => [
@@ -36,7 +39,7 @@ return [
     'complete' => [
         'title' => 'Complete',
         'retry' => 'Try Again',
-        'installed' => 'Application has been successfully installed.',
+        'installed' => 'Application has been successfully installed, you may now exit the installer.',
         'exit' => 'Exit Installer'
     ]
 
