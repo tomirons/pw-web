@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Request;
 
 class Player extends Model
 {
@@ -24,6 +25,8 @@ class Player extends Model
             'pvp' => 'pk_count'
         ];
 
-        return $query->orderBy( $column[ $sub ], 'desc' );
+        return $query
+            ->whereNotIn( 'id', explode( ',', settings( 'ranking_ignore_roles' ) ) )
+            ->orderBy( isset( $column[ $sub ] ) ? $column[ $sub ] : 'level' , 'desc' );
     }
 }

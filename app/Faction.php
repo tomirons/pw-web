@@ -24,6 +24,8 @@ class Faction extends Model
             'pvp' => 'pk_count'
         ];
 
-        return $query->orderBy( $column[ $sub ], 'desc' );
+        return $query
+            ->whereNotIn( 'id', explode( ',', settings( 'ranking_ignore_factions' ) ) )
+            ->orderBy( isset( $column[ $sub ] ) ? $column[ $sub ] : 'level', 'desc' );
     }
 }

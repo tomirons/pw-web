@@ -28,14 +28,14 @@ class RankingController extends Controller
     public function getPlayer( Request $request )
     {
         pagetitle( [ trans( 'ranking.player' ) . ' ' . trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
-        $ranks = Player::whereNotIn('id', explode( ',', settings( 'ranking_ignore_roles' ) ) )->subtype( $request->segment( 3 ) )->paginate();
+        $ranks = Player::subtype( $request->segment( 3 ) )->paginate();
         return view( 'front.ranking.player', compact( 'ranks' ) );
     }
 
     public function getFaction( Request $request )
     {
         pagetitle( [ trans( 'ranking.faction' ) . ' ' . trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
-        $ranks = Faction::whereNotIn('id', explode( ',', settings( 'ranking_ignore_factions' ) ) )->subtype( $request->segment( 3 ) )->paginate();
+        $ranks = Faction::subtype( $request->segment( 3 ) )->paginate();
         return view( 'front.ranking.faction', compact( 'ranks' ) );
     }
 
