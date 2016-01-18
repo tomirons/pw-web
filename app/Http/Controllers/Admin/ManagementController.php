@@ -171,7 +171,7 @@ class ManagementController extends Controller
         {
             if ( DB::table( 'auth' )->where( 'userid', $request->account_id )->count() == 0 )
             {
-                DB::select( "call addGM({$request->account_id}, 1)" );
+                DB::statement( "call addGM({$request->account_id}, 1)" );
                 flash()->success( trans( 'management.complete.gm.add', ['acc' => $user->name] ) );
             }
             else
