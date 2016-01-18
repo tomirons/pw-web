@@ -15,5 +15,6 @@ return [
     'acc_registered_title' => 'Accounts Registered',
     'total_characters_title' => 'Characters Created',
     'total_factions_title' => 'Factions Created',
+    'gms_title' => 'GM\'s Online'
 
 ];

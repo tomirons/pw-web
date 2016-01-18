@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Application;
+use App\User;
 use Huludini\PerfectWorldAPI\API;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -82,6 +84,15 @@ class ViewServiceProvider extends ServiceProvider
 
         view()->composer( 'admin.donate.settings', function ( $view ) {
             $view->with( 'currencies', trans( 'donate.currency' ) );
+        });
+
+        view()->composer( 'front.widgets', function ( $view ) {
+            $gms = [];
+            foreach ( DB::table( 'auth' )->select( 'userid' )->distinct()->get() as $gm )
+            {
+                $gms[] = User::find( $gm->userid );
+            }
+            $view->with( 'gms', $gms );
         });
 
         if ( Schema::hasTable( 'pweb_settings' ) )

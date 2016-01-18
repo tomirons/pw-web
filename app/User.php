@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\DB;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -43,7 +44,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['passwd', 'remember_token'];
 
     public function balance()
     {
@@ -85,5 +86,10 @@ class User extends Model implements AuthenticatableContract,
     public function voucher_logs()
     {
         return $this->hasMany( 'App\VoucherLog' );
+    }
+
+    public function online()
+    {
+        return DB::table( 'point' )->where( 'uid', $this->ID )->where( 'zoneid', 1 )->exists() ? TRUE : FALSE;
     }
 }
