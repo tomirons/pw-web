@@ -25695,6 +25695,14 @@ div.top-menu ul.nav.navbar-nav > li {
   padding: 0 4px;
 }
 
+img.avatar {
+  margin-left: -10px;
+  margin-top: -14px;
+  margin-right: 8px;
+  height: 40px;
+  float: left;
+}
+
 div [data-countdown] span {
   display: inline-block;
   font-size: 2em;

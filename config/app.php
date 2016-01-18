@@ -158,6 +158,8 @@ return [
         Rephlux\PageTitle\PageTitleServiceProvider::class,
         \App\Providers\CustomValidation::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Laravolt\Avatar\ServiceProvider::class,
 
     ],
 
@@ -217,7 +219,8 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
-        'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class
+        'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
+        'Avatar'    => Laravolt\Avatar\Facade::class,
     ],
 
 ];

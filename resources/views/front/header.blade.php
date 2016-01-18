@@ -77,7 +77,8 @@
                                 </li>
                                 <li class="dropdown dropdown-dark">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        {{ Auth::user()->name }}
+                                        <img class="avatar" src="{{ Avatar::create( strtoupper( Auth::user()->name ) )->toBase64() }}" />
+                                        <span>{{ Auth::user()->name }}</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
                                         @if ( Auth::user()->isAdmin() )
