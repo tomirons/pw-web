@@ -32,7 +32,7 @@ Route::get( 'password/reset/{token}', 'Auth\PasswordController@getReset' );
 Route::post( 'password/reset', 'Auth\PasswordController@postReset' );
 
 /* News */
-get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex'] );
+Route::get( '/', ['as' => 'news.index', 'uses' => 'Front\NewsController@getIndex'] );
 
 /* Shop */
 Route::get( 'shop', ['as' => 'shop.index', 'uses' => 'Front\ShopController@getIndex'] );
