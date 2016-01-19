@@ -3,7 +3,7 @@
 ### Requirements
 1. Composer & Git - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
 2. PHP 5.5.9 or higher
-3. PHP GD extension, not sure if you have it? Run `apt-get install php5-gd`
+3. PHP GD extension, not sure if you have it? Run `apt-get install php5-gd; service apache2 restart`
 
 ### Setup
 
