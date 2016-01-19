@@ -21,7 +21,7 @@
             <div class="page-header-top">
                 <div class="container">
                     <div class="page-logo">
-                        <a class="logo-default navbar-brand uppercase font-dark" href="{{ url( '/' ) }}">Perfect World Panel</a>
+                        <a class="logo-default navbar-brand uppercase font-dark" href="{{ url( '/' ) }}">{{ settings( 'server_name', 'Perfect World Panel' ) }}</a>
                     </div>
                     <a href="#" class="menu-toggler"></a>
                     <div class="top-menu">
