@@ -19,7 +19,8 @@ class DonateController extends Controller
     public function postPaypalSettings( Request $request )
     {
         $this->validate($request, [
-            'paypal_email' => 'required|email',
+            'paypal_client_id' => 'required',
+            'paypal_secret' => 'required',
             'paypal_currency' => 'required',
             'paypal_min' => 'required|numeric|min:1',
             'paypal_per' => 'required|numeric|min:1'
@@ -27,7 +28,9 @@ class DonateController extends Controller
 
         Settings::set( 'paypal_double', $request->paypal_double );
 
-        Settings::set( 'paypal_email', $request->paypal_email );
+        Settings::set( 'paypal_client_id', $request->paypal_client_id );
+
+        Settings::set( 'paypal_secret', $request->paypal_secret );
 
         Settings::set( 'paypal_currency', $request->paypal_currency );
 

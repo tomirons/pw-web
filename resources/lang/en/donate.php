@@ -19,10 +19,16 @@ return [
     'double_notice' => '<b>Notice:</b> Double donation is active!',
 
     'double_donation' => 'Double Donation',
-    'paypal_currency' => 'Paypal Currency',
-    'paypal_email' => 'Paypal Email',
+    'paypal_currency' => 'Currency',
+    'paypal_client_id' => 'Client ID',
+    'paypal_client_id_desc' => 'To obtain a client ID and secret, <a href="https://developer.paypal.com/developer/applications/" target="_blank">create an application on PayPal\'s developer site</a>. Make sure you use the <strong>live credentials</strong>, not the test credentials.',
+    'paypal_secret' => 'Secret',
     'paypal_per' => 'Currency per :currency',
     'paypal_min' => 'Minimum Amount',
+    'paypal' => [
+        'description' => ':amount :currency',
+        'success' => 'Thank you for supporting our server, we appreciate your donation.'
+    ],
     'paymentwall_link' => 'iFrame Link',
     'paymentwall_link_desc' => '',
     'paymentwall_key' => 'Secret Key',

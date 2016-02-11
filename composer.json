@@ -18,7 +18,8 @@
         "knplabs/github-api": "^1.5",
         "graham-campbell/github": "^4.2",
         "doctrine/dbal": "^2.5",
-        "laravolt/avatar": "~0.3"
+        "laravolt/avatar": "~0.3",
+        "omnipay/omnipay": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

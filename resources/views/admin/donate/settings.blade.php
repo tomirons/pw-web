@@ -25,9 +25,17 @@
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
-                        {!! Form::label( 'paypal_email', trans( 'donate.paypal_email' ), ['class' => 'col-md-2 control-label'] ) !!}
+                        {!! Form::label( 'paypal_client_id', trans( 'donate.paypal_client_id' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            {!! Form::text( 'paypal_email', settings( 'paypal_email' ), ['class' => 'form-control', 'id' => 'paypal_email'] ) !!}
+                            {!! Form::text( 'paypal_client_id', settings( 'paypal_client_id' ), ['class' => 'form-control', 'id' => 'paypal_client_id'] ) !!}
+                            <div class="form-control-focus"> </div>
+                            <span class="help-block">{!! trans( 'donate.paypal_client_id_desc' ) !!}</span>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        {!! Form::label( 'paypal_secret', trans( 'donate.paypal_secret' ), ['class' => 'col-md-2 control-label'] ) !!}
+                        <div class="col-md-9">
+                            {!! Form::text( 'paypal_secret', settings( 'paypal_secret' ), ['class' => 'form-control', 'id' => 'paypal_secret'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
