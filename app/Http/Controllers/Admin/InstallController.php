@@ -31,7 +31,7 @@ class InstallController extends Controller
     public function __construct()
     {
         $this->env_path = base_path( '.env' );
-        $this->env_example_path = base_path( '.env.example' );
+        $this->env_example_path = base_path( '.env' );
         $this->results['permissions'] = [];
         $this->results['errors'] = null;
     }

@@ -101,7 +101,7 @@
                     <div class="form-group form-md-line-input">
                         {!! Form::label( 'paymentwall_key', trans( 'donate.paymentwall_key' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            {!! Form::text( 'paymentwall_link', settings( 'paymentwall_key' ), ['class' => 'form-control', 'id' => 'paymentwall_key'] ) !!}
+                            {!! Form::text( 'paymentwall_key', settings( 'paymentwall_key' ), ['class' => 'form-control', 'id' => 'paymentwall_key'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
