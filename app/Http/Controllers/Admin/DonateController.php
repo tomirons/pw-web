@@ -57,6 +57,10 @@ class DonateController extends Controller
             preg_match( '/src="([^"]+)"/', $request->paymentwall_link, $match );
             Settings::set( 'paymentwall_link', $match[1] );
         }
+        else
+        {
+            Settings::set( 'paymentwall_link', $request->paymentwall_link );
+        }
 
         Settings::set( 'paymentwall_key', $request->paymentwall_key );
 

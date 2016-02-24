@@ -94,7 +94,7 @@
                     <div class="form-group form-md-line-input">
                         {!! Form::label( 'paymentwall_link', trans( 'donate.paymentwall_link' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
-                            {!! Form::input( 'url', 'paymentwall_link', settings( 'paymentwall_link' ), ['class' => 'form-control', 'id' => 'paymentwall_link'] ) !!}
+                            {!! Form::text( 'paymentwall_link', settings( 'paymentwall_link' ), ['class' => 'form-control', 'id' => 'paymentwall_link'] ) !!}
                             <div class="form-control-focus"> </div>
                         </div>
                     </div>
