@@ -18,7 +18,7 @@ class DonateController extends Controller
 
     public function __construct()
     {
-        $this->middleware( 'auth' );
+        $this->middleware( 'auth', ['except' => 'getPaymentwall'] );
 
         $this->gateway = Omnipay::create( 'PayPal_Rest' );
         $this->gateway->initialize([
@@ -87,7 +87,7 @@ class DonateController extends Controller
         return redirect( 'donate' );
     }
 
-    public function postPaymentwall( Request $request )
+    public function getPaymentwall( Request $request )
     {
         /**
          *  Pingback Listener Script

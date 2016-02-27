@@ -44,7 +44,7 @@ Route::get( 'shop/mask/{shop_mask}', ['as' => 'shop.mask', 'uses' => 'Front\Shop
 Route::get( 'donate', ['as' => 'donate.index', 'uses' => 'Front\DonateController@getIndex'] );
 Route::post( 'donate/paypal', 'Front\DonateController@postPaypalSubmit' );
 Route::get( 'donate/paypal/complete', 'Front\DonateController@postPayPalComplete' );
-Route::get( 'donate/paymentwall', 'Front\DonateController@postPaymentwall' );
+Route::get( 'donate/paymentwall', 'Front\DonateController@getPaymentwall' );
 
 /* Vote */
 Route::get( 'vote', ['as' => 'vote.index', 'uses' => 'Front\VoteController@getIndex'] );
