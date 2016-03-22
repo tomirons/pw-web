@@ -33,7 +33,7 @@
                                     </a>
                                 </li>
                             @else
-                                <li>
+                                <li class="hidden-xs">
                                     <a href="{{ url( 'donate' ) }}">
                                         {{ trans( 'main.acc_balance', ['money' => Auth::user()->balance(), 'currency' => settings('currency_name')] ) }}
                                     </a>
@@ -41,7 +41,7 @@
                                 <li class="dropdown dropdown-separator hidden-xs">
                                     <span class="separator"></span>
                                 </li>
-                                <li class="dropdown dropdown-dark hidden-xs">
+                                <li class="dropdown dropdown-dark">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                         {{ Auth::user()->characterId() ? Auth::user()->characterName() : trans( 'main.select_character' ) }}
                                     </a>
@@ -77,7 +77,9 @@
                                 </li>
                                 <li class="dropdown dropdown-dark">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        <img class="avatar" src="{{ Avatar::create( strtoupper( Auth::user()->name ) )->toBase64() }}" />
+                                        @if ( !$agent->isMobile() )
+                                            <img class="avatar" src="{{ Avatar::create( strtoupper( Auth::user()->name ) )->toBase64() }}" />
+                                        @endif
                                         <span>{{ Auth::user()->name }}</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-default">
