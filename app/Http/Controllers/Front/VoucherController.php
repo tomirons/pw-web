@@ -35,7 +35,7 @@ class VoucherController extends Controller
         $api = new API();
         $voucher = Voucher::findOrFail( $request->code );
 
-        if ( !VoucherLog::redeemed( $voucher->id )->exists() )
+        if ( !VoucherLog::redeemed( $voucher->id, $request )->exists() )
         {
             $mail = [
                 'title' => trans( 'voucher.mail.title', ['code' => $request->code] ),
@@ -57,8 +57,11 @@ class VoucherController extends Controller
             $api->sendMail( Auth::user()->characterId(), $mail['title'], $mail['message'], $mail['item'], $mail['money'] );
             VoucherLog::create([
                 'voucher_id' => $voucher->id,
-                'user_id' => Auth::user()->ID
+                'user_id' => Auth::user()->ID,
+                'ip_address' => $request->ip()
             ]);
+            $voucher->times_redeemed = $voucher->times_redeemed + 1;
+            $voucher->save();
             flash()->success( trans( 'voucher.successfully_redeemed' ) );
         }
         else
