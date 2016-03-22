@@ -36,6 +36,7 @@ class VoteLog extends Model
     {
         return $query
             ->where( 'ip_address', $request->ip() )
+            ->where( 'user_id', Auth::user()->ID )
             ->where( 'site_id', $id )
             ->orderBy( 'created_at', 'desc' )
             ->take( 1 );
