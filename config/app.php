@@ -160,6 +160,7 @@ return [
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class
 
     ],
 
@@ -221,6 +222,7 @@ return [
         'PageTitle' => Rephlux\PageTitle\Facades\PageTitle::class,
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
         'Avatar'    => Laravolt\Avatar\Facade::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class
     ],
 
 ];

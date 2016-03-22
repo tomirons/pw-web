@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Jenssegers\Agent\Agent;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -99,6 +100,8 @@ class ViewServiceProvider extends ServiceProvider
         {
             view()->share( 'api', new API() );
         }
+
+        view()->share( 'agent', new Agent() );
     }
 
     /**
