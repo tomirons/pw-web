@@ -44,7 +44,7 @@
                                 {!! trans( 'donate.double_notice' ) !!}
                             </div>
                         @endif
-                        <iframe src="{{ str_replace( '[USER_ID]', Auth::user()->ID, settings( 'paymentwall_link' ) ) }}" width="100%" height="800" frameborder="0"></iframe>
+                        <iframe src="{{ str_replace( [ '[USER_ID]', '[USER_E]', '[USER_D]' ], [ Auth::user()->ID, Auth::user()->email, Auth::user()->creatime->timestamp ], settings( 'paymentwall_link' ) ) }}" width="100%" height="800" frameborder="0"></iframe>
                     </div>
                 </div>
             @endif

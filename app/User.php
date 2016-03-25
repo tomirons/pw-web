@@ -46,6 +46,13 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['passwd', 'remember_token'];
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['creatime'];
+
     public function balance()
     {
         return number_format( $this->money, 2 );
