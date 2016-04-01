@@ -245,27 +245,8 @@ class ServicesController extends Controller
                 {
                     if ( ( $role_data['status']['level'] + $request->quantity ) <= settings( 'level_up_cap' ) )
                     {
-                        if ( !in_array( $role_data['base']['cls'], [ 9, 1, 2, 3, 7 ] ) )
-                        {
-                            $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
-                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 20 );
-                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 28 );
-                            $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
-                        }
-                        elseif ( !in_array( $role_data['base']['cls'], [ 6, 5 ] ) )
-                        {
-                            $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
-                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 26 );
-                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 22 );
-                            $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
-                        } 
-                        else 
-                        {
-                            $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
-                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 30 );
-                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 18 ); 
-                            $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
-                        }
+                        $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
+                        $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
 
                         if ( $api->putRole( $role, $role_data ) )
                         {
