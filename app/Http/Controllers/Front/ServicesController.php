@@ -248,6 +248,22 @@ class ServicesController extends Controller
                         $role_data['status']['level'] = $role_data['status']['level'] + $request->quantity;
                         $role_data['status']['pp'] = $role_data['status']['pp'] + ( $request->quantity * 5 );
 
+                        if ( !in_array( $role_data['base']['cls'], [ 9, 1, 2, 3, 7 ] ) )
+                        {
+                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 20 );
+                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 28 );
+                        }
+                        elseif ( !in_array( $role_data['base']['cls'], [ 6, 5 ] ) )
+                        {
+                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 26 );
+                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 22 );
+                        }
+                        else
+                        {
+                            $role_data['status']['hp'] = $role_data['status']['hp'] + ( $request->quantity * 30 );
+                            $role_data['status']['mp'] = $role_data['status']['mp'] + ( $request->quantity * 18 );
+                        }
+
                         if ( $api->putRole( $role, $role_data ) )
                         {
                             $user->money = $user->money - ( $request->quantity * $service->price );
