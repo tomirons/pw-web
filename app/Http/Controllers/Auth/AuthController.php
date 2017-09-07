@@ -136,9 +136,9 @@ class AuthController extends Controller
     {
         return User::create([
             'ID' => ( User::all()->count() > 0 ) ? User::orderBy( 'ID', 'desc' )->first()->ID + 16 : 1024,
-            'name' => $data['name'],
+            'name' => strtolower($data['name']),
             'email' => $data['email'],
-            'passwd' => Hash::make($data['name'].$data['password']),
+            'passwd' => Hash::make(strtolower($data['name']).$data['password']),
         ]);
     }
 }
