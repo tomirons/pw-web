@@ -38,7 +38,7 @@ class ShopController extends Controller
     public function postPurchase( ShopItem $item )
     {
         $user = Auth::user();
-        $item_price = ( $item->discout > 0 ) ? $item->price - ( $item->price / 100 * $item->discount ) : $item->price;
+        $item_price = ( $item->discount > 0 ) ? $item->price - ( $item->price / 100 * $item->discount ) : $item->price;
 
         if ( $user->money >= $item_price )
         {
