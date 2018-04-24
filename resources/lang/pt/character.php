@@ -4,11 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Language Type Lines
+    | Character Language Lines
     |--------------------------------------------------------------------------
     */
-    'en' => 'English',
-    'pt' => 'Portuguese'
+    'success' => 'Personagem selecionado.',
+    'error' => [
+        'role' => 'Não foi possível selecionar o personagem.'
+    ]
 
 
 ];
