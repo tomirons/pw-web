@@ -7,8 +7,7 @@ return [
     | Language Type Lines
     |--------------------------------------------------------------------------
     */
-    'en' => 'English',
-    'pt' => 'Portuguese'
-
+    'pt' => 'Português',
+    'en' => 'Inglês'
 
 ];
