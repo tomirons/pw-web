@@ -103,4 +103,12 @@
             e.preventDefault(); // cancel default behavior
         });
     </script>
+    <script type="text/javascript">
+        $(function(){
+            $('.green').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
 @endsection
