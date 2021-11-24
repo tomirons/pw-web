@@ -21,6 +21,6 @@ class IndexController extends Controller
     {
         $releases = $this->github->api( 'repo' )->releases()->all( 'huludini', 'pw-web' );
         pagetitle( [ trans( 'main.dashboard' ), settings( 'server_name' ) ] );
-        return view( 'admin.index', compact( 'version_info', 'releases' ) );
+        return view( 'admin.index', compact( 'releases' ) );
     }
 }
