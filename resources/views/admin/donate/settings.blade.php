@@ -12,6 +12,12 @@
                 {!! csrf_field() !!}
                 <div class="form-body">
                     <div class="form-group form-md-line-input">
+                        {!! Form::label( 'paypal_status', trans( 'donate.status' ), ['class' => 'col-md-2 control-label'] ) !!}
+                        <div class="col-md-9">
+                            {!! Form::checkbox( 'paypal_status', NULL, settings( 'paypal_status' ), ['class' => 'make-switch', 'id' => 'paypal_status', 'data-size' => 'normal', 'data-on-color' => 'danger', 'data-off-color' => 'default'] ) !!}
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
                         {!! Form::label( 'paypal_double', trans( 'donate.double_donation' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
                             {!! Form::checkbox( 'paypal_double', NULL, settings( 'paypal_double' ), ['class' => 'make-switch', 'id' => 'paypal_double', 'data-size' => 'normal', 'data-on-color' => 'danger', 'data-off-color' => 'default'] ) !!}
@@ -21,7 +27,7 @@
                         {!! Form::label( 'paypal_currency', trans( 'donate.paypal_currency' ), ['class' => 'col-md-2 control-label'] ) !!}
                         <div class="col-md-9">
                             {!! Form::select( 'paypal_currency', $currencies, settings( 'paypal_currency' ), ['class' => 'form-control', 'id' => 'paypal_currency'] ) !!}
-                            <div class="form-control-focus"> </div>
+                            <div class="form-control-focus"></div>
                         </div>
                     </div>
                     <div class="form-group form-md-line-input">
@@ -84,6 +90,12 @@
                             <li>{{ trans( 'donate.paymentwall_setup.steps.4', [ 'url' => url( 'donate/paymentwall' ) ] ) }}</li>
                             <li>{!! trans( 'donate.paymentwall_setup.steps.5' ) !!}</li>
                         </ol>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        {!! Form::label( 'paymentwall_status', trans( 'donate.status' ), ['class' => 'col-md-2 control-label'] ) !!}
+                        <div class="col-md-9">
+                            {!! Form::checkbox( 'paymentwall_status', NULL, settings( 'paymentwall_status' ), ['class' => 'make-switch', 'id' => 'paymentwall_status', 'data-size' => 'normal', 'data-on-color' => 'danger', 'data-off-color' => 'default'] ) !!}
+                        </div>
                     </div>
                     <div class="form-group form-md-line-input">
                         {!! Form::label( 'paymentwall_double', trans( 'donate.double_donation' ), ['class' => 'col-md-2 control-label'] ) !!}

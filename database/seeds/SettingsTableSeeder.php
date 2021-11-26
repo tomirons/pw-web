@@ -43,23 +43,28 @@ class SettingsTableSeeder extends Seeder
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'encryption_type' )->exists() )
-        {
+        if (!DB::table('pweb_settings')->where('setting_key', 'encryption_type')->exists()) {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'encryption_type',
                 'setting_value' => serialize('md5')
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'paypal_per' )->exists() )
-        {
+        if (!DB::table('pweb_settings')->where('setting_key', 'paypal_status')->exists()) {
+            DB::table('pweb_settings')->insert([
+                'setting_key' => 'paypal_status',
+                'setting_value' => serialize(FALSE)
+            ]);
+        }
+
+        if (!DB::table('pweb_settings')->where('setting_key', 'paypal_per')->exists()) {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'paypal_per',
                 'setting_value' => serialize(2)
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'paypal_min' )->exists() )
+        if (!DB::table('pweb_settings')->where('setting_key', 'paypal_min')->exists())
         {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'paypal_min',
@@ -91,23 +96,28 @@ class SettingsTableSeeder extends Seeder
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'paypal_currency' )->exists() )
-        {
+        if (!DB::table('pweb_settings')->where('setting_key', 'paypal_currency')->exists()) {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'paypal_currency',
                 'setting_value' => serialize('USD')
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'paymentwall_double' )->exists() )
-        {
+        if (!DB::table('pweb_settings')->where('setting_key', 'paymentwall_status')->exists()) {
+            DB::table('pweb_settings')->insert([
+                'setting_key' => 'paymentwall_status',
+                'setting_value' => serialize(FALSE)
+            ]);
+        }
+
+        if (!DB::table('pweb_settings')->where('setting_key', 'paymentwall_double')->exists()) {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'paymentwall_double',
                 'setting_value' => serialize(FALSE)
             ]);
         }
 
-        if ( !DB::table('pweb_settings')->where('setting_key', 'paymentwall_link' )->exists() )
+        if (!DB::table('pweb_settings')->where('setting_key', 'paymentwall_link')->exists())
         {
             DB::table('pweb_settings')->insert([
                 'setting_key' => 'paymentwall_link',

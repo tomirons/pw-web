@@ -1,54 +1,54 @@
 @extends( 'front.header' )
 
 @section( 'content' )
-        @if ( !settings( 'paypal_client_id' ) && !settings( 'paymentwall_link' ) )
-            <div class="portlet light">
-                <div class="portlet-body text-center">
-                    {{ trans( 'donate.no_methods' ) }}
-                </div>
-            </div>
-        @else
-            @if ( settings( 'paypal_client_id' ) )
-                <div class="portlet light">
-                    <div class="portlet-body">
-                        <form action="{{ url( 'donate/paypal' ) }}" onsubmit="return donation_check();" method="post">
-                            {!! csrf_field() !!}
-                            <legend>{{ trans( 'donate.paypal_title' ) }}</legend>
-                            <div class="col-md-12 mb-md">
-                                @if( settings( 'paypal_double' ) )
-                                    <div class="alert alert-info">
-                                        {!! trans( 'donate.double_notice' ) !!}
-                                    </div>
-                                @endif
-                                <div class="form-group form-md-line-input form-md-floating-label">
-                                    <div class="input-group left-addon right-addon">
-                                        <span class="input-group-addon">$</span>
-                                        <input id="donation_dollars" name="dollars" type="number" class="form-control">
-                                        <span class="input-group-addon">=</span>
-                                        <input id="donation_tokens" name="tokens" type="number" class="form-control">
-                                        <span class="input-group-addon">{{ settings( 'currency_name' ) }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-block btn-lg blue" type="submit">{{ trans( 'main.buy' ) }}</button>
-                        </form>
-                    </div>
-                </div>
-            @endif
-            @if ( settings( 'paymentwall_link' ) && settings( 'paymentwall_key' ) )
-                <div class="portlet light">
-                    <div class="portlet-body">
-                        <legend>{{ trans( 'donate.paymentwall_title' ) }}</legend>
-                        @if( settings( 'paymentwall_double' ) )
+    @if ( settings( 'paypal_status' ) )
+        <div class="portlet light">
+            <div class="portlet-body">
+                <form action="{{ url( 'donate/paypal' ) }}" onsubmit="return donation_check();" method="post">
+                    {!! csrf_field() !!}
+                    <legend>{{ trans( 'donate.paypal_title' ) }}</legend>
+                    <div class="col-md-12 mb-md">
+                        @if( settings( 'paypal_double' ) )
                             <div class="alert alert-info">
                                 {!! trans( 'donate.double_notice' ) !!}
                             </div>
                         @endif
-                        <iframe src="{{ str_replace( [ '[USER_ID]', '[USER_E]', '[USER_D]' ], [ Auth::user()->ID, Auth::user()->email, Auth::user()->creatime->timestamp ], settings( 'paymentwall_link' ) ) }}" width="100%" height="800" frameborder="0"></iframe>
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <div class="input-group left-addon right-addon">
+                                <span class="input-group-addon">$</span>
+                                <input id="donation_dollars" name="dollars" type="number" class="form-control">
+                                <span class="input-group-addon">=</span>
+                                <input id="donation_tokens" name="tokens" type="number" class="form-control">
+                                <span class="input-group-addon">{{ settings( 'currency_name' ) }}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            @endif
-        @endif
+                    <button class="btn btn-block btn-lg blue" type="submit">{{ trans( 'main.buy' ) }}</button>
+                </form>
+            </div>
+        </div>
+    @endif
+    @if ( settings( 'paymentwall_status' ) )
+        <div class="portlet light">
+            <div class="portlet-body">
+                <legend>{{ trans( 'donate.paymentwall_title' ) }}</legend>
+                @if( settings( 'paymentwall_double' ) )
+                    <div class="alert alert-info">
+                        {!! trans( 'donate.double_notice' ) !!}
+                    </div>
+                @endif
+                <iframe src="{{ str_replace( [ '[USER_ID]', '[USER_E]', '[USER_D]' ], [ Auth::user()->ID, Auth::user()->email, Auth::user()->creatime->timestamp ], settings( 'paymentwall_link' ) ) }}"
+                        width="100%" height="800" frameborder="0"></iframe>
+            </div>
+        </div>
+    @endif
+    @if ( !settings( 'paypal_status' ) && !settings('paymentwall_status') )
+        <div class="portlet light">
+            <div class="portlet-body text-center">
+                {{ trans( 'donate.no_methods' ) }}
+            </div>
+        </div>
+    @endif
 @endsection
 
 @section( 'footer' )
