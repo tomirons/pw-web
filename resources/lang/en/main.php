@@ -41,7 +41,9 @@ return [
         6 => 'Archer',
         7 => 'Cleric',
         8 => 'Seeker',
-        9 => 'Mystic'
+        9 => 'Mystic',
+        10 => 'Duskblade',
+        11 => 'Stormbringer'
     ],
 
     /* Login/Register Language Lines */
