@@ -60,12 +60,12 @@ Route::get( 'services', ['as' => 'services.index', 'uses' => 'Front\ServicesCont
 Route::post( 'services/{service}', 'Front\ServicesController@postPurchase' );
 
 /* Ranking */
-Route::get( 'ranking', 'Front\RankingController@getIndex' );
-Route::get( 'ranking/player/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getPlayer'] );
-Route::get( 'ranking/faction', function(){
-    return redirect( 'ranking/faction/level' );
+Route::get('ranking', 'Front\RankingController@getIndex');
+Route::get('ranking/player/{sub}', ['as' => 'ranking.player', 'uses' => 'Front\RankingController@getPlayer']);
+Route::get('ranking/faction', function () {
+    return redirect('ranking/faction/level');
 });
-Route::get( 'ranking/faction/{sub}', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getFaction'] );
+Route::get('ranking/faction/{sub}', ['as' => 'ranking.faction', 'uses' => 'Front\RankingController@getFaction']);
 
 /* Not Working */
 //Route::get( 'ranking/territory', ['as' => 'ranking.index', 'uses' => 'Front\RankingController@getTerritory'] );
@@ -115,24 +115,27 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'admin'] ], functio
     Route::resource( 'vote', 'Admin\VoteController' );
 
     /* Services */
-    Route::get( 'services', ['as' => 'admin.services.edit', 'uses' => 'Admin\ServicesController@getEdit'] );
-    Route::post( 'services', 'Admin\ServicesController@postEdit' );
-    Route::get( 'services/settings', ['as' => 'admin.services.settings', 'uses' => 'Admin\ServicesController@getSettings'] );
-    Route::post( 'services/settings', 'Admin\ServicesController@postSettings' );
+    Route::get('services', ['as' => 'admin.services.edit', 'uses' => 'Admin\ServicesController@getEdit']);
+    Route::post('services', 'Admin\ServicesController@postEdit');
+    Route::get('services/settings', ['as' => 'admin.services.settings', 'uses' => 'Admin\ServicesController@getSettings']);
+    Route::post('services/settings', 'Admin\ServicesController@postSettings');
 
     /* Ranking */
-    Route::get( 'ranking/settings', ['as' => 'admin.ranking.settings', 'uses' => 'Admin\RankingController@getSettings'] );
-    Route::post( 'ranking/settings', 'Admin\RankingController@postSettings' );
+    Route::get('ranking/settings', ['as' => 'admin.ranking.settings', 'uses' => 'Admin\RankingController@getSettings']);
+    Route::post('ranking/settings', 'Admin\RankingController@postSettings');
+    Route::get('ranking/settings/updatePlayer', 'Admin\RankingController@updatePlayer');
+    Route::get('ranking/settings/updateFaction', 'Admin\RankingController@updateFaction');
+    Route::get('ranking/settings/updateTerritories', 'Admin\RankingController@updateTerritories');
 
     /* Management */
-    Route::get( 'management/gm', ['as' => 'admin.management.gm.view', 'uses' => 'Admin\ManagementController@getGM'] );
-    Route::post( 'management/gm', 'Admin\ManagementController@postGM' );
-    Route::get( 'management/gm/edit/{user}', ['as' => 'admin.management.gm.edit', 'uses' => 'Admin\ManagementController@getGMEdit'] );
-    Route::post( 'management/gm/edit/{user}', 'Admin\ManagementController@postGMEdit' );
-    Route::get( 'management/gm/remove/{user}', 'Admin\ManagementController@getGMRemove' );
-    Route::get( 'management/chat/watch', ['as' => 'admin.management.chat.watch', 'uses' => 'Admin\ManagementController@getChatWatch'] );
-    Route::post( 'management/chat/logs', 'Admin\ManagementController@postChatLogs' );
-    Route::get( 'management/chat/settings', ['as' => 'admin.management.chat.settings', 'uses' => 'Admin\ManagementController@getChatSettings'] );
+    Route::get('management/gm', ['as' => 'admin.management.gm.view', 'uses' => 'Admin\ManagementController@getGM']);
+    Route::post('management/gm', 'Admin\ManagementController@postGM');
+    Route::get('management/gm/edit/{user}', ['as' => 'admin.management.gm.edit', 'uses' => 'Admin\ManagementController@getGMEdit']);
+    Route::post('management/gm/edit/{user}', 'Admin\ManagementController@postGMEdit');
+    Route::get('management/gm/remove/{user}', 'Admin\ManagementController@getGMRemove');
+    Route::get('management/chat/watch', ['as' => 'admin.management.chat.watch', 'uses' => 'Admin\ManagementController@getChatWatch']);
+    Route::post('management/chat/logs', 'Admin\ManagementController@postChatLogs');
+    Route::get('management/chat/settings', ['as' => 'admin.management.chat.settings', 'uses' => 'Admin\ManagementController@getChatSettings']);
     Route::post( 'management/chat/settings', 'Admin\ManagementController@postChatSettings' );
     Route::controller( 'management', 'Admin\ManagementController', [
         'getBroadcast' => 'admin.management.broadcast',

@@ -60,17 +60,25 @@ Breadcrumbs::register( 'voucher.index', function( $breadcrumbs )
 });
 
 /* Services */
-Breadcrumbs::register( 'services.index', function( $breadcrumbs )
-{
-    $breadcrumbs->parent( 'home' );
-    $breadcrumbs->push( trans( 'main.apps.services' ) );
+Breadcrumbs::register('services.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('main.apps.services'));
 });
 
 /* Ranking */
-Breadcrumbs::register( 'ranking.index', function( $breadcrumbs )
-{
-    $breadcrumbs->parent( 'home' );
-    $breadcrumbs->push( trans( 'main.apps.ranking' ) );
+Breadcrumbs::register('ranking.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('main.apps.ranking'));
+});
+
+Breadcrumbs::register('ranking.player', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('main.apps.ranking'));
+});
+
+Breadcrumbs::register('ranking.faction', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('main.apps.ranking'));
 });
 
 /*

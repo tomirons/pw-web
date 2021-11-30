@@ -19,9 +19,9 @@ class Faction extends Model
     {
         $column = [
             'level' => 'level',
-            'rep' => 'reputation',
-            'time' => 'time_used',
-            'pvp' => 'pk_count'
+            'members' => 'members',
+            'territories' => 'territories',
+            'pvp' => 'pk_count',
         ];
 
         return $query
