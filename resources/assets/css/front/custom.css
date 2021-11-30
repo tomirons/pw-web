@@ -454,7 +454,10 @@ div.sale label {
 }
 
 .class.s-16 {
+    /*
     background-image: url('data:image/png;base64,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');
+    */
+    background-image: url('/img/class-logo.png');
     width: 16px;
     height: 16px;
 }
@@ -471,36 +474,158 @@ div.sale label {
     height: 50px;
 }
 
-.class.s-16.c0 { background-position: 0 0; }      /* Blademaster */
-.class.s-16.c1 { background-position: 0 -16px; }  /* Wizard */
-.class.s-16.c2 { background-position: 0 -32px; }  /* Psychic */
-.class.s-16.c3 { background-position: 0 -48px; }  /* Venomancer */
-.class.s-16.c4 { background-position: 0 -64px; }  /* Barbarian */
-.class.s-16.c5 { background-position: 0 -80px; }  /* Assassin */
-.class.s-16.c6 { background-position: 0 -96px; }  /* Archer */
-.class.s-16.c7 { background-position: 0 -112px; } /* Cleric */
-.class.s-16.c8 { background-position: 0 -128px; } /* Seeker */
-.class.s-16.c9 { background-position: 0 -144px; } /* Mystic */
+.class.s-16.c0 {
+    background-position: 0 0;
+}
 
-.class.s-25.c6 { background-position: 0 0; }      /* Archer */
-.class.s-25.c5 { background-position: 0 -25px; }  /* Assassin */
-.class.s-25.c4 { background-position: 0 -50px; }  /* Barbarian */
-.class.s-25.c0 { background-position: 0 -75px; }  /* Blademaster */
-.class.s-25.c7 { background-position: 0 -100px; } /* Cleric */
-.class.s-25.c9 { background-position: 0 -125px; } /* Mystic */
-.class.s-25.c2 { background-position: 0 -150px; } /* Psychic */
-.class.s-25.c8 { background-position: 0 -175px; } /* Seeker */
-.class.s-25.c3 { background-position: 0 -200px; } /* Venomancer */
-.class.s-25.c1 { background-position: 0 -225px; } /* Wizard */
+/* Blademaster */
+.class.s-16.c1 {
+    background-position: 0 -16px;
+}
 
-.class.s-50.c6 { background-position: 0 0; }      /* Archer */
-.class.s-50.c5 { background-position: 0 -50px; }  /* Assassin */
-.class.s-50.c4 { background-position: 0 -100px; } /* Barbarian */
-.class.s-50.c0 { background-position: 0 -150px; } /* Blademaster */
-.class.s-50.c7 { background-position: 0 -200px; } /* Cleric */
-.class.s-50.c9 { background-position: 0 -250px; } /* Mystic */
-.class.s-50.c2 { background-position: 0 -300px; } /* Psychic */
-.class.s-50.c8 { background-position: 0 -350px; } /* Seeker */
+/* Wizard */
+.class.s-16.c2 {
+    background-position: 0 -32px;
+}
+
+/* Psychic */
+.class.s-16.c3 {
+    background-position: 0 -48px;
+}
+
+/* Venomancer */
+.class.s-16.c4 {
+    background-position: 0 -64px;
+}
+
+/* Barbarian */
+.class.s-16.c5 {
+    background-position: 0 -80px;
+}
+
+/* Assassin */
+.class.s-16.c6 {
+    background-position: 0 -96px;
+}
+
+/* Archer */
+.class.s-16.c7 {
+    background-position: 0 -112px;
+}
+
+/* Cleric */
+.class.s-16.c8 {
+    background-position: 0 -128px;
+}
+
+/* Seeker */
+.class.s-16.c9 {
+    background-position: 0 -144px;
+}
+
+/* Mystic */
+.class.s-16.c10 {
+    background-position: 0 -160px;
+}
+
+/* Duskblade */
+.class.s-16.c11 {
+    background-position: 0 -176px;
+}
+
+/* Stormbringer */
+
+.class.s-25.c6 {
+    background-position: 0 0;
+}
+
+/* Archer */
+.class.s-25.c5 {
+    background-position: 0 -25px;
+}
+
+/* Assassin */
+.class.s-25.c4 {
+    background-position: 0 -50px;
+}
+
+/* Barbarian */
+.class.s-25.c0 {
+    background-position: 0 -75px;
+}
+
+/* Blademaster */
+.class.s-25.c7 {
+    background-position: 0 -100px;
+}
+
+/* Cleric */
+.class.s-25.c9 {
+    background-position: 0 -125px;
+}
+
+/* Mystic */
+.class.s-25.c2 {
+    background-position: 0 -150px;
+}
+
+/* Psychic */
+.class.s-25.c8 {
+    background-position: 0 -175px;
+}
+
+/* Seeker */
+.class.s-25.c3 {
+    background-position: 0 -200px;
+}
+
+/* Venomancer */
+.class.s-25.c1 {
+    background-position: 0 -225px;
+}
+
+/* Wizard */
+
+.class.s-50.c6 {
+    background-position: 0 0;
+}
+
+/* Archer */
+.class.s-50.c5 {
+    background-position: 0 -50px;
+}
+
+/* Assassin */
+.class.s-50.c4 {
+    background-position: 0 -100px;
+}
+
+/* Barbarian */
+.class.s-50.c0 {
+    background-position: 0 -150px;
+}
+
+/* Blademaster */
+.class.s-50.c7 {
+    background-position: 0 -200px;
+}
+
+/* Cleric */
+.class.s-50.c9 {
+    background-position: 0 -250px;
+}
+
+/* Mystic */
+.class.s-50.c2 {
+    background-position: 0 -300px;
+}
+
+/* Psychic */
+.class.s-50.c8 {
+    background-position: 0 -350px;
+}
+
+/* Seeker */
 .class.s-50.c3 { background-position: 0 -400px; } /* Venomancer */
 .class.s-50.c1 { background-position: 0 -450px; } /* Wizard */
 
