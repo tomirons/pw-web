@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Request;
 
 class Player extends Model
 {
@@ -26,7 +25,13 @@ class Player extends Model
         ];
 
         return $query
-            ->whereNotIn( 'id', explode( ',', settings( 'ranking_ignore_roles' ) ) )
-            ->orderBy( isset( $column[ $sub ] ) ? $column[ $sub ] : 'level' , 'desc' );
+            ->whereNotIn('id', explode(',', settings('ranking_ignore_roles')))
+            ->orderBy(isset($column[$sub]) ? $column[$sub] : 'level', 'desc');
+    }
+
+    public function getSpouse($id)
+    {
+        //$query = DB::select('SELECT name FROM pweb_ranking_players WHERE id =' . $id );
+        return Player::find($id);
     }
 }
