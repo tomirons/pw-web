@@ -42,6 +42,60 @@
                     </div>
                 </div>
             </form>
+                <div class="col-md-4">
+                    <form action="{{ url( 'admin/ranking/settings/updatePlayer' ) }}" method="get"
+                          class="form-horizontal">
+                        {!! csrf_field() !!}
+                        <div class="form-body">
+                            <div class="portlet box red-flamingo">
+                                <div class="portlet-title">
+                                    <div class="caption"> {{ trans( 'ranking.players.caption' ) }} </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <p>{{ trans( 'ranking.players.content' ) }}</p>
+                                    <button type="submit"
+                                            class="btn green">{{ trans( 'ranking.players.button' ) }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form action="{{ url( 'admin/ranking/settings/updateFaction' ) }}" method="get"
+                          class="form-horizontal">
+                        {!! csrf_field() !!}
+                        <div class="form-body">
+                            <div class="portlet box red-flamingo">
+                                <div class="portlet-title">
+                                    <div class="caption"> {{ trans( 'ranking.factions.caption' ) }} </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <p>{{ trans( 'ranking.factions.content' ) }}</p>
+                                    <button type="submit"
+                                            class="btn green">{{ trans( 'ranking.factions.button' ) }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form action="{{ url( 'admin/ranking/settings/updateTerritories' ) }}" method="get"
+                          class="form-horizontal">
+                        {!! csrf_field() !!}
+                        <div class="form-body">
+                            <div class="portlet box red-flamingo">
+                                <div class="portlet-title">
+                                    <div class="caption"> {{ trans( 'ranking.territories.caption' ) }} </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <p>{{ trans( 'ranking.territories.content' ) }}</p>
+                                    <button type="submit"
+                                            class="btn green">{{ trans( 'ranking.territories.button' ) }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
         </div>
     </div>
 @endsection
