@@ -3,15 +3,9 @@
 namespace App\Http\Controllers\Front;
 
 use App\Faction;
-use App\Player;
-use App\Territory;
-use App\User;
-use Huludini\PerfectWorldAPI\API;
-use Huludini\PerfectWorldAPI\Gamed;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Player;
+use Illuminate\Http\Request;
 
 class RankingController extends Controller
 {
@@ -27,9 +21,10 @@ class RankingController extends Controller
 
     public function getPlayer( Request $request )
     {
-        pagetitle( [ trans( 'ranking.player' ) . ' ' . trans( 'main.apps.ranking' ), settings( 'server_name' ) ] );
-        $ranks = Player::subtype( $request->segment( 3 ) )->paginate();
-        return view( 'front.ranking.player', compact( 'ranks' ) );
+        pagetitle([trans('ranking.player') . ' ' . trans('main.apps.ranking'), settings('server_name')]);
+        $ranks = Player::subtype($request->segment(3))->paginate();
+        $players = new Player();
+        return view('front.ranking.player', compact(['ranks', 'players']));
     }
 
     public function getFaction( Request $request )
