@@ -32,6 +32,7 @@ class Player extends Model
     public function getSpouse($id)
     {
         //$query = DB::select('SELECT name FROM pweb_ranking_players WHERE id =' . $id );
-        return Player::find($id);
+        //return Player::find($id);
+		return $this->find($id);
     }
 }
