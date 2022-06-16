@@ -75,6 +75,7 @@ php artisan key:generate
 
 **Note:** If you receive a 500 error after installation, redo the permissions again.
 
-If you receive any other errors please create an [issue](https://github.com/huludini/pw-web/issues).
+If you receive any other errors please create an [issue](https://github.com/huludini/pw-web/issues).\
+Follow my Youtube Channel [Youtube](https://youtube.com/hrace009).
 
 **Note:** This project is no longer supported, however I will still look at pull requests if you'd like to attempt a fix.
