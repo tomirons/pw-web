@@ -10,7 +10,8 @@ please create a pull request. Thanks
 ### Requirements
 
 1. Composer & Git
-   - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
+   - [Install Composer on Ubuntu 14](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
+   - [Install Composer on Centos 7](https://www.vultr.com/docs/install-composer-on-centos-7/)
 2. PHP 7.2 or higher
 3. PHP GD extension, not sure if you have it? Run `apt-get install php7-gd; service apache2 restart`
 
