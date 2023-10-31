@@ -12,7 +12,6 @@
         "guzzlehttp/guzzle": "^6.1",
         "efriandika/laravel-settings": "^1.0",
         "illuminate/html": "^5.0",
-        "wadeshuler/php-paypal-ipn": "^2.5",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "rephlux/pagetitle": "^0.6.0",
         "knplabs/github-api": "^1.5",
@@ -21,7 +20,8 @@
         "laravolt/avatar": "~0.3",
         "omnipay/omnipay": "^2.3",
         "jenssegers/agent": "^2.3",
-        "paymentwall/paymentwall-php": "^2.1"
+        "paymentwall/paymentwall-php": "^2.1",
+        "wadeshuler/php-paypal-ipn": "2.5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -65,5 +65,12 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/antriver/wadeshuler-php-paypal-ipn"
+        }
+    ]
 }
