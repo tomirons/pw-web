@@ -9,7 +9,7 @@
 4. execute the following command `a2enmod rewrite`
 
 ### Setup
-in your apache2 setup (This was used on ubuntu, find something similar in your own distro), In /etc/apache2/apache2.conf enable rewrite, change none to all
+in your apache2 setup (This was used on ubuntu, find something similar in your own distro), In `/etc/apache2/apache2.conf` enable rewrite, change none to all
 
 ```
     <Directory /var/www/>
