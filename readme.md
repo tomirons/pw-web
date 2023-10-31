@@ -6,8 +6,18 @@
 1. Composer & Git - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
 2. PHP 5.5.9 or higher
 3. Install the following Extensions `curl php5-cli git php5.6-gd php5.6-curl php5.6-mcrypt php5.6-intl php5.6-xsl`
+4. execute the following command `a2enmod rewrite`
 
 ### Setup
+in your apache2 setup (This was used on ubuntu, find something similar in your own distro), In /etc/apache2/apache2.conf enable rewrite, change none to all
+
+```
+    <Directory /var/www/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+    </Directory>
+```
 
 Download the latest release and upload the files.
 
