@@ -20,8 +20,7 @@
         "laravolt/avatar": "~0.3",
         "omnipay/omnipay": "^2.3",
         "jenssegers/agent": "^2.3",
-        "paymentwall/paymentwall-php": "^2.1",
-        "wadeshuler/php-paypal-ipn": "2.5.0"
+        "paymentwall/paymentwall-php": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -66,7 +65,6 @@
     "config": {
         "preferred-install": "dist"
     },
-
     "repositories": [
         {
             "type": "vcs",
