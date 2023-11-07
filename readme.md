@@ -2,7 +2,7 @@
 
 **Note from the original author:** This project is no longer supported, however I will still look at pull requests if you'd like to attempt a fix.
 
-###THIS BUILD HAS THE PAYPAL-IPN ISSUE FIXED
+### THIS BUILD HAS THE PAYPAL-IPN ISSUE FIXED
 
 ### Requirements
 1. Composer & Git - [Complete steps 1 & 2 on this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
