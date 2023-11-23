@@ -9,12 +9,54 @@
         <meta content="" name="author" />
 
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        
         <link rel="stylesheet" href="{{ asset( 'css/front/main.css' ) }}">
         <link rel="stylesheet" href="{{ asset( 'css/front/plugins.css' ) }}">
         <link rel="stylesheet" href="{{ asset( 'css/front/global.css' ) }}">
         <link rel="stylesheet" href="{{ asset( 'css/front/layout.css' ) }}">
 
         <link rel="shortcut icon" href="favicon.ico" />
+        <style>
+
+.page-header-top {
+    background-color: #34495e !important; /* Reddish color */
+}
+
+.page-header-menu {
+    background-color: #34495e !important; /* Reddish color */
+}
+
+.page-logo a {
+    color: #ffffff !important; /* White text */
+}
+
+.top-menu .nav > li > a {
+    color: #ffffff !important; /* White text */
+}
+
+.dropdown-toggle {
+    color: #ff6347 !important; /* White text */
+}
+
+.page-header-top .top-menu > li.dropdown.dropdown-dark > a.dropdown-toggle:hover {
+    color: #ff6347 !important; /* White text */
+}
+
+.nav.navbar-nav.pull-right > li > a {
+    background-color: #34495e !important; /* Header background color */
+}
+
+.nav.navbar-nav.pull-right > li > a:hover {
+    background-color: #34495e !important; /* Same color on hover */
+}
+
+.page-header .hor-menu .nav > li.active > a {
+    background-color: #ff6347 !important; /* Active menu item background color */
+}
+
+
+
+            </style>
     </head>
     <body class="page-container-bg-solid page-boxed">
         <div class="page-header">

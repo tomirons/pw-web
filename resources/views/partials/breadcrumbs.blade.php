@@ -1,3 +1,7 @@
+<style>
+    overrides
+    page-title-color #34495e !important;
+</style>
 @if ( Request::is( 'admin*' ) )
     <div class="page-bar">
         @if ( $breadcrumbs )
@@ -21,7 +25,7 @@
             </ul>
         @endif
     </div>
-    <h3 class="page-title">
+    <h3 class="page-title page-title-color" >
         @foreach ( $breadcrumbs as $breadcrumb )
             @if ( $breadcrumb->last )
                 <h3 class="page-title">{{ $breadcrumb->title }}</h3>
@@ -29,8 +33,8 @@
         @endforeach
     </h3>
 @else
-    <div class="page-head">
-        <div class="container">
+    <div class="page-head" style="background-color:#34495e !important; color: #34495e !important;">
+        <div class="container" style="background-color:#34495e !important;">
             <div class="page-title">
                 @foreach ( $breadcrumbs as $breadcrumb )
                     @if ( $breadcrumb->last )
